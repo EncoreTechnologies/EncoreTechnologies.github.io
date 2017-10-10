@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Encore Technologies - DevOps Blog</title>
-    <link>//encoretechnologies.github.io/categories/</link>
+    <link>https://encoretechnologies.github.io/categories/</link>
     <description>Recent content in Categories on Encore Technologies - DevOps Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="//encoretechnologies.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://encoretechnologies.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Encore</title>
-      <link>//encoretechnologies.github.io/categories/encore/</link>
+      <link>https://encoretechnologies.github.io/categories/encore/</link>
       <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>//encoretechnologies.github.io/categories/encore/</guid>
+      <guid>https://encoretechnologies.github.io/categories/encore/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nick Maludy</title>
-      <link>//encoretechnologies.github.io/categories/nick-maludy/</link>
+      <link>https://encoretechnologies.github.io/categories/nick-maludy/</link>
       <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>//encoretechnologies.github.io/categories/nick-maludy/</guid>
+      <guid>https://encoretechnologies.github.io/categories/nick-maludy/</guid>
       <description></description>
     </item>
     

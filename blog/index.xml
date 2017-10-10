@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on Encore Technologies - DevOps Blog</title>
-    <link>//encoretechnologies.github.io/blog/</link>
+    <link>https://encoretechnologies.github.io/blog/</link>
     <description>Recent content in Blog on Encore Technologies - DevOps Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 02 Oct 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="//encoretechnologies.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://encoretechnologies.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>My first blog post</title>
-      <link>//encoretechnologies.github.io/blog/2017/09/nicks_first_post/</link>
+      <link>https://encoretechnologies.github.io/blog/2017/09/nicks_first_post/</link>
       <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>//encoretechnologies.github.io/blog/2017/09/nicks_first_post/</guid>
+      <guid>https://encoretechnologies.github.io/blog/2017/09/nicks_first_post/</guid>
       <description>This is a title This is a smaller title Welcome to my first blog post.
 The content in this part of the post under the +++ is in the &amp;ldquo;markdown&amp;rdquo; format.
 You can find a great reference/cheat-sheet for markdown syntax at this link
@@ -25,10 +25,10 @@ this is called a code block big long commands go here  Or if you just have a sin
     
     <item>
       <title>New Blog</title>
-      <link>//encoretechnologies.github.io/blog/2017/09/intro/</link>
+      <link>https://encoretechnologies.github.io/blog/2017/09/intro/</link>
       <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>//encoretechnologies.github.io/blog/2017/09/intro/</guid>
+      <guid>https://encoretechnologies.github.io/blog/2017/09/intro/</guid>
       <description>Welcome to the Encore DevOps blog!
 We on the DevOps team have been working for about a year and a half building tons of automation solutions for Encore&amp;rsquo;s Managed Services customers. Up until now we haven&amp;rsquo;t had a place to publicly showcase the more technical work that we&amp;rsquo;ve been doing. This blog serves as a new space for our engineers to share their experiences around new and innovating technologies we&amp;rsquo;re exploring.</description>
     </item>
