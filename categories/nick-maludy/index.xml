@@ -6,22 +6,10 @@
     <description>Recent content in Nick Maludy on Encore Technologies - DevOps Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 30 Sep 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://encoretechnologies.github.io/categories/nick-maludy/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>My first blog post</title>
-      <link>https://encoretechnologies.github.io/blog/2017/09/nicks_first_post/</link>
-      <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://encoretechnologies.github.io/blog/2017/09/nicks_first_post/</guid>
-      <description>This is a title This is a smaller title Welcome to my first blog post.
-The content in this part of the post under the +++ is in the &amp;ldquo;markdown&amp;rdquo; format.
-You can find a great reference/cheat-sheet for markdown syntax at this link
-this is called a code block big long commands go here  Or if you just have a single word/command you want to highlight as code you can do this.</description>
-    </item>
     
     <item>
       <title>New Blog</title>
