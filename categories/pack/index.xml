@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pack on Encore Technologies - DevOps Blog</title>
+    <link>https://encoretechnologies.github.io/categories/pack/</link>
+    <description>Recent content in Pack on Encore Technologies - DevOps Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://encoretechnologies.github.io/categories/pack/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Automated creationg of StackStorm Packs</title>
+      <link>https://encoretechnologies.github.io/blog/2017/10/stackstorm-first-pack/</link>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/blog/2017/10/stackstorm-first-pack/</guid>
+      <description>Intro In StackStorm a pack is logical organization unit that contains related actions, aliases, policies, rules and sensors. To get a good overview of what a pack is please see the excellent StackStorm Pack documentation.
+Most users of StackStorm wish to either integrate with a new system that&amp;rsquo;s not available in the Exchange or use StackStorm to execute custom automation scripts. The way to accomplish this is to create a new Pack.</description>
+    </item>
+    
+  </channel>
+</rss>
