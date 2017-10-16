@@ -6,10 +6,20 @@
     <description>Recent content in Blog on Encore Technologies - DevOps Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 30 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://encoretechnologies.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Automated creation of StackStorm Packs</title>
+      <link>https://encoretechnologies.github.io/blog/2017/10/automated-creation-of-stackstorm-packs/</link>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/blog/2017/10/automated-creation-of-stackstorm-packs/</guid>
+      <description>In StackStorm a pack is logical organization that contains related actions, aliases, policies, rules and sensors. To get a good overview of what a pack is please see the excellent StackStorm Pack documentation.
+Most users of StackStorm wish to either integrate with a new system that&amp;rsquo;s not available in the Exchange or use StackStorm to execute custom automation scripts. The way to accomplish this is to create a new Pack.</description>
+    </item>
     
     <item>
       <title>New Blog</title>
