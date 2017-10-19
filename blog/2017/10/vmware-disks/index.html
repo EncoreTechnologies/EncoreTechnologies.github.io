@@ -65,7 +65,7 @@
 
 
 <meta itemprop="dateModified" content="2017-10-19T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1624">
+<meta itemprop="wordCount" content="1616">
 
 
 
@@ -578,35 +578,35 @@ print disk
 
 <ul>
 <li>The disk.backing.datstore needs to be a pyvmomi.vim.Datastore object for the disk to be added properly</li>
-<li>The controller key can be found by querying for the current controller and getting the key.
-```python
-from pyVmomi import vim</li>
+<li>The controller key can be found by querying for the current controller and getting the key.</li>
 </ul>
 
-<h1 id="using-the-vm-object-we-found-above-we-can-query-for-the-controllers">Using the vm object we found above we can query for the controllers.</h1>
+<pre><code class="language-python">from pyVmomi import vim
 
-<h1 id="this-was-we-can-look-at-all-the-controllers-and-get-the-one-we-want-from-the-array">This was we can look at all the controllers and get the one we want from the array.</h1>
-
-<p>controllers = []
+# Using the vm object we found above we can query for the controllers.
+# This was we can look at all the controllers and get the one we want from the array.
+controllers = []
 for device in self.vm.config.hardware.device:
     if (isinstance(device, vim.vm.device.VirtualSCSIController) or
             isinstance(device, vim.vm.device.ParaVirtualSCSIController)):
-        controllers.append(device)</p>
+        controllers.append(device)
+</code></pre>
 
-<pre><code>- There can be a max of 15 disks per controller.
-- The disk.unitNumber must in the range [0, 6] and [7, 15] (7 is reserved).
-- The disk.unitNumber must be unique with respect to all other disks on the controller (ex: there can only be on disk with disk.unitNumber == 5 on a controller).
+<ul>
+<li>There can be a max of 15 disks per controller.</li>
+<li>The disk.unitNumber must in the range [0, 6] and <a href="7 is reserved">7, 15</a>.</li>
+<li>The disk.unitNumber must be unique with respect to all other disks on the controller (ex: there can only be on disk with disk.unitNumber == 5 on a controller).</li>
+</ul>
 
-# VMware Controller
+<h1 id="vmware-controller">VMware Controller</h1>
 
-We also have a need to add a new controller to a VMware VM when the current controller is full. The process to add a controller is very similar to adding a disk thanks to pyVmomi.
+<p>We also have a need to add a new controller to a VMware VM when the current controller is full. The process to add a controller is very similar to adding a disk thanks to pyVmomi.</p>
 
-## Blank Controller
+<h2 id="blank-controller">Blank Controller</h2>
 
-Example of a blank controller:
+<p>Example of a blank controller:</p>
 
-```python
-from pyVmomi import vim
+<pre><code class="language-python">from pyVmomi import vim
 
 controller = vim.vm.device.VirtualSCSIController()
 print controller
