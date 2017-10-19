@@ -6,7 +6,7 @@
     <description>Recent content in Categories on Encore Technologies - DevOps Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://encoretechnologies.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,36 @@
     <item>
       <title>Automation</title>
       <link>https://encoretechnologies.github.io/categories/automation/</link>
-      <pubDate>Sun, 15 Oct 2017 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 19 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://encoretechnologies.github.io/categories/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bradley Bishop</title>
+      <link>https://encoretechnologies.github.io/categories/bradley-bishop/</link>
+      <pubDate>Thu, 19 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/bradley-bishop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Controllers</title>
+      <link>https://encoretechnologies.github.io/categories/controllers/</link>
+      <pubDate>Thu, 19 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/controllers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Disks</title>
+      <link>https://encoretechnologies.github.io/categories/disks/</link>
+      <pubDate>Thu, 19 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/disks/</guid>
       <description></description>
     </item>
     
@@ -48,11 +75,29 @@
     </item>
     
     <item>
+      <title>PyVmomi</title>
+      <link>https://encoretechnologies.github.io/categories/pyvmomi/</link>
+      <pubDate>Thu, 19 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/pyvmomi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>StackStorm</title>
       <link>https://encoretechnologies.github.io/categories/stackstorm/</link>
       <pubDate>Sun, 15 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://encoretechnologies.github.io/categories/stackstorm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware</title>
+      <link>https://encoretechnologies.github.io/categories/vmware/</link>
+      <pubDate>Thu, 19 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/vmware/</guid>
       <description></description>
     </item>
     

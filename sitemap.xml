@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://encoretechnologies.github.io/blog/2017/10/vmware-disks/</loc>
+    <lastmod>2017-10-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://encoretechnologies.github.io/blog/2017/10/automated-creation-of-stackstorm-packs/</loc>
     <lastmod>2017-10-15T00:00:00+00:00</lastmod>
   </url>
@@ -19,24 +24,42 @@
   
   <url>
     <loc>https://encoretechnologies.github.io/categories/automation/</loc>
-    <lastmod>2017-10-15T00:00:00+00:00</lastmod>
+    <lastmod>2017-10-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://encoretechnologies.github.io/blog/</loc>
-    <lastmod>2017-10-15T00:00:00+00:00</lastmod>
+    <lastmod>2017-10-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/bradley-bishop/</loc>
+    <lastmod>2017-10-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://encoretechnologies.github.io/categories/</loc>
-    <lastmod>2017-10-15T00:00:00+00:00</lastmod>
+    <lastmod>2017-10-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://encoretechnologies.github.io/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/controllers/</loc>
+    <lastmod>2017-10-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/disks/</loc>
+    <lastmod>2017-10-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -47,7 +70,7 @@
   
   <url>
     <loc>https://encoretechnologies.github.io/</loc>
-    <lastmod>2017-10-15T00:00:00+00:00</lastmod>
+    <lastmod>2017-10-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -64,6 +87,12 @@
   </url>
   
   <url>
+    <loc>https://encoretechnologies.github.io/categories/pyvmomi/</loc>
+    <lastmod>2017-10-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://encoretechnologies.github.io/categories/stackstorm/</loc>
     <lastmod>2017-10-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -71,6 +100,12 @@
   
   <url>
     <loc>https://encoretechnologies.github.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/vmware/</loc>
+    <lastmod>2017-10-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

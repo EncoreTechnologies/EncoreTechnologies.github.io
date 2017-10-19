@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Controllers on Encore Technologies - DevOps Blog</title>
+    <link>https://encoretechnologies.github.io/categories/controllers/</link>
+    <description>Recent content in Controllers on Encore Technologies - DevOps Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://encoretechnologies.github.io/categories/controllers/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Automated addition of VMware Disks and Controllers</title>
+      <link>https://encoretechnologies.github.io/blog/2017/10/vmware-disks/</link>
+      <pubDate>Thu, 19 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/blog/2017/10/vmware-disks/</guid>
+      <description>When adding disks to VMware VM using Python we need to use the pyVmomi VMware SOAP API to communicate with vCenter. pyVmomi gives us a lot of very helpful features that take out a lot of the guess work in adding new disks to a VMware VM.
+You can install pyVmomi from pip into a virtualenv like the following:
+virtualenv ~/vmware source ~/vmware/bin/activate pip install pyvmomi  VMware Connection pyVmomi makes it really easy to connect to the VMware vCenter environment to query information and perform all the necessary tasks needed.</description>
+    </item>
+    
+  </channel>
+</rss>
