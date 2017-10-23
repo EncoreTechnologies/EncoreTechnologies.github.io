@@ -1,19 +1,11 @@
-
-
-
-    
-        
-    
-
-
-
-
 <!DOCTYPE HTML>
 
 <html>
     <head>
         
-            <title>Pack Posts - Encore Technologies - DevOps Blog</title>
+            
+                <title>Automated Editing and Addition of ServiceNow CIs</title>
+            
         
 
         <meta charset="utf-8" />
@@ -37,24 +29,26 @@
 
 
         
+            <meta name="author" content="John Schoewe">
         
-            
-                <meta name="description" content="Blog about everything DevOps">
-            
+        
+            <meta name="description" content="How to use Python and the ServiceNow API to Automatically Create and Update Configuration Items">
         
 
-        <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Pack"/>
-<meta name="twitter:description" content="Blog about everything DevOps"/>
+        <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Automated Editing and Addition of ServiceNow CIs"/>
+<meta name="twitter:description" content="How to use Python and the ServiceNow API to Automatically Create and Update Configuration Items"/>
 <meta name="twitter:site" content="@encoretechcincy"/>
 
-        <meta property="og:title" content="Pack" />
-<meta property="og:description" content="Blog about everything DevOps" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://encoretechnologies.github.io/categories/pack/" />
+        <meta property="og:title" content="Automated Editing and Addition of ServiceNow CIs" />
+<meta property="og:description" content="How to use Python and the ServiceNow API to Automatically Create and Update Configuration Items" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://encoretechnologies.github.io/blog/2017/10/servicenow-automation/" />
 
 
 
-<meta property="og:updated_time" content="2017-10-15T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2017-10-23T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-10-23T00:00:00&#43;00:00"/>
+
 
 
 
@@ -66,9 +60,16 @@
 
 
         
-<meta itemprop="name" content="Pack">
-<meta itemprop="description" content="Blog about everything DevOps">
+<meta itemprop="name" content="Automated Editing and Addition of ServiceNow CIs">
+<meta itemprop="description" content="How to use Python and the ServiceNow API to Automatically Create and Update Configuration Items">
 
+
+<meta itemprop="dateModified" content="2017-10-23T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="626">
+
+
+
+<meta itemprop="keywords" content="" />
 
         
 
@@ -108,10 +109,11 @@ ga('send', 'pageview');
       <div id="wrapper">
 
     
+    
 <header id="header">
     
       
-          <h1><a href="/"></a></h1>
+          <h1><a href="/">blog</a></h1>
       
     
 
@@ -146,6 +148,10 @@ ga('send', 'pageview');
     </nav>
     <nav class="main">
         <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
             
             <li class="search">
                 <a class="fa-search" href="#search">Search</a>
@@ -237,65 +243,260 @@ ga('send', 'pageview');
         
 </section>
 
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2017%2f10%2fservicenow-automation%2f&text=Automated%20Editing%20and%20Addition%20of%20ServiceNow%20CIs&via=encoretechcincy" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2017%2f10%2fservicenow-automation%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2017%2f10%2fservicenow-automation%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2017%2f10%2fservicenow-automation%2f&title=Automated%20Editing%20and%20Addition%20of%20ServiceNow%20CIs" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2017%2f10%2fservicenow-automation%2f&title=Automated%20Editing%20and%20Addition%20of%20ServiceNow%20CIs" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2017%2f10%2fservicenow-automation%2f&title=Automated%20Editing%20and%20Addition%20of%20ServiceNow%20CIs" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by John%20Schoewe&body=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2017%2f10%2fservicenow-automation%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
     
     <div id="main">
-        <h1>Pack</h1>
         
         
-            <article class="post">
+        <article class="post">
     <header>
     <div class="title">
         
-            <h2><a href="https://encoretechnologies.github.io/blog/2017/10/automated-creation-of-stackstorm-packs/">Automated creation of StackStorm Packs</a></h2>
+            <h1><a href="https://encoretechnologies.github.io/blog/2017/10/servicenow-automation/">Automated Editing and Addition of ServiceNow CIs</a></h1>
+            
         
         
-            <p>Automated creation of StackStorm Packs</p>
+            <p>How to use Python and the ServiceNow API to Automatically Create and Update Configuration Items</p>
         
     </div>
     <div class="meta">
         
 
         <time class="published"
-            datetime='2017-10-15'>
-            October 15, 2017</time>
+            datetime='2017-10-23'>
+            October 23, 2017</time>
         
-        <span class="author"><a href="https://github.com/nmaludy">Nick Maludy</a></span>
+        <span class="author"><a href="https://github.com/jschoewe">John Schoewe</a></span>
         
         
-            <p>5 minute read</p>
+            <p>3 minute read</p>
         
         
     </div>
 </header>
 
+
     
+    <section id="social-share">
+        <ul class="icons">
+            
+
+
+<li><a href="//twitter.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2017%2f10%2fservicenow-automation%2f&text=Automated%20Editing%20and%20Addition%20of%20ServiceNow%20CIs&via=encoretechcincy" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2017%2f10%2fservicenow-automation%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2017%2f10%2fservicenow-automation%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2017%2f10%2fservicenow-automation%2f&title=Automated%20Editing%20and%20Addition%20of%20ServiceNow%20CIs" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2017%2f10%2fservicenow-automation%2f&title=Automated%20Editing%20and%20Addition%20of%20ServiceNow%20CIs" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2017%2f10%2fservicenow-automation%2f&title=Automated%20Editing%20and%20Addition%20of%20ServiceNow%20CIs" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by John%20Schoewe&body=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2017%2f10%2fservicenow-automation%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
     
 
     
+
+    <div id="content">
         
-        
 
+<p>The following is a quick tutorial on using the ServiceNow API with python to programatically create and update configuration items. A personal development instance of ServiceNow Jakarta was used for testing the code below.</p>
 
+<p><br /></p>
 
+<h1 id="about-the-servicenow-api">About the ServiceNow API</h1>
 
-    
+<p>Servicenow uses a REST Table API that allows users to perform create, read, update and delete operations on existing tables. ServiceNow also provides you with a REST API Explorer that uses information from your instance to provide you with a list of endpoints, methods, and variables that you can use to build and send a REST request. This explorer can be found by navigating to &lsquo;System Web Services&rsquo; -&gt; &lsquo;REST API Explorer&rsquo;.</p>
 
+<p>NOTE: Before accessing the API, be sure your user role is either web_service_admin, rest_api_explorer, or admin. If this is not the case, then you will either need to contact your system administrator or login with an adminisrator account to change it as follows:</p>
 
-        
+<ol>
+<li>Type &ldquo;users&rdquo; in the filter navigator</li>
+<li>Click on &ldquo;Organization&rdquo; -&gt; &ldquo;Users&rdquo;</li>
+<li>Click on the user that you want to change</li>
+<li>Scroll to the &ldquo;Roles&rdquo; section at the bottom and click &ldquo;Edit&rdquo;</li>
+<li>Add the role(s) you want to give the user and click &ldquo;Save&rdquo;</li>
+</ol>
 
-        <a href="https://encoretechnologies.github.io/blog/2017/10/automated-creation-of-stackstorm-packs/" class="image featured">
-            <img src="date2017/10/" alt="" />
-        </a>
-    
+<p>The picture below shows the REST API Explorer with the endpoint for the request and a drop-down with all the tables that can be used:
+<img src="/img/2017/10/sn_api_explorer.png" alt="image" /></p>
 
+<p>After selecting your table you can scroll down to the &ldquo;Result Body&rdquo; section to see the attributes that can be added to the CI. Once these attributes are selected, you can click &ldquo;Send&rdquo; to send the POST request and see the resonse.</p>
 
-    <p>In StackStorm a pack is logical organization that contains related actions, aliases, policies, rules and sensors. To get a good overview of what a pack is please see the excellent StackStorm Pack documentation.
-Most users of StackStorm wish to either integrate with a new system that&rsquo;s not available in the Exchange or use StackStorm to execute custom automation scripts. The way to accomplish this is to create a new Pack.</p>
+<p><br /></p>
+
+<h1 id="getting-started">Getting Started</h1>
+
+<p>The Python &ldquo;Requests&rdquo; library makes it easy to connect to your ServiceNow instance and is used in each example below. It can be installed with the following pipenv (or pip) command. The Github page for this library can be found here: <a href="https://github.com/requests/requests">https://github.com/requests/requests</a></p>
+
+<pre><code class="language-bash">pipenv install requests
+</code></pre>
+
+<p><br /></p>
+
+<h1 id="adding-a-new-configuration-item">Adding A New Configuration Item</h1>
+
+<p>Below is a basic example of adding a configuration item to the cmdb_ci_linux_server_list table in ServiceNow. A list of tables that you can add CIs to can be found in the REST API Explorer mentioned above, as well as a list of available attributes for CIs in that table.</p>
+
+<pre><code class="language-python">import requests
+
+# Check the REST API Explorer for the list of tables
+table_name = &quot;cmdb_ci_linux_server&quot;
+
+# Determine the ServiceNow url
+url = &quot;https://dev12345.service-now.com/api/now/table/{0}&quot;.format(table_name)
+
+headers = {'Content-type': 'application/json', 'Accept': 'application/json'}
+
+# A list of attributes for your table can be found in the API Explorer
+# These values will differ depending on the table
+payload = {
+            'cpu_count': '1',
+            'dns_domain': 'domain.com',
+            'install_status': 'Installed',
+            'ip_address': '1.1.1.1',
+            'manufacturer': 'Virtual',
+            'model_number': 'Virtual',
+            'name': 'some-server',
+            'ram': '2048',
+            'serial_number': 'Virtual',
+            'short_description': 'Adding this CI to the cmdb_ci_linux_server table'
+          }
+
+# Save the result of the request in a variable
+result = requests.post(url,
+                       json=payload,
+                       headers=headers,
+                       auth=(&quot;sn_username&quot;, &quot;sn_password&quot;))
+
+# The result will have the sys_id of the new CI
+print result.content
+</code></pre>
+
+<p><br /></p>
+
+<h1 id="editing-a-configuration-item">Editing A Configuration Item</h1>
+
+<p>Each Configuration Item in ServiceNow has its own unique &ldquo;sys_id&rdquo;, which can be found in the result of the POST request. Save this sys_id for updating and deleting the CI in the future.</p>
+
+<p>The following example shows how to use that sys_id to change some of the fields of the CI:</p>
+
+<pre><code class="language-python">import requests
+
+# Check the REST API Explorer for the list of tables
+table_name = &quot;cmdb_ci_linux_server&quot;
+
+# The unique ServiceNow sys_id
+sys_id = &quot;b9b264230f310300787988cce1050e41&quot;
+
+# Determine the ServiceNow url
+url = &quot;https://dev12345.service-now.com/api/now/table/{0}/{1}&quot;.format(table_name, sys_id)
+
+headers = {'Content-type': 'application/json', 'Accept': 'application/json'}
+
+# A list of attributes for your table can be found in the API Explorer
+# These  values will differ depending on  the table
+payload = {
+            'install_status': 'Retired',
+            'short_description': 'Change the install_status of this CI'
+          }
+
+# Save the result of the request in a variable
+result = requests.patch(url,
+                        json=payload,
+                        headers=headers,
+                        auth=(&quot;sn_username&quot;, &quot;sn_password&quot;))
+
+</code></pre>
+
+    </div>
 
     <footer>
-        <ul class="actions">
-            <li><a href="https://encoretechnologies.github.io/blog/2017/10/automated-creation-of-stackstorm-packs/" class="button big">Continue Reading</a></li>
-        </ul>
         <ul class="stats">
     
         
@@ -323,31 +524,51 @@ Most users of StackStorm wish to either integrate with a new system that&rsquo;s
 
     
     
-        <li><a href='/categories/nick-maludy'>Nick Maludy</a></li>
+        <li><a href='/categories/john-schoewe'>John Schoewe</a></li>
     
-        <li><a href='/categories/stackstorm'>StackStorm</a></li>
-    
-        <li><a href='/categories/pack'>pack</a></li>
-    
-        <li><a href='/categories/automation'>automation</a></li>
+        <li><a href='/categories/encore'>Encore</a></li>
     
 </ul>
 
     </footer>
 </article>
-
-        
-
-        
 <ul class="actions pagination">
     
-        <li><a href="#" class="disabled button big previous">Previous Page</a></li>
+        <li><a href="https://encoretechnologies.github.io/blog/2017/10/vmware-disks/"
+                class="button big previous">Automated addition of VMware Disks and Controllers</a></li>
     
 
     
-        <li><a href="#" class="disabled button big next">Next Page</a></li>
-    
 </ul>
+
+
+
+    
+        <article class="post">
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "shortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </article>
+    
+
+
 
     </div>
     
@@ -368,9 +589,6 @@ Most users of StackStorm wish to either integrate with a new system that&rsquo;s
                 </header>
             
             <ul class="icons">
-                
-                    <li><a href="https://encoretechnologies.github.io/categories/pack/index.xml" type="application/rss+xml"
-                        target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 
                     
@@ -626,9 +844,6 @@ Most users of StackStorm wish to either integrate with a new system that&rsquo;s
     
         <section id="footer">
             <ul class="icons">
-                
-                    <li><a href="https://encoretechnologies.github.io/categories/pack/index.xml" type="application/rss+xml"
-                        target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 
                     
