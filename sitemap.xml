@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://encoretechnologies.github.io/blog/2017/11/stackstorm-inquiries/</loc>
+    <lastmod>2017-11-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://encoretechnologies.github.io/blog/2017/10/servicenow-automation/</loc>
     <lastmod>2017-10-23T00:00:00+00:00</lastmod>
   </url>
@@ -35,7 +40,7 @@
   
   <url>
     <loc>https://encoretechnologies.github.io/blog/</loc>
-    <lastmod>2017-10-23T00:00:00+00:00</lastmod>
+    <lastmod>2017-11-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -68,6 +73,12 @@
   </url>
   
   <url>
+    <loc>https://encoretechnologies.github.io/categories/duo/</loc>
+    <lastmod>2017-11-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://encoretechnologies.github.io/categories/encore/</loc>
     <lastmod>2017-10-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -75,7 +86,13 @@
   
   <url>
     <loc>https://encoretechnologies.github.io/</loc>
-    <lastmod>2017-10-23T00:00:00+00:00</lastmod>
+    <lastmod>2017-11-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/inquiries/</loc>
+    <lastmod>2017-11-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -87,7 +104,7 @@
   
   <url>
     <loc>https://encoretechnologies.github.io/categories/nick-maludy/</loc>
-    <lastmod>2017-10-15T00:00:00+00:00</lastmod>
+    <lastmod>2017-11-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -105,7 +122,7 @@
   
   <url>
     <loc>https://encoretechnologies.github.io/categories/stackstorm/</loc>
-    <lastmod>2017-10-15T00:00:00+00:00</lastmod>
+    <lastmod>2017-11-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
