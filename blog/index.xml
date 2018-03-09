@@ -6,10 +6,20 @@
     <description>Recent content in Blog on Encore Technologies - DevOps Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 31 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://encoretechnologies.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How StackStorm Changed Our Lives</title>
+      <link>https://encoretechnologies.github.io/blog/2018/03/stackstorm-changed-our-lives/</link>
+      <pubDate>Fri, 09 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/blog/2018/03/stackstorm-changed-our-lives/</guid>
+      <description>We started playing around with StackStorm about 9 months ago just to try out some new tools. After a few months of playing around we realized that it was much more than a toy and could provide serious benefits to our DevOps team, our organization and to our customers. Before we discuss all of the great things about StackStorm, let&amp;rsquo;s start with a little history.
+History When I started at Encore in June of 2016 the team had just started working on an automation platform.</description>
+    </item>
     
     <item>
       <title>Implementing 2-Factor Auth For Workflows In StackStorm Using Inquiries</title>
