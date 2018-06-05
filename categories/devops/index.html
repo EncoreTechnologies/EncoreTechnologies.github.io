@@ -56,7 +56,7 @@
 
 
 
-<meta property="og:updated_time" content="2018-03-09T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2018-06-05T00:00:00&#43;00:00"/>
 
 
 
@@ -225,11 +225,11 @@ ga('send', 'pageview');
 
                 
                     <li>
-                        <a href="https://encoretechnologies.github.io/blog/2018/03/stackstorm-changed-our-lives/"><p>How StackStorm Changed Our Lives</p></a>
+                        <a href="https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation/"><p>Automating Red Hat Enterprise Linux Patching with Ansible (Part 1 of 2)</p></a>
                     </li>
                 
                     <li>
-                        <a href="https://encoretechnologies.github.io/blog/2017/10/stackstorm-inquiries/"><p>Implementing 2-Factor Auth For Workflows In StackStorm Using Inquiries</p></a>
+                        <a href="https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation2/"><p>Automating Red Hat Enterprise Linux Patching with Ansible (Part 2 0f 2)</p></a>
                     </li>
                 
             </ul>
@@ -243,6 +243,170 @@ ga('send', 'pageview');
     <div id="main">
         <h1>DevOps</h1>
         
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation/">Automating Red Hat Enterprise Linux Patching with Ansible (Part 1 of 2)</a></h2>
+        
+        
+            <p>How we automated Red Hat Enterprise Linux OS patching to reduce time-to-production and human error, while improving compliance and risk management posture.</p>
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2018-06-05'>
+            June 5, 2018</time>
+        
+        <span class="author">Brian Alcorn</span>
+        
+        
+            <p>9 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+    
+
+    
+
+
+    <p>In this first installment of a two-part series, we&rsquo;ll be going over Phase One, the build out of the &ldquo;core&rdquo; patching and reboot functionality on Ansible.
+History Around a year ago, we began working with a customer who&rsquo;s Red Hat Enterprise Linux (RHEL) 6 and 7 OS patching process was being conducted manually. This required highly skilled administrators focused solely on patching. Documentation was eschewed in favor of tribal knowledge and manual command entry at the command line presented moderate to high risk during server patching.</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-sitemap">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/brian-alcorn'>Brian Alcorn</a></li>
+    
+        <li><a href='/categories/encore'>Encore</a></li>
+    
+        <li><a href='/categories/ansible'>Ansible</a></li>
+    
+        <li><a href='/categories/patch'>Patch</a></li>
+    
+        <li><a href='/categories/patching'>Patching</a></li>
+    
+        <li><a href='/categories/devops'>DevOps</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation2/">Automating Red Hat Enterprise Linux Patching with Ansible (Part 2 0f 2)</a></h2>
+        
+        
+            <p>How we automated Red Hat Enterprise Linux OS patching to reduce time-to-production and human error, while improving compliance and risk management posture.</p>
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2018-06-05'>
+            June 5, 2018</time>
+        
+        <span class="author">Brian Alcorn</span>
+        
+        
+            <p>8 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>In this second installment of a two-part series, we&rsquo;ll be going over Phase Two, the build out of standard pre- and post-patching automation, and Phase Three, the build out of application-specific pre- and post-patching automation. Click here for Phase One.
+Status Report With basic patching and reboots automated, a patching session for application environments without any special pre-patching and post-patching activities was reduced from 20 minutes per server, down to 6 minutes per server.</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation2/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-sitemap">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/brian-alcorn'>Brian Alcorn</a></li>
+    
+        <li><a href='/categories/encore'>Encore</a></li>
+    
+        <li><a href='/categories/ansible'>Ansible</a></li>
+    
+        <li><a href='/categories/patch'>Patch</a></li>
+    
+        <li><a href='/categories/patching'>Patching</a></li>
+    
+        <li><a href='/categories/devops'>DevOps</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
         
             <article class="post">
     <header>
@@ -444,11 +608,11 @@ History When I started at Encore in June of 2016 the team had just started worki
                     <li>
                         <article>
                             <header>
-                                <h3><a href="https://encoretechnologies.github.io/blog/2018/03/stackstorm-changed-our-lives/">How StackStorm Changed Our Lives</a></h3>
+                                <h3><a href="https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation/">Automating Red Hat Enterprise Linux Patching with Ansible (Part 1 of 2)</a></h3>
                                 
                                 <time class="published" datetime=
-                                    '2018-03-09'>
-                                    March 9, 2018</time>
+                                    '2018-06-05'>
+                                    June 5, 2018</time>
                             </header>
                         </article>
                     </li>
@@ -456,11 +620,11 @@ History When I started at Encore in June of 2016 the team had just started worki
                     <li>
                         <article>
                             <header>
-                                <h3><a href="https://encoretechnologies.github.io/blog/2017/10/stackstorm-inquiries/">Implementing 2-Factor Auth For Workflows In StackStorm Using Inquiries</a></h3>
+                                <h3><a href="https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation2/">Automating Red Hat Enterprise Linux Patching with Ansible (Part 2 0f 2)</a></h3>
                                 
                                 <time class="published" datetime=
-                                    '2017-10-31'>
-                                    October 31, 2017</time>
+                                    '2018-06-05'>
+                                    June 5, 2018</time>
                             </header>
                         </article>
                     </li>
@@ -498,8 +662,26 @@ History When I started at Encore in June of 2016 the team had just started worki
                     <li>
                         <article>
                             <header>
+                                <a href="/categories/encore/">Encore</a>
+                                <span style="float:right;">4</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <a href="/categories/nick-maludy/">Nick Maludy</a>
                                 <span style="float:right;">4</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/devops/">DevOps</a>
+                                <span style="float:right;">3</span>
                             </header>
                         </article>
                     </li>
@@ -516,7 +698,34 @@ History When I started at Encore in June of 2016 the team had just started worki
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/encore/">Encore</a>
+                                <a href="/categories/ansible/">Ansible</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/brian-alcorn/">Brian Alcorn</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/patch/">Patch</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/patching/">Patching</a>
                                 <span style="float:right;">2</span>
                             </header>
                         </article>
@@ -544,15 +753,6 @@ History When I started at Encore in June of 2016 the team had just started worki
                         <article>
                             <header>
                                 <a href="/categories/controllers/">Controllers</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/devops/">DevOps</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>

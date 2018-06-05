@@ -1,0 +1,1314 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>Automating Red Hat Enterprise Linux Patching with Ansible (Part 1 of 2)</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.30-DEV" />
+        
+    
+        
+    
+
+    
+
+    <link rel="apple-touch-icon-precomposed"
+        href='/favicon/apple-touch-icon-precomposed.png'>
+    <link rel="icon" href='/favicon/favicon.png'>
+    
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage"
+        content='/favicon/mstile.png'>
+
+
+
+        
+            <meta name="author" content="Brian Alcorn">
+        
+        
+            <meta name="description" content="How we automated Red Hat Enterprise Linux OS patching to reduce time-to-production and human error, while improving compliance and risk management posture.">
+        
+
+        <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image:src" content="https://encoretechnologies.github.io/img/main/encore_power_button_small.png"/>
+<meta name="twitter:title" content="Automating Red Hat Enterprise Linux Patching with Ansible (Part 1 of 2)"/>
+<meta name="twitter:description" content="How we automated Red Hat Enterprise Linux OS patching to reduce time-to-production and human error, while improving compliance and risk management posture."/>
+<meta name="twitter:site" content="@encoretechcincy"/>
+
+        <meta property="og:title" content="Automating Red Hat Enterprise Linux Patching with Ansible (Part 1 of 2)" />
+<meta property="og:description" content="How we automated Red Hat Enterprise Linux OS patching to reduce time-to-production and human error, while improving compliance and risk management posture." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation/" />
+
+
+
+<meta property="article:published_time" content="2018-06-05T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-06-05T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+        
+<meta itemprop="name" content="Automating Red Hat Enterprise Linux Patching with Ansible (Part 1 of 2)">
+<meta itemprop="description" content="How we automated Red Hat Enterprise Linux OS patching to reduce time-to-production and human error, while improving compliance and risk management posture.">
+
+
+<meta itemprop="dateModified" content="2018-06-05T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1904">
+
+
+
+<meta itemprop="keywords" content="" />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" />
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+        
+
+        
+
+        
+            
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-108206364-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+        
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      
+          <h1><a href="/">blog</a></h1>
+      
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://encoretechnologies.github.io">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="q" value="site:https://encoretechnologies.github.io">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    <li>
+                        <a href="https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation/"><p>Automating Red Hat Enterprise Linux Patching with Ansible (Part 1 of 2)</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation2/"><p>Automating Red Hat Enterprise Linux Patching with Ansible (Part 2 0f 2)</p></a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2018%2f06%2fansiblepatchingautomation%2f&text=Automating%20Red%20Hat%20Enterprise%20Linux%20Patching%20with%20Ansible%20%28Part%201%20of%202%29&via=encoretechcincy" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2018%2f06%2fansiblepatchingautomation%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2018%2f06%2fansiblepatchingautomation%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2018%2f06%2fansiblepatchingautomation%2f&title=Automating%20Red%20Hat%20Enterprise%20Linux%20Patching%20with%20Ansible%20%28Part%201%20of%202%29" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2018%2f06%2fansiblepatchingautomation%2f&title=Automating%20Red%20Hat%20Enterprise%20Linux%20Patching%20with%20Ansible%20%28Part%201%20of%202%29" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2018%2f06%2fansiblepatchingautomation%2f&title=Automating%20Red%20Hat%20Enterprise%20Linux%20Patching%20with%20Ansible%20%28Part%201%20of%202%29" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by Brian%20Alcorn&body=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2018%2f06%2fansiblepatchingautomation%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+    <header>
+    <div class="title">
+        
+            <h1><a href="https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation/">Automating Red Hat Enterprise Linux Patching with Ansible (Part 1 of 2)</a></h1>
+            
+        
+        
+            <p>How we automated Red Hat Enterprise Linux OS patching to reduce time-to-production and human error, while improving compliance and risk management posture.</p>
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2018-06-05'>
+            June 5, 2018</time>
+        
+        <span class="author">Brian Alcorn</span>
+        
+        
+            <p>9 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+    
+    <section id="social-share">
+        <ul class="icons">
+            
+
+
+<li><a href="//twitter.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2018%2f06%2fansiblepatchingautomation%2f&text=Automating%20Red%20Hat%20Enterprise%20Linux%20Patching%20with%20Ansible%20%28Part%201%20of%202%29&via=encoretechcincy" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2018%2f06%2fansiblepatchingautomation%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2018%2f06%2fansiblepatchingautomation%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2018%2f06%2fansiblepatchingautomation%2f&title=Automating%20Red%20Hat%20Enterprise%20Linux%20Patching%20with%20Ansible%20%28Part%201%20of%202%29" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2018%2f06%2fansiblepatchingautomation%2f&title=Automating%20Red%20Hat%20Enterprise%20Linux%20Patching%20with%20Ansible%20%28Part%201%20of%202%29" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2018%2f06%2fansiblepatchingautomation%2f&title=Automating%20Red%20Hat%20Enterprise%20Linux%20Patching%20with%20Ansible%20%28Part%201%20of%202%29" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by Brian%20Alcorn&body=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2018%2f06%2fansiblepatchingautomation%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+    
+
+    
+    
+
+    
+
+
+    <div id="content">
+        
+
+<p><em>In this first installment of a two-part series, we&rsquo;ll be going over Phase One, the build out of the &ldquo;core&rdquo; patching and reboot functionality on Ansible.</em></p>
+
+<h1 id="history">History</h1>
+
+<p>Around a year ago, we began working with a customer who&rsquo;s Red Hat Enterprise Linux (RHEL) 6 and 7 OS patching process was being conducted manually.  This required highly skilled administrators focused solely on patching.  Documentation was eschewed in favor of tribal knowledge and manual command entry at the command line presented moderate to high risk during server patching.  Some of the involved environments included the handling of Personally Identifiable Information (PII) as well as data and information subject to Payment Card Industry (PCI) compliance requirements.</p>
+
+<p><a href="https://www.pcisecuritystandards.org/documents/Prioritized-Approach-for-PCI_DSS-v3_2.pdf">PCI Security Standards Council</a> states:</p>
+
+<blockquote>
+<p>Ensure that all system components and software are protected from known vulnerabilities by installing applicable vendor-supplied security patches.  Install critical patches within one month of release.</p>
+</blockquote>
+
+<p>Because of this and other PCI compliance requirements, all the customer&rsquo;s RHEL servers needed to be patched at least once monthly.  Patching needed to follow a <em>DEVELOPMENT -&gt; STAGING -&gt; PRODUCTION</em> workflow to minimize risks to the production environments. Because of the complexities involved in a fully manual patching process, meeting PCI compliance standards was a constant chase with inconsistent results.</p>
+
+<p>Dissatisfied with the high costs, high complexity and consistent underperformance of the manual patching process, the customer sought ways to improve operational efficiency and reduce costs, expressing interest in leveraging automation where it made sense to do so.</p>
+
+<h1 id="enter-ansible">Enter Ansible</h1>
+
+<p>To minimize complexity, the solution was developed on <a href="https://www.ansible.com/">Ansible</a>, in conjunction with common Linux tools such as YUM, Bash scripts and SSH keys.  No agent software installation or additional security infrastructure was required, thus the customer incurred zero appreciable cost for the technology.</p>
+
+<p>Implementation was carried out in three phases:</p>
+
+<ol>
+<li>Automate Basic Patching and Endpoint Reboots</li>
+<li>Automate Standard Pre- and Post-patching Activities</li>
+<li>Automate Application/Host-specific Pre- and Post-patching Activities</li>
+</ol>
+
+<h2 id="phase-one-automate-basic-patching-and-endpoint-reboots">Phase One - Automate Basic Patching and Endpoint Reboots</h2>
+
+<p>The first phase of the project focused on the installation and configuration of Ansible on a control node, as well as developing the core patch installation and reboot functionality.  Automation of patch installation and reboots, without any change to pre- and post-patching activity processes saw an immediate benefit of speedier path installation as well as a marked reduction in human errors being introduced.</p>
+
+<p>Before development of patching automation could begin in earnest, a foundational directory structure needed to be established for Ansible.  Following is a visual representation:</p>
+
+<p><img src="/img/2018/06/PatchingAutomationFileTree.png" alt="Ansible Directory Structure" /></p>
+
+<h3 id="inventory">Inventory</h3>
+
+<p>The <code>inventory</code> subdirectory is home to the <code>hosts</code> file and Ansible references to know what systems to work with.  For our customer, the hosts file contains server FQDNs (preferred) and IP addresses (where hostname usage is prohibitive) for all Ansible managed endpoints. For example <em>(these are NOT real hostnames)</em>:</p>
+
+<p><em>/ansible/invetory/hosts</em></p>
+
+<pre><code>[group1]
+clsusa1ipm01.internal.cls.com
+clsusa1cfg01.internal.cls.com
+mon02.cls1.usa1.internal.cls.com
+dns01.cls1.usa1.internal.cls.com
+dns03.cls1.usa1.internal.cls.com
+clsusa1log01.internal.cls.com
+clsusa1log03.internal.cls.com
+clsusa1esn02.internal.cls.com
+clsusa1mon03.internal.cls.com
+clsusa1mon04.internal.cls.com
+
+[group2]
+clsusa1jnk01.internal.cls.com
+mta01.afg1.nor1.internal.cls.com
+mon01.afg1.nor1.internal.cls.com
+dns02.afg1.nor1.internal.cls.com
+clsusa1log02.internal.cls.com
+clsusa1esn01.internal.cls.com
+clsusa1esn03.internal.cls.com
+clsusa1std01.internal.cls.com
+
+[noreboot]
+clsusa1rhs01.internal.cls.com
+clsusa1ssh01.internal.cls.com
+clsusa1sto01.internal.cls.com
+vds01.afg1.nor1.internal.cls.com
+
+[satellite]
+clsusa1rhs01.internal.cls.com
+</code></pre>
+
+<p>Inside the <code>group_vars</code> and <code>host_vars</code> directories reside subdirectories named for either the group or the host for which variables are defined.  Order of precedence prioritizes host definitions over group definitions.  For application environments with no special requirements, a standard <code>all</code> group is defined.  <code>all</code> group definitions are overridden by more specific group and host definitions.  Following are examples:</p>
+
+<p><em>/ansible/inventory/group_vars/all/config</em></p>
+
+<pre><code># File name of pre and post patching scripts.
+pre_update_script: /opt/home/svc_cls/pre_update.sh
+post_update_script: /opt/home/svc_cls/post_update.sh
+post_update_conf: /opt/home/svc_cls/post_update_conf.env
+env_verify_dest: /opt/home/svc_cls/env_verify.sh
+
+# Comma-separated list of application team email addresses
+app_email: app_owners@&lt;yourdomain&gt;.com
+</code></pre>
+
+<p><em>/ansible/inventory/host_vars/clsusa1ipm01.intneral.cls.com (the <code>role_path</code> variale is globally defined in the Ansible configuration)</em></p>
+
+<pre><code>env_verify_src: &quot;{{ role_path }}/files/host/clsusa1ipm01.internal.cls.com /env_verify.sh&quot;
+pre_update_src: &quot;{{ role_path }}/files/host/clsusa1ipm01.internal.cls.com /pre_update.sh&quot;
+</code></pre>
+
+<h3 id="playbooks">Playbooks</h3>
+
+<p>The <code>playbooks</code> directory houses all the playbooks (written in YAML) that are used to execute automated patching actions, as well as any other automation that is implemented through Ansible.  In the following example, update.yaml includes logic for emailing notifications both before and after patching activities are executed against a host.  The roles included in this playbook are explored later on.</p>
+
+<p>/ansible/playbooks/update.yaml</p>
+
+<pre><code>---
+#------------------------------------------------------------------------------
+# Description: Playbook to perform 'yum update' on selected hosts.
+# NOTE: This playbook will also reboot hosts if kernel is updated.
+#------------------------------------------------------------------------------
+- name: Performing yum update on host(s)
+hosts: group1
+become: yes
+any_errors_fatal: false
+##########################################################
+# Send notification email at start of change to app teams
+##########################################################
+pre_tasks:
+- mail:
+subject: 'OS patching for {{ ansible_hostname }} is beginning now.'
+from: 'svc_cls@{{ ansible_fqdn }}'
+body: 'Automated OS patching for {{ ansible_hostname }} is beginning now.'
+to: '{{ app_email }}'
+charset: utf8
+delegate_to: localhost
+tags: mail
+#########################################################
+# Execute update procedures
+#########################################################
+roles:
+- { role: pre_update, become: yes }
+- { role: yum_update, become: yes }
+- { role: post_update, become: yes }
+##########################################################
+# Send notifiction of completion
+##########################################################
+post_tasks:
+- mail:
+subject: 'OS patching for {{ ansible_hostname }} has completed.'
+from: 'svc_cls@{{ ansible_fqdn }}'
+body: &quot;Automated OS patching for {{ ansible_hostname }} has completed.&quot;
+to: '{{ app_email }}'
+charset: utf8
+delegate_to: localhost
+tags: mail
+- name: Performing yum update on host(s)
+hosts: group2
+become: yes
+any_errors_fatal: false
+##########################################################
+# Send notification email at start of change to app teams
+##########################################################
+pre_tasks:
+- mail:
+subject: 'OS patching for {{ ansible_hostname }} is beginning now.'
+from: 'svc_cls@{{ ansible_fqdn }}'
+body: 'Automated OS patching for {{ ansible_hostname }} is beginning now.'
+to: '{{ app_email }}'
+charset: utf8
+delegate_to: localhost
+tags: mailAUTOMATION OF CENTOS 7 OPERATING SYSTEM PATCHING 30
+#########################################################
+# Execute update procedures
+#########################################################
+roles:
+- { role: pre_update, become: yes }
+- { role: yum_update, become: yes }
+- { role: post_update, become: yes }
+##########################################################
+# Send notifiction of completion
+##########################################################
+post_tasks:
+- mail:
+subject: 'OS patching for {{ ansible_hostname }} has completed.'
+from: 'svc_cls@{{ ansible_fqdn }}'
+body: &quot;Automated OS patching for {{ ansible_hostname }} has completed.&quot;
+to: '{{ app_email }}'
+charset: utf8
+delegate_to: localhost
+tags: mail
+- name: Performing yum update on host(s)
+hosts: noreboot
+become: yes
+any_errors_fatal: false
+##########################################################
+# Send notification email at start of change to app teams
+##########################################################
+pre_tasks:
+- mail:
+subject: 'OS patching for {{ ansible_hostname }} is beginning now.'
+from: 'svc_cls@{{ ansible_fqdn }}'
+body: 'Automated OS patching for {{ ansible_hostname }} is beginning now.'
+to: '{{ app_email }}'
+charset: utf8
+delegate_to: localhost
+tags: mail
+#########################################################
+# Execute update procedures
+#########################################################
+roles:
+- { role: pre_update, become: yes }
+- { role: yum_update, become: yes }
+- { role: post_update, become: yes }
+##########################################################
+# Send notifiction of completion
+##########################################################
+post_tasks:
+- mail:
+subject: 'OS patching for {{ ansible_hostname }} has completed.'
+from: 'svc_cls@{{ ansible_fqdn }}'
+body: &quot;Automated OS patching for {{ ansible_hostname }} has completed.&quot;
+to: '{{ app_email }}'
+charset: utf8
+delegate_to: localhost
+tags: mail
+- name: Performing yum update on satellite servers
+hosts: satellite
+become: yes
+any_errors_fatal: false
+##########################################################
+# Send notification email at start of change to app teams
+##########################################################AUTOMATION OF CENTOS 7 OPERATING SYSTEM PATCHING 31
+pre_tasks:
+- mail:
+subject: 'OS patching for {{ ansible_hostname }} is beginning now.'
+from: 'svc_cls@{{ ansible_fqdn }}'
+body: 'Automated OS patching for {{ ansible_hostname }} is beginning now.'
+to: '{{ app_email }}'
+charset: utf8
+delegate_to: localhost
+tags: mail
+#########################################################
+# Execute update procedures
+#########################################################
+roles:
+- { role: pre_update, become: yes }
+- { role: yum_noreboot, become: yes }
+- { role: post_update, become: yes }
+##########################################################
+# Send notifiction of completion
+##########################################################
+post_tasks:
+- mail:
+subject: 'OS patching for {{ ansible_hostname }} has completed.'
+from: 'svc_cls@{{ ansible_fqdn }}'
+body: &quot;Automated OS patching for {{ ansible_hostname }} has completed.&quot;
+to: '{{ app_email }}'
+charset: utf8
+delegate_to: localhost
+tags: mail
+</code></pre>
+
+<h3 id="roles">Roles</h3>
+
+<p>Everything inside the <code>roles</code> directory and its subdirectories exists to carry out all the actions called out in a playbook.  Basic patching automation makes use of four distinct roles:</p>
+
+<ul>
+<li>yum_update</li>
+<li>yum_noreboot</li>
+<li>pre_update</li>
+<li>post_update</li>
+</ul>
+
+<h4 id="yum-update">yum_update</h4>
+
+<p><code>/ansible/roles/yum_update/tasks/main.yaml</code> executes a yum update to the latest available version on all installed packages, and then performs a check to see if a new kernel was installed, creating a flag that triggers a reboot during <code>post_update</code> if one was.</p>
+
+<p><em>/ansible/roles/yum_update/tasks/main.yaml</em></p>
+
+<pre><code>---
+#------------------------------------------------------------------------------
+# Description: Perform yum update on selected hosts and compare running
+#              kernel version with last updated kernel version.
+#       Notes: shell module used to compare last kernel and
+#              current, can't find a better method.
+#------------------------------------------------------------------------------
+
+- name: Updating all packages
+  yum:
+    name: '*'
+    state: latest
+  tags:
+    - skip_ansible_lint
+
+- name: Comparing last kernel and running kernel
+  shell: |
+    LAST_KERNEL=$(rpm -q --last kernel | perl -pe 's/^kernel-(\S+).*/$1/' | head -1)
+    CURRENT_KERNEL=$(uname -r)
+
+    if [[ $LAST_KERNEL != $CURRENT_KERNEL ]]; then
+      # Set reboot flag
+      touch /tmp/reboot
+      # Shutdown/stop any services before reboot if exists.
+      if [[ -f /opt/home/svc_cls/pre_reboot.sh ]]; then
+        /opt/home/svc_cls/pre_reboot.sh
+      fi
+    fi
+  tags:
+    - skip_ansible_lint
+</code></pre>
+
+<h4 id="yum-noreboot">yum_noreboot</h4>
+
+<p><code>/anbsible/roles/yum_noreboot/tasks/main.yaml</code>executes a yum update to the latest available version on all installed packages.  This role does NOT check for a new kernel or create a flag to trigger a reboot during <code>post_update</code>.  This functionality is reserved for those servers and application environments where an automated reboot may cause issues (e.g. rebooting the Satellite server, which houses all YUM repos, in the middle of a patching cycle).</p>
+
+<p><em>/anbsible/roles/yum_noreboot/tasks/main.yaml</em></p>
+
+<pre><code>---
+#------------------------------------------------------------------------------
+# Description: Perform yum update on selected hosts and compare running
+#              kernel version with last updated kernel version.
+#------------------------------------------------------------------------------
+
+- name: Updating all packages
+  yum:
+    name: '*'
+    state: latest
+  tags:
+    - skip_ansible_lint
+</code></pre>
+
+<h4 id="pre-update">pre_update</h4>
+
+<p>The <code>pre_update</code> role, like the <code>yum_update</code> and <code>yum_noreboot</code> roles, also has a <code>main.yaml</code> file located in its <code>tasks</code> subdirectory.  This role looks for the existence of a pre_update.sh script on the remote host and executes it.  The <code>pre_update</code> role is more heavily leveraged when an application has special requirements.</p>
+
+<p><em>/ansible/roles/pre_update/tasks/main.yaml</em></p>
+
+<pre><code>---
+#------------------------------------------------------------------------------
+# Description: Check for existence of pre_update.sh script and run it if
+#              found.
+#------------------------------------------------------------------------------
+- name: Checking if pre_update.sh script exists
+  stat:
+    path: /opt/home/svc_cls/pre_update.sh
+  register: update_scripts
+
+
+- name: Running pre update script
+  command: sh /opt/home/svc_cls/pre_update.sh
+  when: update_scripts.stat.exists == true
+  ignore_errors: no
+</code></pre>
+
+<h4 id="post-update">post_update</h4>
+
+<p>The <code>post_update</code> roles also contains a <code>main.yaml</code> file in its <code>tasks</code> directory.  This role checks for the reboot flag (created in the <code>yum_update</code> role) and initiates a reboot of the remote host if the flag exists.  Ansible then waits for the remote host to come back online before it checks for and executes the <code>post_update.sh</code> script on the remote host (if it exists).  At a minimum, post_update triggers a report of newly installed packages and send the notification that patching is complete.</p>
+
+<p><em>/ansible/roles/post_update/tasks/main.yaml</em></p>
+
+<pre><code>---
+# Description: Check for existence of post_update.sh script and if reboot
+#              flag has been set; if so, reboot host and wait for restart.
+#------------------------------------------------------------------------------
+- name: Checking if post_update.sh script exists
+  stat:
+    path: /opt/home/svc_cls/post_update.sh
+  register: update_scripts
+
+- name: Checking if reboot flag exists
+  stat:
+    path: /tmp/reboot
+  register: reboot
+
+- name: Clearing reboot flag
+  file:
+    path: /tmp/reboot
+    state: absent
+  when: reboot.stat.exists == true
+
+- name: Rebooting host(s).
+  shell: sleep 2 &amp;&amp; /sbin/shutdown -r now &quot;Reboot required for updated kernel.&quot; &amp;&amp; sleep 2
+  async: 20
+  poll: 0
+  when: reboot.stat.exists == true
+
+# This version doesn't freak out about sudo permission issues for non-privileged execution.
+- name: Waiting for host(s) to reboot
+  wait_for_connection:
+    delay: 60
+    timeout: 300
+  when: reboot.stat.exists == true
+
+- name: Running post update script
+  command: sh /opt/home/svc_cls/post_update.sh
+  when:
+    - update_scripts.stat.exists == true
+
+</code></pre>
+
+<h1 id="results">Results</h1>
+
+<p>As a result of simply automating the patching and reboot functions through leveraging Ansible, opportunities for human error were effectively reduced.  While pre-patching and post-patching actions still required varying levels of manual effort, depending on the application environment involved, laying the foundation for automation reclaimed enough time to clear the way for a deeper dive into automation, which will be explored in <a href="../ansiblepatchingautomation2/">Part 2</a> of this series.</p>
+
+<p>-Brian</p>
+
+    </div>
+
+    <footer>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-sitemap">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/brian-alcorn'>Brian Alcorn</a></li>
+    
+        <li><a href='/categories/encore'>Encore</a></li>
+    
+        <li><a href='/categories/ansible'>Ansible</a></li>
+    
+        <li><a href='/categories/patch'>Patch</a></li>
+    
+        <li><a href='/categories/patching'>Patching</a></li>
+    
+        <li><a href='/categories/devops'>DevOps</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+<ul class="actions pagination">
+    
+        <li><a href="https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation2/"
+                class="button big previous">Automating Red Hat Enterprise Linux Patching with Ansible (Part 2 0f 2)</a></li>
+    
+
+    
+</ul>
+
+
+
+    
+        <article class="post">
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "encoretechnologies" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </article>
+    
+
+
+
+    </div>
+    
+<section id="sidebar">
+
+    
+        <section id="intro">
+            
+            
+                
+                    <img src="/img/main/encore_logo_small.png" width="300" alt="Hugo Future Imperfect" />
+                
+            
+            
+                <header>
+                    <h2>DevOps Blog</h2>
+                    <p>Blog about everything DevOps, automation, virtualization and cloud</p>
+                </header>
+            
+            <ul class="icons">
+                
+                
+                    
+<li><a href="http://encore.tech/" target="_blank" title="Website" class="fa fa-globe"></a></li>
+
+
+
+<li><a href="//github.com/EncoreTechnologies" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/company/encoretechnologies" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//facebook.com/EncoreTechnologies" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+<li><a href="//twitter.com/encoretechcincy" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <ul class="posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation/">Automating Red Hat Enterprise Linux Patching with Ansible (Part 1 of 2)</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-06-05'>
+                                    June 5, 2018</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation2/">Automating Red Hat Enterprise Linux Patching with Ansible (Part 2 0f 2)</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-06-05'>
+                                    June 5, 2018</time>
+                            </header>
+                        </article>
+                    </li>
+                
+
+                
+                    <li>
+                        <ul class="actions">
+                            <li><a href=
+                            
+                                /blog/
+                            
+                            class="button">View more posts</a></li>
+                        </ul>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+    
+    
+    
+        <section id="categories">
+            <ul class="posts">
+                <header>
+                    <h3><a href="/categories/">Categories</a></h3>
+                </header>
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/encore/">Encore</a>
+                                <span style="float:right;">4</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/nick-maludy/">Nick Maludy</a>
+                                <span style="float:right;">4</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/devops/">DevOps</a>
+                                <span style="float:right;">3</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/stackstorm/">StackStorm</a>
+                                <span style="float:right;">3</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/ansible/">Ansible</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/brian-alcorn/">Brian Alcorn</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/patch/">Patch</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/patching/">Patching</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/automation/">automation</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/bradley-bishop/">Bradley Bishop</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/controllers/">Controllers</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/disks/">Disks</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/john-schoewe/">John Schoewe</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/vmware/">VMware</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/duo/">duo</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/inquiries/">inquiries</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/life/">life</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/pack/">pack</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/pyvmomi/">pyVmomi</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+            </ul>
+        </section>
+    
+
+    
+        
+        <section class="blurb">
+            <h2>About</h2>
+            <p>Encore Technologies helps companies automate and accelerate their IT environments</p>
+
+            <ul class="actions">
+                <li><a href="/about/" class="button">Learn More</a></li>
+            </ul>
+        </section>
+        
+
+    
+        <section id="footer">
+            <ul class="icons">
+                
+                
+                    
+<li><a href="http://encore.tech/" target="_blank" title="Website" class="fa fa-globe"></a></li>
+
+
+
+<li><a href="//github.com/EncoreTechnologies" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/company/encoretechnologies" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//facebook.com/EncoreTechnologies" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+<li><a href="//twitter.com/encoretechcincy" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+                
+            </ul>
+
+            <p class="copyright">&copy; 2018 Encore Technologies - DevOps Blog. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        </section>
+
+</section>
+
+      </div>
+      <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+      
+
+      
+        
+      
+
+      
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script>
+        <script src="/js/util.js"></script>
+        <script src="/js/main.js"></script>
+        <script src="/js/backToTop.js"></script>
+      
+
+      
+
+      
+      <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>
+

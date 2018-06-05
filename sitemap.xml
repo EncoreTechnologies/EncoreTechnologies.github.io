@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation/</loc>
+    <lastmod>2018-06-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation2/</loc>
+    <lastmod>2018-06-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://encoretechnologies.github.io/blog/2018/03/stackstorm-changed-our-lives/</loc>
     <lastmod>2018-03-09T00:00:00+00:00</lastmod>
   </url>
@@ -38,6 +48,12 @@
   </url>
   
   <url>
+    <loc>https://encoretechnologies.github.io/categories/ansible/</loc>
+    <lastmod>2018-06-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://encoretechnologies.github.io/categories/automation/</loc>
     <lastmod>2017-10-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -45,7 +61,7 @@
   
   <url>
     <loc>https://encoretechnologies.github.io/blog/</loc>
-    <lastmod>2018-03-09T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -56,8 +72,14 @@
   </url>
   
   <url>
+    <loc>https://encoretechnologies.github.io/categories/brian-alcorn/</loc>
+    <lastmod>2018-06-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://encoretechnologies.github.io/categories/</loc>
-    <lastmod>2017-10-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -73,7 +95,7 @@
   
   <url>
     <loc>https://encoretechnologies.github.io/categories/devops/</loc>
-    <lastmod>2018-03-09T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -91,13 +113,13 @@
   
   <url>
     <loc>https://encoretechnologies.github.io/categories/encore/</loc>
-    <lastmod>2017-10-23T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://encoretechnologies.github.io/</loc>
-    <lastmod>2018-03-09T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -128,6 +150,18 @@
   <url>
     <loc>https://encoretechnologies.github.io/categories/pack/</loc>
     <lastmod>2017-10-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/patch/</loc>
+    <lastmod>2018-06-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/patching/</loc>
+    <lastmod>2018-06-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
