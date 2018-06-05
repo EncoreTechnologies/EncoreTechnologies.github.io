@@ -6,10 +6,20 @@
     <description>Recent content in Brian Alcorn on Encore Technologies - DevOps Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://encoretechnologies.github.io/categories/brian-alcorn/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Automating Red Hat Enterprise Linux Patching with Ansible (Part 2 0f 2)</title>
+      <link>https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation2/</link>
+      <pubDate>Tue, 12 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation2/</guid>
+      <description>In this second installment of a two-part series, we&amp;rsquo;ll be going over Phase Two, the build out of standard pre- and post-patching automation, and Phase Three, the build out of application-specific pre- and post-patching automation. Click here for Phase One.
+Status Report With basic patching and reboots automated, a patching session for application environments without any special pre-patching and post-patching activities was reduced from 20 minutes per server, down to 6 minutes per server.</description>
+    </item>
     
     <item>
       <title>Automating Red Hat Enterprise Linux Patching with Ansible (Part 1 of 2)</title>
@@ -19,16 +29,6 @@
       <guid>https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation/</guid>
       <description>In this first installment of a two-part series, we&amp;rsquo;ll be going over Phase One, the build out of the &amp;ldquo;core&amp;rdquo; patching and reboot functionality on Ansible.
 History Around a year ago, we began working with a customer who&amp;rsquo;s Red Hat Enterprise Linux (RHEL) 6 and 7 OS patching process was being conducted manually. This required highly skilled administrators focused solely on patching. Documentation was eschewed in favor of tribal knowledge and manual command entry at the command line presented moderate to high risk during server patching.</description>
-    </item>
-    
-    <item>
-      <title>Automating Red Hat Enterprise Linux Patching with Ansible (Part 2 0f 2)</title>
-      <link>https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation2/</link>
-      <pubDate>Tue, 05 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation2/</guid>
-      <description>In this second installment of a two-part series, we&amp;rsquo;ll be going over Phase Two, the build out of standard pre- and post-patching automation, and Phase Three, the build out of application-specific pre- and post-patching automation. Click here for Phase One.
-Status Report With basic patching and reboots automated, a patching session for application environments without any special pre-patching and post-patching activities was reduced from 20 minutes per server, down to 6 minutes per server.</description>
     </item>
     
   </channel>
