@@ -6,10 +6,19 @@
     <description>Recent content on Encore Technologies - DevOps Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://encoretechnologies.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>V D Why?</title>
+      <link>https://encoretechnologies.github.io/blog/2018/10/vdi-p001/</link>
+      <pubDate>Tue, 16 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/blog/2018/10/vdi-p001/</guid>
+      <description>Virtual Desktops are a topic that runs hot and cold through the enterprise space. Many enterprises begin pilots and projects in the space before building a clearly defined plan, and these are the environments that need additional remediation down the road. Before we start in with architecture, getting a firm answer to “Why do we need them?” is critical to a successfully scope, cost, and validate the design. This month we will focus on the security use case which is one of the ‘easy wins’ for virtual end user compute.</description>
+    </item>
     
     <item>
       <title>Automating Red Hat Enterprise Linux Patching with Ansible (Part 2 0f 2)</title>
