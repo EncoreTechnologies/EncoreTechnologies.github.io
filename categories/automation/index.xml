@@ -6,10 +6,20 @@
     <description>Recent content in Automation on Encore Technologies - DevOps Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 28 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://encoretechnologies.github.io/categories/automation/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Automated addition of VMware VM to Host Affinity Rules</title>
+      <link>https://encoretechnologies.github.io/blog/2019/01/vmware-affinity-rules/</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/blog/2019/01/vmware-affinity-rules/</guid>
+      <description>Background VMware Affinity rules can solve many issues in a virtualized environment with out the need to create different clusters or datacenters to separate Virtual Machines. The specific need that we at Encore had for this was that when a vm is being cloned, if the VM was migrated to a different Host due to a vMotion, the custom spec with Kickstart files or Autounattended Syspreps would fail.
+This was a random error that would only happened when vCenter or a host was overloaded.</description>
+    </item>
     
     <item>
       <title>Automated addition of VMware Disks and Controllers</title>

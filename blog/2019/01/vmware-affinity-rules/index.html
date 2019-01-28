@@ -1,19 +1,11 @@
-
-
-
-    
-        
-    
-
-
-
-
 <!DOCTYPE HTML>
 
 <html>
     <head>
         
-            <title>Nick Maludy Posts - Encore Technologies - DevOps Blog</title>
+            
+                <title>Automated addition of VMware VM to Host Affinity Rules</title>
+            
         
 
         <meta charset="utf-8" />
@@ -37,26 +29,28 @@
 
 
         
+            <meta name="author" content="Bradley Bishop">
         
-            
-                <meta name="description" content="Blog about everything DevOps">
-            
+        
+            <meta name="description" content="Automated addition of VMware VM to Host Affinity Rules">
         
 
         <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image:src" content="https://encoretechnologies.github.io/img/main/encore_power_button_small.png"/>
-<meta name="twitter:title" content="Nick Maludy"/>
-<meta name="twitter:description" content="Blog about everything DevOps"/>
+<meta name="twitter:title" content="Automated addition of VMware VM to Host Affinity Rules"/>
+<meta name="twitter:description" content="Automated addition of VMware VM to Host Affinity Rules"/>
 <meta name="twitter:site" content="@encoretechcincy"/>
 
-        <meta property="og:title" content="Nick Maludy" />
-<meta property="og:description" content="Blog about everything DevOps" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://encoretechnologies.github.io/categories/nick-maludy/" />
+        <meta property="og:title" content="Automated addition of VMware VM to Host Affinity Rules" />
+<meta property="og:description" content="Automated addition of VMware VM to Host Affinity Rules" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://encoretechnologies.github.io/blog/2019/01/vmware-affinity-rules/" />
 
 
 
-<meta property="og:updated_time" content="2018-03-09T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2019-01-28T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-01-28T00:00:00&#43;00:00"/>
+
 
 
 
@@ -68,9 +62,16 @@
 
 
         
-<meta itemprop="name" content="Nick Maludy">
-<meta itemprop="description" content="Blog about everything DevOps">
+<meta itemprop="name" content="Automated addition of VMware VM to Host Affinity Rules">
+<meta itemprop="description" content="Automated addition of VMware VM to Host Affinity Rules">
 
+
+<meta itemprop="dateModified" content="2019-01-28T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1090">
+
+
+
+<meta itemprop="keywords" content="" />
 
         
 
@@ -110,10 +111,11 @@ ga('send', 'pageview');
       <div id="wrapper">
 
     
+    
 <header id="header">
     
       
-          <h1><a href="/"></a></h1>
+          <h1><a href="/">blog</a></h1>
       
     
 
@@ -148,6 +150,10 @@ ga('send', 'pageview');
     </nav>
     <nav class="main">
         <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
             
             <li class="search">
                 <a class="fa-search" href="#search">Search</a>
@@ -239,50 +245,340 @@ ga('send', 'pageview');
         
 </section>
 
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2019%2f01%2fvmware-affinity-rules%2f&text=Automated%20addition%20of%20VMware%20VM%20to%20Host%20Affinity%20Rules&via=encoretechcincy" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2019%2f01%2fvmware-affinity-rules%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2019%2f01%2fvmware-affinity-rules%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2019%2f01%2fvmware-affinity-rules%2f&title=Automated%20addition%20of%20VMware%20VM%20to%20Host%20Affinity%20Rules" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2019%2f01%2fvmware-affinity-rules%2f&title=Automated%20addition%20of%20VMware%20VM%20to%20Host%20Affinity%20Rules" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2019%2f01%2fvmware-affinity-rules%2f&title=Automated%20addition%20of%20VMware%20VM%20to%20Host%20Affinity%20Rules" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by Bradley%20Bishop&body=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2019%2f01%2fvmware-affinity-rules%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
     
     <div id="main">
-        <h1>Nick Maludy</h1>
         
         
-            <article class="post">
+        <article class="post">
     <header>
     <div class="title">
         
-            <h2><a href="https://encoretechnologies.github.io/blog/2018/03/stackstorm-changed-our-lives/">How StackStorm Changed Our Lives</a></h2>
+            <h1><a href="https://encoretechnologies.github.io/blog/2019/01/vmware-affinity-rules/">Automated addition of VMware VM to Host Affinity Rules</a></h1>
+            
         
         
-            <p>Discusses how StackStorm has revolutionized the way we write automation code and improve the lives of our DevOps team.</p>
+            <p>Automated addition of VMware VM to Host Affinity Rules</p>
         
     </div>
     <div class="meta">
         
 
         <time class="published"
-            datetime='2018-03-09'>
-            March 9, 2018</time>
+            datetime='2019-01-28'>
+            January 28, 2019</time>
         
-        <span class="author"><a href="https://github.com/nmaludy">Nick Maludy</a></span>
+        <span class="author"><a href="https://github.com/bishopbm1">Bradley Bishop</a></span>
         
         
-            <p>18 minute read</p>
+            <p>6 minute read</p>
         
         
     </div>
 </header>
 
+
     
+    <section id="social-share">
+        <ul class="icons">
+            
+
+
+<li><a href="//twitter.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2019%2f01%2fvmware-affinity-rules%2f&text=Automated%20addition%20of%20VMware%20VM%20to%20Host%20Affinity%20Rules&via=encoretechcincy" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2019%2f01%2fvmware-affinity-rules%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2019%2f01%2fvmware-affinity-rules%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2019%2f01%2fvmware-affinity-rules%2f&title=Automated%20addition%20of%20VMware%20VM%20to%20Host%20Affinity%20Rules" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2019%2f01%2fvmware-affinity-rules%2f&title=Automated%20addition%20of%20VMware%20VM%20to%20Host%20Affinity%20Rules" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2019%2f01%2fvmware-affinity-rules%2f&title=Automated%20addition%20of%20VMware%20VM%20to%20Host%20Affinity%20Rules" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by Bradley%20Bishop&body=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2019%2f01%2fvmware-affinity-rules%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
     
 
     
 
+    <div id="content">
+        
 
-    <p>We started playing around with StackStorm about 9 months ago just to try out some new tools. After a few months of playing around we realized that it was much more than a toy and could provide serious benefits to our DevOps team, our organization and to our customers. Before we discuss all of the great things about StackStorm, let&rsquo;s start with a little history.
-History When I started at Encore in June of 2016 the team had just started working on an automation platform.</p>
+<h1 id="background">Background</h1>
+
+<p>VMware Affinity rules can solve many issues in a virtualized environment with out the need to create different clusters or datacenters to separate Virtual Machines. The specific need that we at Encore had for this was that when a vm is being cloned, if the VM was migrated to a different Host due to a vMotion, the custom spec with Kickstart files or Autounattended Syspreps would fail.</p>
+
+<p>This was a random error that would only happened when vCenter or a host was overloaded. We didn&rsquo;t want to turn off the vMotion so we needed to find a different solution to keep our VMs on the same host during the automation task. We were able to do this using VM to Host Affinity rules and we were able to automate the process with the usage of pyVmomi.</p>
+
+<p>We have published an action for creating affinity rules to an open source <a href="https://github.com/StackStorm-Exchange/stackstorm-vsphere">StackStorm pack</a> to give the community an automated way to accomplish everything we will discuss below. You can go to the link to learn more about <a href="https://stackstorm.com/">StackStorm</a>.</p>
+
+<p>Running an action to create Affinity Rules in StackStorm is as easy as:</p>
+
+<pre><code class="language-bash">st2 run vsphere.affinity_rule_create cluster_name=&quot;test-cluster&quot; vm_names=&quot;test-vm1&quot;,&quot;test-vm2&quot; host_names=&quot;test-host1&quot;,&quot;test-host2&quot; rule_name=&quot;test-rule&quot;
+</code></pre>
+
+<h1 id="setup">Setup</h1>
+
+<p>You can install pyVmomi from pip into a virtualenv like the following:</p>
+
+<pre><code class="language-bash">virtualenv ~/vmware
+source ~/vmware/bin/activate
+pip install pyvmomi
+</code></pre>
+
+<h1 id="vmware-connection">VMware Connection</h1>
+
+<p>pyVmomi makes it really easy to connect to the VMware vCenter environment to query information and perform all the necessary tasks needed.</p>
+
+<p>Example of connecting to VMware vCenter unsecured:</p>
+
+<pre><code class="language-python">from pyVim.connect import SmartConnect, Disconnect
+import requests
+import ssl
+
+requests.packages.urllib3.disable_warnings()
+context = ssl._create_unverified_context()
+
+si = SmartConnect(host=&quot;test.dev&quot;,
+                  port=443,
+                  user=&quot;username&quot;,
+                  pwd=&quot;password&quot;,
+                  sslContext=context)
+
+client = si.RetrieveContent()
+</code></pre>
+
+<h1 id="creating-affinity-groups">Creating Affinity Groups</h1>
+
+<p>The first thing that we have to do to create an affinity rule once we get connected to vCenter is to create two affinity groups. One for the VMware VMs and the second one is for the VMware Host machines. You can have many of each of these in the groups if you wish.</p>
+
+<p>One important thing to keep in mind about this is that the VMs and the Hosts must already be created in VMware before you can add them to a group. And that Affinity rules and groups are applied at the cluster level so all the VMs and Hosts that you choose must live in the same cluster.</p>
+
+<p>First we need to find the VMs and the Hosts that we will be adding to the Affinity Groups. Finding these objects can be done in the same manor. We can find many objects at the same time or we can find a single object, either way we have to return the objects as an array of objects so that they can be added to the group.</p>
+
+<p>Once we have the objects we need to create separate groups that are created in a similar manor and add the objects to them.</p>
+
+<h3 id="finding-virtual-machines">Finding Virtual Machines</h3>
+
+<p>To find VMs (either one or many) and add them to a VM groupyou can do the following:</p>
+
+<pre><code class="language-python">from pyVmomi import vim
+
+vm_view = content.viewManager.CreateContainerView(client.rootFolder, [vim.VirtualMachine], True)
+
+vm_names = [&quot;test-vm1&quot;, &quot;test-vm2&quot;]
+returned_vms = []
+for vm_name in vm_names:
+  for vm in vm_view.view:
+      if vm.name == vm_name:
+          returned_vms.append(vm)
+          break
+
+# Delete the View object once we are finished finding VMs
+vm_view.Destroy()
+
+# Decide on a name for the VM group and set it to a variable to be used later when creating the affinity rule
+vm_group_name = &quot;test-vm-group&quot;
+
+# Create VMware group
+vm_group = vim.cluster.VmGroup(name=vm_group_name, vm=returned_vms)
+
+# Create the group creation specification to be implemented at the end
+vm_group_spec = vim.cluster.GroupSpec(info=vm_group, operation='add')
+</code></pre>
+
+<h3 id="finding-vmware-hosts">Finding VMware Hosts</h3>
+
+<p>To find VMware Hosts (either one or many) and create a Host group is very similar to what we did for VMs:</p>
+
+<pre><code class="language-python">from pyVmomi import vim
+
+host_view = content.viewManager.CreateContainerView(client.rootFolder, [vim.HostSystem], True)
+
+host_names = [&quot;test-host1&quot;, &quot;test-host2&quot;]
+returned_hosts = []
+for host_name in host_names:
+  for host in host_view.view:
+      if host.name == host_name:
+          returned_hosts.append(host)
+          break
+
+# Delete the View object once we are finished finding Hosts
+host_view.Destroy()
+
+# Decide on a name for the Host group and set it to a variable to be used later when creating the affinity rule
+host_group_name = &quot;test-host-group&quot;
+
+# Create VMware group
+host_group = vim.cluster.HostGroup(name=host_group_name, host=returned_hosts)
+
+# Create the group creation specification to be implemented at the end
+host_group_spec = vim.cluster.GroupSpec(info=host_group, operation='add')
+</code></pre>
+
+<h1 id="creating-affinity-rule">Creating Affinity Rule</h1>
+
+<p>Now that we have created both the VM group and the Host group above we can use that information to create the affinity rules. Doing this is acutally really similar to creating the VMware groups above. The only thing that you will need to have is the names of the groups that were created which we conviently saved to variables above.</p>
+
+<p>To create Affinity rules:</p>
+
+<pre><code class="language-python">from pyVmomi import vim
+
+# Create VMware VM to Host Rule
+rule_obj = vim.cluster.VmHostRuleInfo(vmGroupName=vm_group_name,
+                                     affineHostGroupName=host_group_name,
+                                     name=&quot;test-rule&quot;,
+                                     enabled=True,
+                                     mandatory=True)
+
+# Create the rule creation specification to be implemented at the end
+rule_spec = vim.cluster.RuleSpec(info=rule_obj, operation='add')
+</code></pre>
+
+<h1 id="implementing-the-groups-and-rules">Implementing the Groups and Rules</h1>
+
+<p>Now that we have the groups and the rule information created we need to find the cluster to add these rules and groups to. All Affinity Rules and groups are assigned at the cluster level. So we need to find the cluster that these objects are associated with and add them to it. There are several ways to find the cluser that we are looking for. I will show you a few below.</p>
+
+<p>Find by name:</p>
+
+<pre><code class="language-python">from pyVmomi import vim
+
+cluster_view = content.viewManager.CreateContainerView(client.rootFolder, [vim.ClusterComputeResource], True)
+
+custer_name = &quot;test-cluster&quot;
+return_cluster = []
+for cluster in cluster_view.view:
+    if cluster.name == custer_name:
+        return_cluster = cluster
+        break
+
+# Delete the View object once we are finished finding Hosts
+cluster_view.Destroy()
+</code></pre>
+
+<p>Find by using one of the Hosts found above:</p>
+
+<pre><code class="language-python">first_host = returned_hosts[0]
+
+return_cluster = first_host.parent
+</code></pre>
+
+<p>Find by using one of the VMs found above</p>
+
+<pre><code class="language-python">first_vm = returned_vms[0]
+
+vm_host = first_vm.runtime.host
+
+return_cluster = vm_host.parent
+</code></pre>
+
+<p>Regardless of the method that you use to get the cluster object. Once we have it we can finish up ad add all the information that we have created to the cluster so that VMware will create out Affinity Groups and Rule for us.</p>
+
+<p>To add the information to the cluster:</p>
+
+<pre><code class="language-python">from pyVmomi import vim
+
+# Create the Cluster Config Specification with the information that we created above
+config_spec = vim.cluster.ConfigSpecEx(groupSpec=[vm_group_spec, host_group_spec],
+                                      rulesSpec=[rule_spec])
+
+# Add the information to VMware
+add_task = cluster.ReconfigureEx(config_spec, modify=True)
+
+# Check the status of the task until success
+add_task.info.state
+</code></pre>
+
+<p>Now your new VMware Affinity Rule and Groups should be added to you VMware Cluster. This should help keep VMs on the correct host while you do any work that is needed.</p>
+
+<p>-Bradley Bishop</p>
+
+    </div>
 
     <footer>
-        <ul class="actions">
-            <li><a href="https://encoretechnologies.github.io/blog/2018/03/stackstorm-changed-our-lives/" class="button big">Continue Reading</a></li>
-        </ul>
         <ul class="stats">
     
         
@@ -310,166 +606,15 @@ History When I started at Encore in June of 2016 the team had just started worki
 
     
     
-        <li><a href='/categories/nick-maludy'>Nick Maludy</a></li>
+        <li><a href='/categories/bradley-bishop'>Bradley Bishop</a></li>
     
-        <li><a href='/categories/stackstorm'>StackStorm</a></li>
+        <li><a href='/categories/vmware'>VMware</a></li>
     
-        <li><a href='/categories/devops'>DevOps</a></li>
+        <li><a href='/categories/pyvmomi'>pyVmomi</a></li>
     
-        <li><a href='/categories/life'>life</a></li>
+        <li><a href='/categories/python'>Python</a></li>
     
-</ul>
-
-    </footer>
-</article>
-
-        
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="https://encoretechnologies.github.io/blog/2017/10/stackstorm-inquiries/">Implementing 2-Factor Auth For Workflows In StackStorm Using Inquiries</a></h2>
-        
-        
-            <p>Provides a walkthrough of securing a StackStorm Mistral workflow with Duo 2-factor authentication from your phone using the newly available inquiries feature in StackStorm 2.5</p>
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2017-10-31'>
-            October 31, 2017</time>
-        
-        <span class="author"><a href="https://github.com/nmaludy">Nick Maludy</a></span>
-        
-        
-            <p>11 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-    
-
-    
-
-
-    <p>A common request I have seen on the StackStorm Slack Channel is the ability to utilize 2-factor auth before executing a workflow. Users sometimes have very powerful workflows that require extra care, or a second set of eyes before executing. Inquiries are an experimental feature in StackStorm 2.5 (changelog) that allow the workflow to pause and wait for input from a user before proceeding. In this post we&rsquo;re going to use inquiries to secure a workflow execution using Duo 2-factor authentication (2FA).</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="https://encoretechnologies.github.io/blog/2017/10/stackstorm-inquiries/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-            <li>
-                
-                
-                    
-
-                    
-
-                    
-                        <i class="fa fa-sitemap">&nbsp;</i>
-                    
-
-                    
-                        Categories
-                    
-                
-            </li>
-        
-    
-
-    
-    
-        <li><a href='/categories/nick-maludy'>Nick Maludy</a></li>
-    
-        <li><a href='/categories/stackstorm'>StackStorm</a></li>
-    
-        <li><a href='/categories/inquiries'>inquiries</a></li>
-    
-        <li><a href='/categories/duo'>duo</a></li>
-    
-</ul>
-
-    </footer>
-</article>
-
-        
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="https://encoretechnologies.github.io/blog/2017/10/automated-creation-of-stackstorm-packs/">Automated creation of StackStorm Packs</a></h2>
-        
-        
-            <p>Automated creation of StackStorm Packs</p>
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2017-10-15'>
-            October 15, 2017</time>
-        
-        <span class="author"><a href="https://github.com/nmaludy">Nick Maludy</a></span>
-        
-        
-            <p>5 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-
-    <p>In StackStorm a pack is logical organization that contains related actions, aliases, policies, rules and sensors. To get a good overview of what a pack is please see the excellent StackStorm Pack documentation.
-Most users of StackStorm wish to either integrate with a new system that&rsquo;s not available in the Exchange or use StackStorm to execute custom automation scripts. The way to accomplish this is to create a new Pack.</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="https://encoretechnologies.github.io/blog/2017/10/automated-creation-of-stackstorm-packs/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-            <li>
-                
-                
-                    
-
-                    
-
-                    
-                        <i class="fa fa-sitemap">&nbsp;</i>
-                    
-
-                    
-                        Categories
-                    
-                
-            </li>
-        
-    
-
-    
-    
-        <li><a href='/categories/nick-maludy'>Nick Maludy</a></li>
-    
-        <li><a href='/categories/stackstorm'>StackStorm</a></li>
-    
-        <li><a href='/categories/pack'>pack</a></li>
+        <li><a href='/categories/afinity-rule'>Afinity Rule</a></li>
     
         <li><a href='/categories/automation'>automation</a></li>
     
@@ -477,20 +622,43 @@ Most users of StackStorm wish to either integrate with a new system that&rsquo;s
 
     </footer>
 </article>
-
-        
-
-        
 <ul class="actions pagination">
     
-        <li><a href="#" class="disabled button big previous">Previous Page</a></li>
+        <li><a href="https://encoretechnologies.github.io/blog/2018/10/vdi-p001/"
+                class="button big previous">V D Why?</a></li>
     
 
     
-        <li><a href="/categories/nick-maludy/page/2/"
-                class="button big next">Next Page</a></li>
-    
 </ul>
+
+
+
+    
+        <article class="post">
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "encoretechnologies" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </article>
+    
+
+
 
     </div>
     
@@ -511,9 +679,6 @@ Most users of StackStorm wish to either integrate with a new system that&rsquo;s
                 </header>
             
             <ul class="icons">
-                
-                    <li><a href="https://encoretechnologies.github.io/categories/nick-maludy/index.xml" type="application/rss+xml"
-                        target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 
                     
@@ -877,9 +1042,6 @@ Most users of StackStorm wish to either integrate with a new system that&rsquo;s
     
         <section id="footer">
             <ul class="icons">
-                
-                    <li><a href="https://encoretechnologies.github.io/categories/nick-maludy/index.xml" type="application/rss+xml"
-                        target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 
                     

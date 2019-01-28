@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Encore Technologies - DevOps Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 28 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://encoretechnologies.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Afinity Rule</title>
+      <link>https://encoretechnologies.github.io/categories/afinity-rule/</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/afinity-rule/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Ansible</title>
@@ -23,7 +32,7 @@
     <item>
       <title>Automation</title>
       <link>https://encoretechnologies.github.io/categories/automation/</link>
-      <pubDate>Thu, 19 Oct 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://encoretechnologies.github.io/categories/automation/</guid>
       <description></description>
@@ -32,7 +41,7 @@
     <item>
       <title>Bradley Bishop</title>
       <link>https://encoretechnologies.github.io/categories/bradley-bishop/</link>
-      <pubDate>Thu, 19 Oct 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://encoretechnologies.github.io/categories/bradley-bishop/</guid>
       <description></description>
@@ -176,9 +185,18 @@
     <item>
       <title>PyVmomi</title>
       <link>https://encoretechnologies.github.io/categories/pyvmomi/</link>
-      <pubDate>Thu, 19 Oct 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://encoretechnologies.github.io/categories/pyvmomi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://encoretechnologies.github.io/categories/python/</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/python/</guid>
       <description></description>
     </item>
     
@@ -194,7 +212,7 @@
     <item>
       <title>VMware</title>
       <link>https://encoretechnologies.github.io/categories/vmware/</link>
-      <pubDate>Thu, 19 Oct 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://encoretechnologies.github.io/categories/vmware/</guid>
       <description></description>

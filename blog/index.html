@@ -54,7 +54,7 @@
 
 
 
-<meta property="og:updated_time" content="2018-10-16T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2019-01-28T00:00:00&#43;00:00"/>
 
 
 
@@ -223,11 +223,11 @@ ga('send', 'pageview');
 
                 
                     <li>
-                        <a href="https://encoretechnologies.github.io/blog/2018/10/vdi-p001/"><p>V D Why?</p></a>
+                        <a href="https://encoretechnologies.github.io/blog/2019/01/vmware-affinity-rules/"><p>Automated addition of VMware VM to Host Affinity Rules</p></a>
                     </li>
                 
                     <li>
-                        <a href="https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation2/"><p>Automating Red Hat Enterprise Linux Patching with Ansible (Part 2 0f 2)</p></a>
+                        <a href="https://encoretechnologies.github.io/blog/2018/10/vdi-p001/"><p>V D Why?</p></a>
                     </li>
                 
             </ul>
@@ -240,6 +240,86 @@ ga('send', 'pageview');
     
     <div id="main">
         
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="https://encoretechnologies.github.io/blog/2019/01/vmware-affinity-rules/">Automated addition of VMware VM to Host Affinity Rules</a></h2>
+        
+        
+            <p>Automated addition of VMware VM to Host Affinity Rules</p>
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2019-01-28'>
+            January 28, 2019</time>
+        
+        <span class="author"><a href="https://github.com/bishopbm1">Bradley Bishop</a></span>
+        
+        
+            <p>6 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>Background VMware Affinity rules can solve many issues in a virtualized environment with out the need to create different clusters or datacenters to separate Virtual Machines. The specific need that we at Encore had for this was that when a vm is being cloned, if the VM was migrated to a different Host due to a vMotion, the custom spec with Kickstart files or Autounattended Syspreps would fail.
+This was a random error that would only happened when vCenter or a host was overloaded.</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="https://encoretechnologies.github.io/blog/2019/01/vmware-affinity-rules/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-sitemap">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/bradley-bishop'>Bradley Bishop</a></li>
+    
+        <li><a href='/categories/vmware'>VMware</a></li>
+    
+        <li><a href='/categories/pyvmomi'>pyVmomi</a></li>
+    
+        <li><a href='/categories/python'>Python</a></li>
+    
+        <li><a href='/categories/afinity-rule'>Afinity Rule</a></li>
+    
+        <li><a href='/categories/automation'>automation</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
         
             <article class="post">
     <header>
@@ -348,90 +428,6 @@ Status Report With basic patching and reboots automated, a patching session for 
     <footer>
         <ul class="actions">
             <li><a href="https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation2/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-            <li>
-                
-                
-                    
-
-                    
-
-                    
-                        <i class="fa fa-sitemap">&nbsp;</i>
-                    
-
-                    
-                        Categories
-                    
-                
-            </li>
-        
-    
-
-    
-    
-        <li><a href='/categories/brian-alcorn'>Brian Alcorn</a></li>
-    
-        <li><a href='/categories/encore'>Encore</a></li>
-    
-        <li><a href='/categories/ansible'>Ansible</a></li>
-    
-        <li><a href='/categories/patch'>Patch</a></li>
-    
-        <li><a href='/categories/patching'>Patching</a></li>
-    
-        <li><a href='/categories/devops'>DevOps</a></li>
-    
-</ul>
-
-    </footer>
-</article>
-
-        
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation/">Automating Red Hat Enterprise Linux Patching with Ansible (Part 1 of 2)</a></h2>
-        
-        
-            <p>How we automated Red Hat Enterprise Linux OS patching to reduce time-to-production and human error, while improving compliance and risk management posture.</p>
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2018-06-05'>
-            June 5, 2018</time>
-        
-        <span class="author">Brian Alcorn</span>
-        
-        
-            <p>9 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-    
-
-    
-
-
-    <p>In this first installment of a two-part series, we&rsquo;ll be going over Phase One, the build out of the &ldquo;core&rdquo; patching and reboot functionality on Ansible.
-History Around a year ago, we began working with a customer whose Red Hat Enterprise Linux (RHEL) 6 and 7 OS patching process was being conducted manually. This required highly skilled administrators focused solely on patching. Documentation was eschewed in favor of tribal knowledge and manual command entry at the command line presented moderate to high risk during server patching.</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation/" class="button big">Continue Reading</a></li>
         </ul>
         <ul class="stats">
     
@@ -599,11 +595,11 @@ History Around a year ago, we began working with a customer whose Red Hat Enterp
                     <li>
                         <article>
                             <header>
-                                <h3><a href="https://encoretechnologies.github.io/blog/2018/10/vdi-p001/">V D Why?</a></h3>
+                                <h3><a href="https://encoretechnologies.github.io/blog/2019/01/vmware-affinity-rules/">Automated addition of VMware VM to Host Affinity Rules</a></h3>
                                 
                                 <time class="published" datetime=
-                                    '2018-10-16'>
-                                    October 16, 2018</time>
+                                    '2019-01-28'>
+                                    January 28, 2019</time>
                             </header>
                         </article>
                     </li>
@@ -611,11 +607,11 @@ History Around a year ago, we began working with a customer whose Red Hat Enterp
                     <li>
                         <article>
                             <header>
-                                <h3><a href="https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation2/">Automating Red Hat Enterprise Linux Patching with Ansible (Part 2 0f 2)</a></h3>
+                                <h3><a href="https://encoretechnologies.github.io/blog/2018/10/vdi-p001/">V D Why?</a></h3>
                                 
                                 <time class="published" datetime=
-                                    '2018-06-13'>
-                                    June 13, 2018</time>
+                                    '2018-10-16'>
+                                    October 16, 2018</time>
                             </header>
                         </article>
                     </li>
@@ -689,7 +685,25 @@ History Around a year ago, we began working with a customer whose Red Hat Enterp
                     <li>
                         <article>
                             <header>
+                                <a href="/categories/automation/">automation</a>
+                                <span style="float:right;">3</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <a href="/categories/ansible/">Ansible</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/bradley-bishop/">Bradley Bishop</a>
                                 <span style="float:right;">2</span>
                             </header>
                         </article>
@@ -725,7 +739,7 @@ History Around a year ago, we began working with a customer whose Red Hat Enterp
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/automation/">automation</a>
+                                <a href="/categories/vmware/">VMware</a>
                                 <span style="float:right;">2</span>
                             </header>
                         </article>
@@ -734,7 +748,16 @@ History Around a year ago, we began working with a customer whose Red Hat Enterp
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/bradley-bishop/">Bradley Bishop</a>
+                                <a href="/categories/pyvmomi/">pyVmomi</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/afinity-rule/">Afinity Rule</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -788,7 +811,7 @@ History Around a year ago, we began working with a customer whose Red Hat Enterp
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/vmware/">VMware</a>
+                                <a href="/categories/python/">Python</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -825,15 +848,6 @@ History Around a year ago, we began working with a customer whose Red Hat Enterp
                         <article>
                             <header>
                                 <a href="/categories/pack/">pack</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/pyvmomi/">pyVmomi</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -930,7 +944,7 @@ History Around a year ago, we began working with a customer whose Red Hat Enterp
                 
             </ul>
 
-            <p class="copyright">&copy; 2018 Encore Technologies - DevOps Blog. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+            <p class="copyright">&copy; 2019 Encore Technologies - DevOps Blog. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
         </section>
 
 </section>
