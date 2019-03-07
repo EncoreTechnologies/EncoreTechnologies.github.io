@@ -6,10 +6,21 @@
     <description>Recent content in Blog on Encore Technologies - DevOps Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://encoretechnologies.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using Grafana and InfluxDB to Visualize Power Consumption</title>
+      <link>https://encoretechnologies.github.io/blog/2019/01/monitoring-power-consumption/</link>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/blog/2019/01/monitoring-power-consumption/</guid>
+      <description>This blog explains how we configured and use Grafana to graph and visualize PDU data stored in InfluxDB.
+
+Background InfluxDB is a time series database that we use to store dozens of metrics from all of our power distribution units (PDUs). This database is updated periodically with a python script that parses snmp data from our PDUs and stores it in the correct table and row. After getting the data into the db, we used Grafana to create graphs of some of the power consumption metrics so that we could easily see how much power was being used by each PDU.</description>
+    </item>
     
     <item>
       <title>Automated addition of VMware VM to Host Affinity Rules</title>

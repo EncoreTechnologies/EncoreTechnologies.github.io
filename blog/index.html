@@ -54,7 +54,7 @@
 
 
 
-<meta property="og:updated_time" content="2019-01-28T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2019-01-29T00:00:00&#43;00:00"/>
 
 
 
@@ -223,11 +223,11 @@ ga('send', 'pageview');
 
                 
                     <li>
-                        <a href="https://encoretechnologies.github.io/blog/2019/01/vmware-affinity-rules/"><p>Automated addition of VMware VM to Host Affinity Rules</p></a>
+                        <a href="https://encoretechnologies.github.io/blog/2019/01/monitoring-power-consumption/"><p>Using Grafana and InfluxDB to Visualize Power Consumption</p></a>
                     </li>
                 
                     <li>
-                        <a href="https://encoretechnologies.github.io/blog/2018/10/vdi-p001/"><p>V D Why?</p></a>
+                        <a href="https://encoretechnologies.github.io/blog/2019/01/vmware-affinity-rules/"><p>Automated addition of VMware VM to Host Affinity Rules</p></a>
                     </li>
                 
             </ul>
@@ -240,6 +240,80 @@ ga('send', 'pageview');
     
     <div id="main">
         
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="https://encoretechnologies.github.io/blog/2019/01/monitoring-power-consumption/">Using Grafana and InfluxDB to Visualize Power Consumption</a></h2>
+        
+        
+            <p>How Encore uses Grafana and InfluxDB to Gather Information About Our PDUs and Visuallize Their Power Consumption</p>
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2019-01-29'>
+            January 29, 2019</time>
+        
+        <span class="author"><a href="https://github.com/jschoewe">John Schoewe</a></span>
+        
+        
+            <p>2 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p><p>This blog explains how we configured and use Grafana to graph and visualize PDU data stored in InfluxDB.</p>
+
+<p>Background InfluxDB is a time series database that we use to store dozens of metrics from all of our power distribution units (PDUs). This database is updated periodically with a python script that parses snmp data from our PDUs and stores it in the correct table and row. After getting the data into the db, we used Grafana to create graphs of some of the power consumption metrics so that we could easily see how much power was being used by each PDU.</p>
+</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="https://encoretechnologies.github.io/blog/2019/01/monitoring-power-consumption/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-sitemap">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/john-schoewe'>John Schoewe</a></li>
+    
+        <li><a href='/categories/encore'>Encore</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
         
             <article class="post">
     <header>
@@ -394,86 +468,6 @@ This was a random error that would only happened when vCenter or a host was over
 </article>
 
         
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation2/">Automating Red Hat Enterprise Linux Patching with Ansible (Part 2 0f 2)</a></h2>
-        
-        
-            <p>How we automated Red Hat Enterprise Linux OS patching to reduce time-to-production and human error, while improving compliance and risk management posture.</p>
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2018-06-13'>
-            June 13, 2018</time>
-        
-        <span class="author">Brian Alcorn</span>
-        
-        
-            <p>8 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-
-    <p>In this second installment of a two-part series, we&rsquo;ll be going over Phase Two, the build out of standard pre- and post-patching automation, and Phase Three, the build out of application-specific pre- and post-patching automation. Click here for Phase One.
-Status Report With basic patching and reboots automated, a patching session for application environments without any special pre-patching and post-patching activities was reduced from 20 minutes per server, down to 6 minutes per server.</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation2/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-            <li>
-                
-                
-                    
-
-                    
-
-                    
-                        <i class="fa fa-sitemap">&nbsp;</i>
-                    
-
-                    
-                        Categories
-                    
-                
-            </li>
-        
-    
-
-    
-    
-        <li><a href='/categories/brian-alcorn'>Brian Alcorn</a></li>
-    
-        <li><a href='/categories/encore'>Encore</a></li>
-    
-        <li><a href='/categories/ansible'>Ansible</a></li>
-    
-        <li><a href='/categories/patch'>Patch</a></li>
-    
-        <li><a href='/categories/patching'>Patching</a></li>
-    
-        <li><a href='/categories/devops'>DevOps</a></li>
-    
-</ul>
-
-    </footer>
-</article>
-
-        
 
         
 <ul class="actions pagination">
@@ -595,11 +589,11 @@ Status Report With basic patching and reboots automated, a patching session for 
                     <li>
                         <article>
                             <header>
-                                <h3><a href="https://encoretechnologies.github.io/blog/2019/01/vmware-affinity-rules/">Automated addition of VMware VM to Host Affinity Rules</a></h3>
+                                <h3><a href="https://encoretechnologies.github.io/blog/2019/01/monitoring-power-consumption/">Using Grafana and InfluxDB to Visualize Power Consumption</a></h3>
                                 
                                 <time class="published" datetime=
-                                    '2019-01-28'>
-                                    January 28, 2019</time>
+                                    '2019-01-29'>
+                                    January 29, 2019</time>
                             </header>
                         </article>
                     </li>
@@ -607,11 +601,11 @@ Status Report With basic patching and reboots automated, a patching session for 
                     <li>
                         <article>
                             <header>
-                                <h3><a href="https://encoretechnologies.github.io/blog/2018/10/vdi-p001/">V D Why?</a></h3>
+                                <h3><a href="https://encoretechnologies.github.io/blog/2019/01/vmware-affinity-rules/">Automated addition of VMware VM to Host Affinity Rules</a></h3>
                                 
                                 <time class="published" datetime=
-                                    '2018-10-16'>
-                                    October 16, 2018</time>
+                                    '2019-01-28'>
+                                    January 28, 2019</time>
                             </header>
                         </article>
                     </li>
@@ -650,7 +644,7 @@ Status Report With basic patching and reboots automated, a patching session for 
                         <article>
                             <header>
                                 <a href="/categories/encore/">Encore</a>
-                                <span style="float:right;">5</span>
+                                <span style="float:right;">6</span>
                             </header>
                         </article>
                     </li>
@@ -713,6 +707,15 @@ Status Report With basic patching and reboots automated, a patching session for 
                         <article>
                             <header>
                                 <a href="/categories/brian-alcorn/">Brian Alcorn</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/john-schoewe/">John Schoewe</a>
                                 <span style="float:right;">2</span>
                             </header>
                         </article>
@@ -785,15 +788,6 @@ Status Report With basic patching and reboots automated, a patching session for 
                         <article>
                             <header>
                                 <a href="/categories/end-user-compute/">End User Compute</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/john-schoewe/">John Schoewe</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
