@@ -1,10 +1,70 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://encoretechnologies.github.io/blog/</loc>
+    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/</loc>
+    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/blog/2020/03/vmware-iscsi-timeout/</loc>
+    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/encore/</loc>
+    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/</loc>
+    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/esxi/</loc>
+    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/greg-perry/</loc>
+    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/iscsi/</loc>
+    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/storage/</loc>
+    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/vmware/</loc>
+    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/john-schoewe/</loc>
+    <lastmod>2019-01-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://encoretechnologies.github.io/blog/2019/01/monitoring-power-consumption/</loc>
     <lastmod>2019-01-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/afinity-rule/</loc>
+    <lastmod>2019-01-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -13,12 +73,67 @@
   </url>
   
   <url>
+    <loc>https://encoretechnologies.github.io/categories/automation/</loc>
+    <lastmod>2019-01-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/bradley-bishop/</loc>
+    <lastmod>2019-01-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/python/</loc>
+    <lastmod>2019-01-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/pyvmomi/</loc>
+    <lastmod>2019-01-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/end-user-compute/</loc>
+    <lastmod>2018-10-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/pat-coughlin/</loc>
+    <lastmod>2018-10-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://encoretechnologies.github.io/blog/2018/10/vdi-p001/</loc>
     <lastmod>2018-10-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
+    <loc>https://encoretechnologies.github.io/categories/ansible/</loc>
+    <lastmod>2018-06-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://encoretechnologies.github.io/blog/2018/06/ansiblepatchingautomation2/</loc>
+    <lastmod>2018-06-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/brian-alcorn/</loc>
+    <lastmod>2018-06-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/devops/</loc>
+    <lastmod>2018-06-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/patch/</loc>
+    <lastmod>2018-06-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/patching/</loc>
     <lastmod>2018-06-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -33,7 +148,32 @@
   </url>
   
   <url>
+    <loc>https://encoretechnologies.github.io/categories/life/</loc>
+    <lastmod>2018-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/nick-maludy/</loc>
+    <lastmod>2018-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/stackstorm/</loc>
+    <lastmod>2018-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/duo/</loc>
+    <lastmod>2017-10-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://encoretechnologies.github.io/blog/2017/10/stackstorm-inquiries/</loc>
+    <lastmod>2017-10-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/inquiries/</loc>
     <lastmod>2017-10-31T00:00:00+00:00</lastmod>
   </url>
   
@@ -48,7 +188,22 @@
   </url>
   
   <url>
+    <loc>https://encoretechnologies.github.io/categories/controllers/</loc>
+    <lastmod>2017-10-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/disks/</loc>
+    <lastmod>2017-10-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://encoretechnologies.github.io/blog/2017/10/automated-creation-of-stackstorm-packs/</loc>
+    <lastmod>2017-10-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/pack/</loc>
     <lastmod>2017-10-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -63,168 +218,11 @@
   </url>
   
   <url>
-    <loc>https://encoretechnologies.github.io/categories/afinity-rule/</loc>
-    <lastmod>2019-01-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/categories/ansible/</loc>
-    <lastmod>2018-06-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/categories/automation/</loc>
-    <lastmod>2019-01-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/blog/</loc>
-    <lastmod>2019-01-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/categories/bradley-bishop/</loc>
-    <lastmod>2019-01-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/categories/brian-alcorn/</loc>
-    <lastmod>2018-06-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/categories/</loc>
-    <lastmod>2019-01-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://encoretechnologies.github.io/contact/</loc>
   </url>
   
   <url>
-    <loc>https://encoretechnologies.github.io/categories/controllers/</loc>
-    <lastmod>2017-10-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/categories/devops/</loc>
-    <lastmod>2018-06-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/categories/disks/</loc>
-    <lastmod>2017-10-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/categories/duo/</loc>
-    <lastmod>2017-10-31T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/categories/encore/</loc>
-    <lastmod>2019-01-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/</loc>
-    <lastmod>2019-01-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/categories/end-user-compute/</loc>
-    <lastmod>2018-10-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/categories/inquiries/</loc>
-    <lastmod>2017-10-31T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/categories/john-schoewe/</loc>
-    <lastmod>2019-01-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/categories/life/</loc>
-    <lastmod>2018-03-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/categories/nick-maludy/</loc>
-    <lastmod>2018-03-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/categories/pack/</loc>
-    <lastmod>2017-10-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/categories/pat-coughlin/</loc>
-    <lastmod>2018-10-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/categories/patch/</loc>
-    <lastmod>2018-06-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/categories/patching/</loc>
-    <lastmod>2018-06-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/categories/pyvmomi/</loc>
-    <lastmod>2019-01-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/categories/python/</loc>
-    <lastmod>2019-01-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/categories/stackstorm/</loc>
-    <lastmod>2018-03-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://encoretechnologies.github.io/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/categories/vmware/</loc>
-    <lastmod>2019-01-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>

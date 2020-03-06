@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on Encore Technologies - DevOps Blog</title>
@@ -6,10 +6,20 @@
     <description>Recent content in Blog on Encore Technologies - DevOps Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://encoretechnologies.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Changing iSCSI LoginTimeout with PowerCLI</title>
+      <link>https://encoretechnologies.github.io/blog/2020/03/vmware-iscsi-timeout/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/blog/2020/03/vmware-iscsi-timeout/</guid>
+      <description>In this blog post we will be explaining how we are changing the iSCSI LoginTimeout and the reasons why we are doing it in this method.
+Background Recently we were going through a code upgrade on our storage arrays and one of the recommendations from Pure support is to increase the iSCSI LoginTimeout prior to upgrading the code. For the uninitiated, VMware defines the LoginTimeout as &amp;ldquo;Time in seconds the initiator will wait for the login response to finish.</description>
+    </item>
     
     <item>
       <title>Using Grafana and InfluxDB to Visualize Power Consumption</title>

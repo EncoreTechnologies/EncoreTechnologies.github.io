@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pack on Encore Technologies - DevOps Blog</title>
+    <title>pack on Encore Technologies - DevOps Blog</title>
     <link>https://encoretechnologies.github.io/categories/pack/</link>
-    <description>Recent content in Pack on Encore Technologies - DevOps Blog</description>
+    <description>Recent content in pack on Encore Technologies - DevOps Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0000</lastBuildDate>

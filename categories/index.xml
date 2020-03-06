@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Encore Technologies - DevOps Blog</title>
@@ -6,10 +6,73 @@
     <description>Recent content in Categories on Encore Technologies - DevOps Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://encoretechnologies.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Encore</title>
+      <link>https://encoretechnologies.github.io/categories/encore/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/encore/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ESXi</title>
+      <link>https://encoretechnologies.github.io/categories/esxi/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/esxi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Greg Perry</title>
+      <link>https://encoretechnologies.github.io/categories/greg-perry/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/greg-perry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iSCSI</title>
+      <link>https://encoretechnologies.github.io/categories/iscsi/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/iscsi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Storage</title>
+      <link>https://encoretechnologies.github.io/categories/storage/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/storage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware</title>
+      <link>https://encoretechnologies.github.io/categories/vmware/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/vmware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>John Schoewe</title>
+      <link>https://encoretechnologies.github.io/categories/john-schoewe/</link>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/john-schoewe/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Afinity Rule</title>
@@ -21,16 +84,7 @@
     </item>
     
     <item>
-      <title>Ansible</title>
-      <link>https://encoretechnologies.github.io/categories/ansible/</link>
-      <pubDate>Wed, 13 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://encoretechnologies.github.io/categories/ansible/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Automation</title>
+      <title>automation</title>
       <link>https://encoretechnologies.github.io/categories/automation/</link>
       <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
       
@@ -48,56 +102,20 @@
     </item>
     
     <item>
-      <title>Brian Alcorn</title>
-      <link>https://encoretechnologies.github.io/categories/brian-alcorn/</link>
-      <pubDate>Wed, 13 Jun 2018 00:00:00 +0000</pubDate>
+      <title>Python</title>
+      <link>https://encoretechnologies.github.io/categories/python/</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://encoretechnologies.github.io/categories/brian-alcorn/</guid>
+      <guid>https://encoretechnologies.github.io/categories/python/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Controllers</title>
-      <link>https://encoretechnologies.github.io/categories/controllers/</link>
-      <pubDate>Thu, 19 Oct 2017 00:00:00 +0000</pubDate>
+      <title>pyVmomi</title>
+      <link>https://encoretechnologies.github.io/categories/pyvmomi/</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://encoretechnologies.github.io/categories/controllers/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DevOps</title>
-      <link>https://encoretechnologies.github.io/categories/devops/</link>
-      <pubDate>Wed, 13 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://encoretechnologies.github.io/categories/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Disks</title>
-      <link>https://encoretechnologies.github.io/categories/disks/</link>
-      <pubDate>Thu, 19 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://encoretechnologies.github.io/categories/disks/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Duo</title>
-      <link>https://encoretechnologies.github.io/categories/duo/</link>
-      <pubDate>Tue, 31 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://encoretechnologies.github.io/categories/duo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Encore</title>
-      <link>https://encoretechnologies.github.io/categories/encore/</link>
-      <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://encoretechnologies.github.io/categories/encore/</guid>
+      <guid>https://encoretechnologies.github.io/categories/pyvmomi/</guid>
       <description></description>
     </item>
     
@@ -111,56 +129,38 @@
     </item>
     
     <item>
-      <title>Inquiries</title>
-      <link>https://encoretechnologies.github.io/categories/inquiries/</link>
-      <pubDate>Tue, 31 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://encoretechnologies.github.io/categories/inquiries/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>John Schoewe</title>
-      <link>https://encoretechnologies.github.io/categories/john-schoewe/</link>
-      <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://encoretechnologies.github.io/categories/john-schoewe/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Life</title>
-      <link>https://encoretechnologies.github.io/categories/life/</link>
-      <pubDate>Fri, 09 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://encoretechnologies.github.io/categories/life/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nick Maludy</title>
-      <link>https://encoretechnologies.github.io/categories/nick-maludy/</link>
-      <pubDate>Fri, 09 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://encoretechnologies.github.io/categories/nick-maludy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pack</title>
-      <link>https://encoretechnologies.github.io/categories/pack/</link>
-      <pubDate>Sun, 15 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://encoretechnologies.github.io/categories/pack/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Pat Coughlin</title>
       <link>https://encoretechnologies.github.io/categories/pat-coughlin/</link>
       <pubDate>Tue, 16 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://encoretechnologies.github.io/categories/pat-coughlin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ansible</title>
+      <link>https://encoretechnologies.github.io/categories/ansible/</link>
+      <pubDate>Wed, 13 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/ansible/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Brian Alcorn</title>
+      <link>https://encoretechnologies.github.io/categories/brian-alcorn/</link>
+      <pubDate>Wed, 13 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/brian-alcorn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DevOps</title>
+      <link>https://encoretechnologies.github.io/categories/devops/</link>
+      <pubDate>Wed, 13 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/devops/</guid>
       <description></description>
     </item>
     
@@ -183,20 +183,20 @@
     </item>
     
     <item>
-      <title>PyVmomi</title>
-      <link>https://encoretechnologies.github.io/categories/pyvmomi/</link>
-      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
+      <title>life</title>
+      <link>https://encoretechnologies.github.io/categories/life/</link>
+      <pubDate>Fri, 09 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://encoretechnologies.github.io/categories/pyvmomi/</guid>
+      <guid>https://encoretechnologies.github.io/categories/life/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Python</title>
-      <link>https://encoretechnologies.github.io/categories/python/</link>
-      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
+      <title>Nick Maludy</title>
+      <link>https://encoretechnologies.github.io/categories/nick-maludy/</link>
+      <pubDate>Fri, 09 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://encoretechnologies.github.io/categories/python/</guid>
+      <guid>https://encoretechnologies.github.io/categories/nick-maludy/</guid>
       <description></description>
     </item>
     
@@ -210,11 +210,47 @@
     </item>
     
     <item>
-      <title>VMware</title>
-      <link>https://encoretechnologies.github.io/categories/vmware/</link>
-      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
+      <title>duo</title>
+      <link>https://encoretechnologies.github.io/categories/duo/</link>
+      <pubDate>Tue, 31 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://encoretechnologies.github.io/categories/vmware/</guid>
+      <guid>https://encoretechnologies.github.io/categories/duo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>inquiries</title>
+      <link>https://encoretechnologies.github.io/categories/inquiries/</link>
+      <pubDate>Tue, 31 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/inquiries/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Controllers</title>
+      <link>https://encoretechnologies.github.io/categories/controllers/</link>
+      <pubDate>Thu, 19 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/controllers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Disks</title>
+      <link>https://encoretechnologies.github.io/categories/disks/</link>
+      <pubDate>Thu, 19 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/disks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pack</title>
+      <link>https://encoretechnologies.github.io/categories/pack/</link>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/pack/</guid>
       <description></description>
     </item>
     
