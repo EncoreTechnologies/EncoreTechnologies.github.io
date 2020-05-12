@@ -4,36 +4,71 @@
   
   <url>
     <loc>https://encoretechnologies.github.io/blog/</loc>
-    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/bolt/</loc>
+    <lastmod>2020-05-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://encoretechnologies.github.io/categories/</loc>
-    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://encoretechnologies.github.io/blog/2020/03/vmware-iscsi-timeout/</loc>
-    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
+    <loc>https://encoretechnologies.github.io/categories/chatops/</loc>
+    <lastmod>2020-05-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://encoretechnologies.github.io/categories/encore/</loc>
-    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://encoretechnologies.github.io/</loc>
-    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://encoretechnologies.github.io/categories/esxi/</loc>
-    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://encoretechnologies.github.io/categories/greg-perry/</loc>
+    <lastmod>2020-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/logs/</loc>
+    <lastmod>2020-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/puppet/</loc>
+    <lastmod>2020-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/stackstorm/</loc>
+    <lastmod>2020-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/blog/2020/05/chatops_vmware_host_log_collection/</loc>
+    <lastmod>2020-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/categories/vmware/</loc>
+    <lastmod>2020-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://encoretechnologies.github.io/blog/2020/03/vmware-iscsi-timeout/</loc>
     <lastmod>2020-03-05T00:00:00+00:00</lastmod>
   </url>
   
@@ -44,11 +79,6 @@
   
   <url>
     <loc>https://encoretechnologies.github.io/categories/storage/</loc>
-    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/categories/vmware/</loc>
     <lastmod>2020-03-05T00:00:00+00:00</lastmod>
   </url>
   
@@ -154,11 +184,6 @@
   
   <url>
     <loc>https://encoretechnologies.github.io/categories/nick-maludy/</loc>
-    <lastmod>2018-03-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://encoretechnologies.github.io/categories/stackstorm/</loc>
     <lastmod>2018-03-09T00:00:00+00:00</lastmod>
   </url>
   

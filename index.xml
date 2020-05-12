@@ -6,10 +6,20 @@
     <description>Recent content on Encore Technologies - DevOps Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://encoretechnologies.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Utilizing Chatops for VMWare Support Cases</title>
+      <link>https://encoretechnologies.github.io/blog/2020/05/chatops_vmware_host_log_collection/</link>
+      <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/blog/2020/05/chatops_vmware_host_log_collection/</guid>
+      <description>In this post we will be explaining how we have created a chatops workflow that enables us to upload VMWare ESXi log bundles directly to a VMWare support case from our chat client of choice. The code that makes all of this work is at the bottom of this article.
+Chatops Introduction For the those who have never heard of chatops before; To me, it means the ability to call automation workflows from your favorite chat client.</description>
+    </item>
     
     <item>
       <title>Changing iSCSI LoginTimeout with PowerCLI</title>

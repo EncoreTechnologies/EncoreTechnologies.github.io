@@ -57,7 +57,7 @@
 
 <meta property="og:image" content="https://encoretechnologies.github.io/img/main/encore_power_button_small.png" />
 
-<meta property="og:updated_time" content="2018-03-09T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-05-07T00:00:00+00:00" />
 
         <meta itemprop="name" content="StackStorm">
 <meta itemprop="description" content="Blog about everything DevOps">
@@ -219,11 +219,11 @@ if (!doNotTrack) {
 
                 
                     <li>
-                        <a href="https://encoretechnologies.github.io/blog/2020/03/vmware-iscsi-timeout/"><p>Changing iSCSI LoginTimeout with PowerCLI</p></a>
+                        <a href="https://encoretechnologies.github.io/blog/2020/05/chatops_vmware_host_log_collection/"><p>Utilizing Chatops for VMWare Support Cases</p></a>
                     </li>
                 
                     <li>
-                        <a href="https://encoretechnologies.github.io/blog/2019/01/monitoring-power-consumption/"><p>Using Grafana and InfluxDB to Visualize Power Consumption</p></a>
+                        <a href="https://encoretechnologies.github.io/blog/2020/03/vmware-iscsi-timeout/"><p>Changing iSCSI LoginTimeout with PowerCLI</p></a>
                     </li>
                 
             </ul>
@@ -237,6 +237,92 @@ if (!doNotTrack) {
     <div id="main">
         <h1>StackStorm</h1>
         
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="https://encoretechnologies.github.io/blog/2020/05/chatops_vmware_host_log_collection/">Utilizing Chatops for VMWare Support Cases</a></h2>
+        
+        
+            <p>How Encore is Utilizing Chatops for VMWare Support Cases</p>
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2020-05-07'>
+            May 7, 2020</time>
+        
+        <span class="author"><a href="https://github.com/gsperry2011">Greg Perry</a></span>
+        
+        
+            <p>8 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>In this post we will be explaining how we have created a chatops workflow that enables us to upload VMWare ESXi log bundles directly to a VMWare support case from our chat client of choice. The code that makes all of this work is at the bottom of this article.
+Chatops Introduction For the those who have never heard of chatops before; To me, it means the ability to call automation workflows from your favorite chat client.</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="https://encoretechnologies.github.io/blog/2020/05/chatops_vmware_host_log_collection/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-sitemap">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/greg-perry'>Greg Perry</a></li>
+    
+        <li><a href='/categories/encore'>Encore</a></li>
+    
+        <li><a href='/categories/vmware'>VMware</a></li>
+    
+        <li><a href='/categories/esxi'>ESXi</a></li>
+    
+        <li><a href='/categories/logs'>logs</a></li>
+    
+        <li><a href='/categories/chatops'>chatops</a></li>
+    
+        <li><a href='/categories/stackstorm'>StackStorm</a></li>
+    
+        <li><a href='/categories/bolt'>Bolt</a></li>
+    
+        <li><a href='/categories/puppet'>puppet</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
         
             <article class="post">
     <header>
@@ -397,82 +483,6 @@ History When I started at Encore in June of 2016 the team had just started worki
 </article>
 
         
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="https://encoretechnologies.github.io/blog/2017/10/automated-creation-of-stackstorm-packs/">Automated creation of StackStorm Packs</a></h2>
-        
-        
-            <p>Automated creation of StackStorm Packs</p>
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2017-10-15'>
-            October 15, 2017</time>
-        
-        <span class="author"><a href="https://github.com/nmaludy">Nick Maludy</a></span>
-        
-        
-            <p>5 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-
-    <p>In StackStorm a pack is logical organization that contains related actions, aliases, policies, rules and sensors. To get a good overview of what a pack is please see the excellent StackStorm Pack documentation.
-Most users of StackStorm wish to either integrate with a new system that&rsquo;s not available in the Exchange or use StackStorm to execute custom automation scripts. The way to accomplish this is to create a new Pack.</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="https://encoretechnologies.github.io/blog/2017/10/automated-creation-of-stackstorm-packs/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-            <li>
-                
-                
-                    
-
-                    
-
-                    
-                        <i class="fa fa-sitemap">&nbsp;</i>
-                    
-
-                    
-                        Categories
-                    
-                
-            </li>
-        
-    
-
-    
-    
-        <li><a href='/categories/nick-maludy'>Nick Maludy</a></li>
-    
-        <li><a href='/categories/stackstorm'>StackStorm</a></li>
-    
-        <li><a href='/categories/pack'>pack</a></li>
-    
-        <li><a href='/categories/automation'>automation</a></li>
-    
-</ul>
-
-    </footer>
-</article>
-
-        
 
         
 <ul class="actions pagination">
@@ -481,7 +491,8 @@ Most users of StackStorm wish to either integrate with a new system that&rsquo;s
     
 
     
-        <li><a href="#" class="disabled button big next">Next Page</a></li>
+        <li><a href="/categories/stackstorm/page/2/"
+                class="button big next">Next Page</a></li>
     
 </ul>
 
@@ -593,11 +604,11 @@ Most users of StackStorm wish to either integrate with a new system that&rsquo;s
                     <li>
                         <article>
                             <header>
-                                <h3><a href="https://encoretechnologies.github.io/blog/2020/03/vmware-iscsi-timeout/">Changing iSCSI LoginTimeout with PowerCLI</a></h3>
+                                <h3><a href="https://encoretechnologies.github.io/blog/2020/05/chatops_vmware_host_log_collection/">Utilizing Chatops for VMWare Support Cases</a></h3>
                                 
                                 <time class="published" datetime=
-                                    '2020-03-05'>
-                                    March 5, 2020</time>
+                                    '2020-05-07'>
+                                    May 7, 2020</time>
                             </header>
                         </article>
                     </li>
@@ -605,11 +616,11 @@ Most users of StackStorm wish to either integrate with a new system that&rsquo;s
                     <li>
                         <article>
                             <header>
-                                <h3><a href="https://encoretechnologies.github.io/blog/2019/01/monitoring-power-consumption/">Using Grafana and InfluxDB to Visualize Power Consumption</a></h3>
+                                <h3><a href="https://encoretechnologies.github.io/blog/2020/03/vmware-iscsi-timeout/">Changing iSCSI LoginTimeout with PowerCLI</a></h3>
                                 
                                 <time class="published" datetime=
-                                    '2019-01-29'>
-                                    January 29, 2019</time>
+                                    '2020-03-05'>
+                                    March 5, 2020</time>
                             </header>
                         </article>
                     </li>
@@ -648,7 +659,7 @@ Most users of StackStorm wish to either integrate with a new system that&rsquo;s
                         <article>
                             <header>
                                 <a href="/categories/encore/">encore</a>
-                                <span style="float:right;">7</span>
+                                <span style="float:right;">8</span>
                             </header>
                         </article>
                     </li>
@@ -657,6 +668,24 @@ Most users of StackStorm wish to either integrate with a new system that&rsquo;s
                         <article>
                             <header>
                                 <a href="/categories/nick-maludy/">nick-maludy</a>
+                                <span style="float:right;">4</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/stackstorm/">stackstorm</a>
+                                <span style="float:right;">4</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/vmware/">vmware</a>
                                 <span style="float:right;">4</span>
                             </header>
                         </article>
@@ -675,24 +704,6 @@ Most users of StackStorm wish to either integrate with a new system that&rsquo;s
                         <article>
                             <header>
                                 <a href="/categories/devops/">devops</a>
-                                <span style="float:right;">3</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/stackstorm/">stackstorm</a>
-                                <span style="float:right;">3</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/vmware/">vmware</a>
                                 <span style="float:right;">3</span>
                             </header>
                         </article>
@@ -720,6 +731,24 @@ Most users of StackStorm wish to either integrate with a new system that&rsquo;s
                         <article>
                             <header>
                                 <a href="/categories/brian-alcorn/">brian-alcorn</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/esxi/">esxi</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/greg-perry/">greg-perry</a>
                                 <span style="float:right;">2</span>
                             </header>
                         </article>
@@ -773,6 +802,24 @@ Most users of StackStorm wish to either integrate with a new system that&rsquo;s
                     <li>
                         <article>
                             <header>
+                                <a href="/categories/bolt/">bolt</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/chatops/">chatops</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <a href="/categories/controllers/">controllers</a>
                                 <span style="float:right;">1</span>
                             </header>
@@ -809,24 +856,6 @@ Most users of StackStorm wish to either integrate with a new system that&rsquo;s
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/esxi/">esxi</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/greg-perry/">greg-perry</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="/categories/inquiries/">inquiries</a>
                                 <span style="float:right;">1</span>
                             </header>
@@ -854,6 +883,15 @@ Most users of StackStorm wish to either integrate with a new system that&rsquo;s
                     <li>
                         <article>
                             <header>
+                                <a href="/categories/logs/">logs</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <a href="/categories/pack/">pack</a>
                                 <span style="float:right;">1</span>
                             </header>
@@ -864,6 +902,15 @@ Most users of StackStorm wish to either integrate with a new system that&rsquo;s
                         <article>
                             <header>
                                 <a href="/categories/pat-coughlin/">pat-coughlin</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/puppet/">puppet</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>

@@ -6,15 +6,33 @@
     <description>Recent content in Categories on Encore Technologies - DevOps Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://encoretechnologies.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Bolt</title>
+      <link>https://encoretechnologies.github.io/categories/bolt/</link>
+      <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/bolt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>chatops</title>
+      <link>https://encoretechnologies.github.io/categories/chatops/</link>
+      <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/chatops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Encore</title>
       <link>https://encoretechnologies.github.io/categories/encore/</link>
-      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://encoretechnologies.github.io/categories/encore/</guid>
       <description></description>
@@ -23,7 +41,7 @@
     <item>
       <title>ESXi</title>
       <link>https://encoretechnologies.github.io/categories/esxi/</link>
-      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://encoretechnologies.github.io/categories/esxi/</guid>
       <description></description>
@@ -32,9 +50,45 @@
     <item>
       <title>Greg Perry</title>
       <link>https://encoretechnologies.github.io/categories/greg-perry/</link>
-      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://encoretechnologies.github.io/categories/greg-perry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>logs</title>
+      <link>https://encoretechnologies.github.io/categories/logs/</link>
+      <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/logs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>puppet</title>
+      <link>https://encoretechnologies.github.io/categories/puppet/</link>
+      <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/puppet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>StackStorm</title>
+      <link>https://encoretechnologies.github.io/categories/stackstorm/</link>
+      <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/stackstorm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware</title>
+      <link>https://encoretechnologies.github.io/categories/vmware/</link>
+      <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/categories/vmware/</guid>
       <description></description>
     </item>
     
@@ -53,15 +107,6 @@
       <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://encoretechnologies.github.io/categories/storage/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>VMware</title>
-      <link>https://encoretechnologies.github.io/categories/vmware/</link>
-      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://encoretechnologies.github.io/categories/vmware/</guid>
       <description></description>
     </item>
     
@@ -197,15 +242,6 @@
       <pubDate>Fri, 09 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://encoretechnologies.github.io/categories/nick-maludy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>StackStorm</title>
-      <link>https://encoretechnologies.github.io/categories/stackstorm/</link>
-      <pubDate>Fri, 09 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://encoretechnologies.github.io/categories/stackstorm/</guid>
       <description></description>
     </item>
     
