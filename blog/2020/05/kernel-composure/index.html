@@ -1,0 +1,1645 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>Introducing Kernel Composure</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.59.1" />
+        
+    
+        
+    
+
+    
+
+    <link rel="apple-touch-icon-precomposed"
+        href='/favicon/apple-touch-icon-precomposed.png'>
+    <link rel="icon" href='/favicon/favicon.png'>
+    
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage"
+        content='/favicon/mstile.png'>
+
+
+
+        
+            <meta name="author" content="Tyler Sparr">
+        
+        
+            <meta name="description" content="Parsing Kernel Panic logs on macOS 10.15.x">
+        
+
+        <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://encoretechnologies.github.io/img/main/encore_power_button_small.png"/>
+
+<meta name="twitter:title" content="Introducing Kernel Composure"/>
+<meta name="twitter:description" content="Parsing Kernel Panic logs on macOS 10.15.x"/>
+<meta name="twitter:site" content="@encoretechcincy"/>
+
+        <meta property="og:title" content="Introducing Kernel Composure" />
+<meta property="og:description" content="Parsing Kernel Panic logs on macOS 10.15.x" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://encoretechnologies.github.io/blog/2020/05/kernel-composure/" />
+
+<meta property="og:image" content="https://encoretechnologies.github.io/img/main/encore_power_button_small.png" />
+<meta property="article:published_time" content="2020-05-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-05-17T00:00:00+00:00" />
+
+        <meta itemprop="name" content="Introducing Kernel Composure">
+<meta itemprop="description" content="Parsing Kernel Panic logs on macOS 10.15.x">
+
+
+<meta itemprop="datePublished" content="2020-05-17T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-05-17T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2578">
+
+
+
+<meta itemprop="keywords" content="" />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" />
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+        
+
+        
+
+        
+            
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-108206364-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+        
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      
+          <h1><a href="/">blog</a></h1>
+      
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://encoretechnologies.github.io">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="q" value="site:https://encoretechnologies.github.io">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    <li>
+                        <a href="https://encoretechnologies.github.io/blog/2020/05/kernel-composure/"><p>Introducing Kernel Composure</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="https://encoretechnologies.github.io/blog/2020/05/chatops_vmware_host_log_collection/"><p>Utilizing Chatops for VMWare Support Cases</p></a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f&text=Introducing%20Kernel%20Composure&via=encoretechcincy" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f&title=Introducing%20Kernel%20Composure" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f&title=Introducing%20Kernel%20Composure" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f&title=Introducing%20Kernel%20Composure" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by Tyler%20Sparr&body=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+    <header>
+    <div class="title">
+        
+            <h1><a href="https://encoretechnologies.github.io/blog/2020/05/kernel-composure/">Introducing Kernel Composure</a></h1>
+            
+        
+        
+            <p>Parsing Kernel Panic logs on macOS 10.15.x</p>
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2020-05-17'>
+            May 17, 2020</time>
+        
+        <span class="author"><a href="https://github.com/TSPARR">Tyler Sparr</a></span>
+        
+        
+            <p>13 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+    
+    <section id="social-share">
+        <ul class="icons">
+            
+
+
+<li><a href="//twitter.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f&text=Introducing%20Kernel%20Composure&via=encoretechcincy" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f&title=Introducing%20Kernel%20Composure" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f&title=Introducing%20Kernel%20Composure" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f&title=Introducing%20Kernel%20Composure" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by Tyler%20Sparr&body=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+    
+
+    
+
+    <div id="content">
+        
+
+<p>In this post we will be explaining how we have created an application for macOS to help administrators quickly parse logs generated by kernel panics on macOS 10.15. Kernel panics can result in a less than ideal experience for users, but administrators can now keep their cool and stay composed when troubleshooting by using Encore&rsquo;s Kernel Composure. The code that makes all of this work is at the bottom of this article.</p>
+
+<h2 id="background">Background</h2>
+
+<p>For those unfamiliar, kernel panics on macOS are the equivalent of the Windows &ldquo;Blue Screen of Death&rdquo;. It&rsquo;s a full crash of your computer followed by a black screen with the message &ldquo;You need to restart your computer. Hold down the Power button for several seconds or press the Restart button.&rdquo; displayed in several different languages. While kernel panics are becoming less common due to Apple&rsquo;s limiting of kernel extensions, they are unfortunately still a reality for macOS administrators.</p>
+
+<p>When a macOS computer kernel panics, a log is generated and stored in <strong>/Library/Logs/DiagnosticReports</strong> in the format of <strong>Kernel_{date of error}_{computer name}</strong>. For most recent versions of OS X/macOS, those files were easy to open up and quickly determine what caused the issue. Beginning with macOS 10.15, the format of the logs was drastically changed. While this has made it harder to open them and review, it has made them much easier to automatically parse.</p>
+
+<h2 id="overview-of-solution">Overview of Solution</h2>
+
+<p>Our parser is written entirely in Python using v3 syntax and relies on the following modules:
+  * <a href="https://pypi.org/project/PyQt5/">PyQT5</a>
+  * <a href="https://pypi.org/project/py2app/">py2app</a>
+  * <a href="https://pypi.org/project/darkdetect/">darkdetect</a>
+  * <a href="https://pypi.org/project/QDarkStyle/">qdarkstyle</a>
+  * <a href="https://pypi.org/project/argparse/">argparse</a> - <em>Command line version only</em></p>
+
+<p>The Python script to parse these logs can be run directly from the command line, but macOS does not include Python 3 by default. In order to bundle up our Python framework and all of our dependencies, we use the excellent tool py2app. This allows us to build a complete application which means the administrator does not need to install any dependencies to use it. Additionally, we are able to use PyQT5 to build a GUI to make everything more accessible to those who aren&rsquo;t comfortable with the command line. You can even deploy the application to your users to help you gather initial information on kernel panics before digging in.</p>
+
+<p>This isn&rsquo;t supposed to be necessary according to <a href="https://www.learnpyqt.com/blog/macos-mojave-dark-mode-support-pyqt5122/">https://www.learnpyqt.com/blog/macos-mojave-dark-mode-support-pyqt5122/</a>, but we found that this was not our experience. So in order to provide support for those who prefer to work in Dark Mode on macOS 10.14+, we use <code>darkdetect</code> to check which theme you&rsquo;re on and <code>qdarkstyle</code> to properly give our app a Dark Mode theme.</p>
+
+<h2 id="code-aka-the-meat">Code AKA The Meat</h2>
+
+<h3 id="command-line-version">Command Line Version</h3>
+
+<p>Let&rsquo;s start with the completely standalone version. This is in Py3 syntax, but only requires <code>argparse</code> as an additional module. It does no formatting and only presents the information in a more readable fashion. This could be written in pure Py2 syntax using sys.argv, but as Python is slated to be removed from macOS in a future version, we believe it&rsquo;s worth moving to Python 3 now.</p>
+
+<pre><code>#!/usr/bin/env python3
+
+import argparse
+import json
+import re
+
+
+# Parses a given log file for every match of a specific regex
+def parse_log_file(log_file_path, regex):
+    match_list = []
+    with open(log_file_path, &quot;r&quot;) as log_file:
+        content = log_file.read().splitlines()
+
+    for line in content:
+        for match in re.finditer(regex, line, re.S):
+            match_text = match.group()
+            match_list.append(match_text)
+
+    return match_list
+
+
+def main():
+    kernel_panic = parse_log_file(log_file_path, regex)
+
+    initial_info = json.loads(kernel_panic[0])
+
+    for key, value in initial_info.items():
+        print(f&quot;{key}: {value}&quot;)
+
+    panic_json = json.loads(kernel_panic[1])
+
+    print(panic_json[&quot;macOSPanicString&quot;])
+
+
+if __name__ == &quot;__main__&quot;:
+    parser = argparse.ArgumentParser(description=&quot;Kernel Panic Log Path&quot;)
+    parser.add_argument(
+        &quot;log_file_path&quot;,
+        type=str,
+        help=&quot;Kernel Panic Log Path i.e. /Library/Logs/DiagnosticReports/Kernel_2020-03-09-135527_Test-Mac.panic&quot;,
+    )
+    args = parser.parse_args()
+
+    regex = r&quot;\{(.*?)\}&quot;
+    log_file_path = f&quot;{args.log_file_path}&quot;
+
+    main()
+</code></pre>
+
+<h3 id="gui-version">GUI Version</h3>
+
+<p>By using PyQT5, we can add a GUI to our Python script. This is fully cross-platform, so as long as the modules are installed and you can get the <strong>.panic</strong> files transferred over, this can even be given to Windows administrators for usage.</p>
+
+<pre><code>#!/usr/bin/env python3
+
+import json
+import os
+import re
+import sys
+
+import darkdetect
+import qdarkstyle
+from PyQt5.QtCore import QDir
+from PyQt5.QtWidgets import (
+    QApplication,
+    QFileDialog,
+    QLabel,
+    QPushButton,
+    QTextEdit,
+    QVBoxLayout,
+    QWidget,
+)
+
+
+class kernelcomposure(QWidget):
+    def __init__(self, parent=None):
+        super(kernelcomposure, self).__init__(parent)
+
+        layout = QVBoxLayout()
+        self.btn = QPushButton(&quot;Browse for Kernel Panic log&quot;)
+        self.btn.clicked.connect(self.getfile)
+
+        layout.addWidget(self.btn)
+        self.le = QLabel(&quot;Kernel Composure&quot;)
+
+        self.contents = QTextEdit()
+        self.contents.setReadOnly(True)
+        layout.addWidget(self.contents)
+        self.setLayout(layout)
+        self.setWindowTitle(&quot;Kernel Composure&quot;)
+
+    # Parses a given log file for every match of a specific regex
+    def parse_log_file(self, log_file_path, regex):
+        match_list = []
+        with open(log_file_path, &quot;r&quot;) as log_file:
+            content = log_file.read().splitlines()
+
+        for line in content:
+            for match in re.finditer(regex, line, re.S):
+                match_text = match.group()
+                match_list.append(match_text)
+
+        return match_list
+
+    def getfile(self):
+        fname = QFileDialog.getOpenFileName(
+            self, &quot;Open file&quot;, &quot;/&quot;, &quot;Kernel Panic Files (*.panic)&quot;
+        )
+
+        log_file_path = fname[0]
+
+        if not os.path.exists(log_file_path):
+            self.contents.setText(&quot;Please select a valid Kernel Panic log.&quot;)
+        else:
+            self.parsefile(fname[0])
+
+    def parsefile(self, log_file_path):
+        regex = r&quot;\{(.*?)\}&quot;
+
+        kernel_panic = self.parse_log_file(log_file_path, regex)
+
+        try:
+            initial_info = json.loads(kernel_panic[0])
+
+            for key, value in initial_info.items():
+                if key == list(initial_info.keys())[0]:
+                    panic_info = (
+                        f&quot;&lt;b&gt;{key}:&lt;/b&gt; &lt;br&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {value} &lt;br&gt;&quot;
+                    )
+                else:
+                    panic_info = f&quot;{panic_info} &lt;br&gt; &lt;b&gt;{key}:&lt;/b&gt; &lt;br&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {value} &lt;br&gt;&quot;
+
+            panic_json = json.loads(kernel_panic[1])
+
+            macOSPanicString = panic_json[&quot;macOSPanicString&quot;]
+
+            panic_info = (
+                f&quot;{panic_info} &lt;br&gt; &lt;b&gt;Kernel Extensions in backtrace:&lt;/b&gt; &lt;br&gt;&quot;
+            )
+
+            backtrace = False
+            for line in macOSPanicString.splitlines():
+                if &quot;Kernel Extensions in backtrace&quot; in line:
+                    backtrace = True
+                    continue
+                elif &quot;BSD process name corresponding to current thread&quot; in line:
+                    backtrace = False
+                    process_name = line.split(&quot;:&quot;, 1)[1]
+                    panic_info = f&quot;{panic_info} &lt;b&gt;Last process before crash:&lt;/b&gt; {process_name} &lt;br&gt;&quot;
+                    continue
+                elif backtrace and &quot;dependency&quot; not in line:
+                    panic_info = f&quot;{panic_info} {line.strip()} &lt;br&gt;&quot;
+                elif backtrace and &quot;dependency&quot; in line:
+                    panic_info = (
+                        f&quot;{panic_info} &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {line.strip()} &lt;br&gt;&quot;
+                    )
+
+            html_panic_string = macOSPanicString.replace(&quot;\n&quot;, &quot;&lt;br&gt;&quot;)
+
+            panic_info = (
+                f&quot;{panic_info} &lt;br&gt; &lt;b&gt;Full Panic String:&lt;/b&gt; &lt;br&gt; {html_panic_string}&quot;
+            )
+
+            self.contents.setText(panic_info)
+
+        except IndexError:
+
+            self.contents.setText(
+                &quot;Currently I can only parse Kernel Panic logs generated from macOS 10.15.x&quot;
+            )
+
+
+def main():
+    app = QApplication(sys.argv)
+    ex = kernelcomposure()
+    ex.resize(950, 500)
+    if len(sys.argv) &gt; 1:
+        ex.parsefile(sys.argv[1])
+    if darkdetect.isDark():
+        ex.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
+    ex.show()
+    sys.exit(app.exec_())
+
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+
+<h3 id="python-application">Python Application</h3>
+
+<p>Next we come to the native macOS application. This allows us to provide a native GUI and a fully standalone application designed to be easy to use for anyone. In order for py2app to build the application, we first need to generate a <strong>setup.py</strong> file. A base version can be generated from within the working directly by using <code>py2applet</code> which is included within the <code>py2app</code> module. A good breakdown of using it yourself is found <a href="https://py2app.readthedocs.io/en/latest/tutorial.html#create-a-setup-py-file">here</a>. Our <strong>setup.py</strong> is as follows:</p>
+
+<pre><code>&quot;&quot;&quot;
+This is a setup.py script generated by py2applet
+
+Usage:
+    python setup.py py2app
+&quot;&quot;&quot;
+
+from setuptools import setup
+
+APP = [&quot;./src/main/python/main.py&quot;]
+DATA_FILES = []
+OPTIONS = {
+    &quot;argv_emulation&quot;: True,
+    &quot;iconfile&quot;: &quot;kp.icns&quot;,
+    &quot;plist&quot;: {
+        &quot;CFBundleName&quot;: &quot;Kernel Composure&quot;,
+        &quot;CFBundleDisplayName&quot;: &quot;Kernel Composure&quot;,
+        &quot;CFBundleGetInfoString&quot;: &quot;Kernel Composure&quot;,
+        &quot;CFBundleIdentifier&quot;: &quot;com.encore.kernelcomposure&quot;,
+        &quot;CFBundleVersion&quot;: &quot;0.2.0&quot;,
+        &quot;CFBundleShortVersionString&quot;: &quot;0.2.0&quot;,
+        &quot;NSHumanReadableCopyright&quot;: u&quot;Copyright © 2020, Encore Technologies, All Rights Reserved&quot;,
+        &quot;CFBundleTypeExtensions&quot;: [&quot;panic&quot;],
+    },
+}
+
+setup(
+    app=APP,
+    data_files=DATA_FILES,
+    options={&quot;py2app&quot;: OPTIONS},
+    setup_requires=[&quot;py2app&quot;],
+)
+</code></pre>
+
+<p>After generating your <strong>setup.py</strong>, you finish your application build by running:</p>
+
+<pre><code>python setup.py py2app
+</code></pre>
+
+<p>This will result in your <strong>.app</strong> being built within the <strong>dist</strong> folder of your working directory.</p>
+
+<h2 id="swift-application">Swift application</h2>
+
+<p>Finally, we decided to rewrite the app in Swift to stay entirely within the native Apple tools. One of the biggest reasons for this change is that the app doesn&rsquo;t need to include the entire Python 3 framework inside of it. This brought the size of the app down from ~135 MB to less than 400 KB while maintaining all of the same functionality. This size went up after changing the deployment target from macOS 10.15 to macOS 10.13 due to some needed Swift inclusions, but is still much smaller than the comparable Python app. Due to the nature of storyboards, it&rsquo;s hard to accurately show all of the code within this blogpost, but the AppDelegate.swift and ViewController.swift are shown below:</p>
+
+<h3 id="appdelegate">AppDelegate</h3>
+
+<pre><code class="language-//">//  AppDelegate.swift
+//  Kernel Composure
+//
+//  Created by Tyler Sparr on 5/17/20.
+//  Copyright © 2020 Encore Technologies. All rights reserved.
+//
+
+import Cocoa
+
+@NSApplicationMain
+class AppDelegate: NSObject, NSApplicationDelegate {
+
+    var filename: String = &quot;&quot;
+
+//  Accepts a file via &quot;Open With&quot; and does an automatic parsing run
+    func application(_ sender: NSApplication, openFile filename: String) -&gt; Bool {
+        self.filename = filename
+        let fileUrl = URL(fileURLWithPath: filename)
+        guard let main = NSApp.mainWindow?.contentViewController as! ViewController? else { return true }
+        main.automatic_run(fileUrl)
+        return true
+    }
+
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        // Insert code here to initialize your application
+    }
+
+    func applicationWillTerminate(_ aNotification: Notification) {
+        // Insert code here to tear down your application
+    }
+
+
+}
+</code></pre>
+
+<h3 id="viewcontroller">ViewController</h3>
+
+<pre><code>//
+//  ViewController.swift
+//  Kernel Composure
+//
+//  Created by Tyler Sparr on 5/17/20.
+//  Copyright © 2020 Encore Technologies. All rights reserved.
+//
+
+import Cocoa
+
+class ViewController: NSViewController {
+
+//  Defines our button at the top of the window
+    @IBOutlet weak var kernelPanicSelection: NSButton!
+
+//  Defines the box where we output our text
+    @IBOutlet weak var kernelPanicText: NSTextView!
+
+//  Action connected to our button, opens file selection
+    @IBAction func handleKernelPanicSelection(_ sender: Any) {
+        let dialog = NSOpenPanel();
+
+        dialog.title                   = &quot;Choose the Kernel Panic log&quot;;
+        dialog.showsResizeIndicator    = true;
+        dialog.showsHiddenFiles        = false;
+        dialog.allowsMultipleSelection = false;
+        dialog.canChooseDirectories = false;
+        dialog.allowedFileTypes        = [&quot;panic&quot;];
+
+        if (dialog.runModal() ==  NSApplication.ModalResponse.OK) {
+            let result = dialog.url
+
+            if (result != nil) {
+
+                basic_parse_kernel_panic(file_name: result!)
+
+            }
+
+        } else {
+            // User clicked on &quot;Cancel&quot;
+            return
+        }
+    }
+
+//  Action connected to View - &gt; Show Advanced menu button
+    @IBAction func handleAdvancedViewSelection(_ sender: Any) {
+//      Check if there's already text in our view
+        let panic_string = (kernelPanicText.textStorage as NSAttributedString?)?.string
+
+//      If there's text, pull the filename and reparse gathering and displaying all info
+        if panic_string != nil {
+            let lines = panic_string!.split(whereSeparator: \.isNewline)
+            let filename = lines[1].trimmingCharacters(in: .whitespaces)
+            let fileUrl = URL(fileURLWithPath: filename)
+
+            advanced_parse_kernel_panic(file_name: fileUrl)
+
+            }
+        else {
+            return
+        }
+    }
+
+//  Action connected to Help -&gt; Kernel Composure Help menu button
+    @IBAction func getMoreInfo(_ sender: Any) {
+        let url = URL(string: &quot;https://developer.apple.com/library/archive/technotes/tn2063/_index.html&quot;)!
+        NSWorkspace.shared.open(url)
+    }
+
+//  This is called from AppDelegate.swift if the file is opened by &quot;Open With&quot;
+//  rather than via our GUI button
+    func automatic_run(_ filename: URL) {
+
+        basic_parse_kernel_panic(file_name: filename)
+
+    }
+
+//  Make sure we start off with a blank, uneditable view that supports rich text
+    func setupUI() {
+        kernelPanicText.string = &quot;&quot;
+        kernelPanicText.isEditable = false
+        kernelPanicText.isRichText = true
+    }
+
+//  Reads the file line by line and adds the lines to an array
+    func loadFile(file_path:URL) -&gt;  Array&lt;String&gt;{
+        var panic_log_lines: [String] = []
+        let path:String = file_path.path
+        let reader = LineReader(path: path)
+        for line in reader! {
+            panic_log_lines.append(line)
+        }
+        return panic_log_lines
+    }
+
+//  Parse the first line of the Kernel Panic log and return it as a JSON object
+    func get_initial_info(panic_log_lines:Array&lt;String&gt;) -&gt; JSON{
+        let initial_info = panic_log_lines[0]
+        let json = JSON.init(parseJSON:initial_info)
+
+        return(json)
+    }
+
+//  Parse the second line of the Kernel Panic log and return it as a JSON object
+    func get_panic_string(panic_log_lines:Array&lt;String&gt;) -&gt; JSON{
+        let panic_string = panic_log_lines[1]
+        let json = JSON.init(parseJSON:panic_string)
+
+        return(json)
+    }
+
+//  Get the kernel extensions in backtrace via brute force text parsing
+    func get_backtrace(panic_string:JSON) -&gt; Array&lt;String&gt;{
+        var process_info: [String] = []
+        let panic_string = panic_string[&quot;macOSPanicString&quot;].stringValue
+        let lines = panic_string.split(whereSeparator: \.isNewline)
+
+//      Find where the backtrace starts
+        let backtraceIndex = lines.firstIndex(of: &quot;      Kernel Extensions in backtrace:&quot;)!
+
+        for line in lines {
+//          Find where the backtrace ends
+            if line.contains(&quot;BSD process name corresponding to current thread&quot;) {
+                let process_name_line = lines.firstIndex(of: line)
+
+//              Copy everything in between the two lines to get our full backtrace
+                let backtrace_values = lines[backtraceIndex..&lt;process_name_line!]
+                for line in backtrace_values {
+//                  Bold the first line in the backtrace
+                    if backtrace_values.first == line {
+                        let stripped_line = line.trimmingCharacters(in: .whitespaces)
+                        process_info.append(&quot;&lt;b&gt;\(stripped_line)&lt;/b&gt;&quot;)
+                    }
+//                  Indent all dependencies
+                    if line.contains(&quot;dependency&quot;){
+                        let stripped_line = line.trimmingCharacters(in: .whitespaces)
+                        process_info.append(&quot;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;\(stripped_line)&lt;br&gt;&quot;)
+                    } else {
+                    let stripped_line = line.trimmingCharacters(in: .whitespaces)
+                    process_info.append(&quot;\(stripped_line)&lt;br&gt;&quot;)
+                    }
+                }
+//              Get the process name by splitting by colon
+                let process_name = line.components(separatedBy: &quot;:&quot;)
+                let process_name_txt = process_name[1]
+                process_info.append(&quot;&lt;br&gt;&lt;br&gt;&lt;b&gt;Last process before crash:&lt;/b&gt; \(process_name_txt)&lt;br&gt;&quot;)
+            }
+        }
+        return process_info
+    }
+
+//  Build our basic output with all of the necessary HTML formatting
+    func build_initial_output(file_name: URL, initial_info:JSON, panic_string:JSON, process_info:Array&lt;String&gt;) -&gt; NSAttributedString{
+        var initial_output: [String] = []
+        let path:String = file_name.path
+        initial_output.append(&quot;&lt;b&gt;filename:&lt;/b&gt; &lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;\(path)&lt;br&gt;&quot;)
+        let timestamp = initial_info[&quot;timestamp&quot;].stringValue
+        initial_output.append(&quot;&lt;b&gt;timestamp:&lt;/b&gt; &lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;\(timestamp)&lt;br&gt;&quot;)
+        let bug_type = initial_info[&quot;bug_type&quot;].stringValue
+        initial_output.append(&quot;&lt;b&gt;bug_type:&lt;/b&gt; &lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;\(bug_type)&lt;br&gt;&quot;)
+        let os_version = initial_info[&quot;os_version&quot;].stringValue
+        initial_output.append(&quot;&lt;b&gt;os_version:&lt;/b&gt; &lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;\(os_version)&lt;br&gt;&quot;)
+
+        let initial_output_text = initial_output.joined(separator: &quot;\n&quot;)
+
+        var process_text = process_info.joined(separator: &quot;,&quot;)
+        process_text = process_text.replacingOccurrences(of: &quot;,&quot;, with: &quot;&quot;, options: NSString.CompareOptions.literal, range:nil)
+
+        let full_panic_text = initial_output_text + &quot;&lt;br&gt;&lt;br&gt;&quot; + process_text
+
+//      We need to convert from String to Data to use HTML formatting
+        let panic_html = full_panic_text.data(using: .utf8)!
+
+//      Tell it we want our Data to be parsed as HTML and make it mutable
+        let formatted_panic = NSMutableAttributedString(html: panic_html, documentAttributes: nil)!
+
+//      We need to get the full length so we can apply formatting to the whole string
+        let panic_range = NSMakeRange(0, formatted_panic.length)
+
+//      This is necessary for automatic Dark Mode support
+        formatted_panic.addAttribute(.foregroundColor, value: NSColor.textColor, range: panic_range)
+
+        return formatted_panic
+    }
+
+//  Build our entire output with necessary HTML formatting
+    func build_full_output(file_name: URL, initial_info:JSON, panic_string:JSON, process_info:Array&lt;String&gt;) -&gt; NSAttributedString{
+        var initial_output: [String] = []
+        let path:String = file_name.path
+        initial_output.append(&quot;&lt;b&gt;filename:&lt;/b&gt; &lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;\(path)&lt;br&gt;&quot;)
+        let timestamp = initial_info[&quot;timestamp&quot;].stringValue
+        initial_output.append(&quot;&lt;b&gt;timestamp:&lt;/b&gt; &lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;\(timestamp)&lt;br&gt;&quot;)
+        let bug_type = initial_info[&quot;bug_type&quot;].stringValue
+        initial_output.append(&quot;&lt;b&gt;bug_type:&lt;/b&gt; &lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;\(bug_type)&lt;br&gt;&quot;)
+        let os_version = initial_info[&quot;os_version&quot;].stringValue
+        initial_output.append(&quot;&lt;b&gt;os_version:&lt;/b&gt; &lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;\(os_version)&lt;br&gt;&quot;)
+
+        let initial_output_text = initial_output.joined(separator: &quot;\n&quot;)
+
+        var process_text = process_info.joined(separator: &quot;,&quot;)
+        process_text = process_text.replacingOccurrences(of: &quot;,&quot;, with: &quot;&quot;, options: NSString.CompareOptions.literal, range:nil)
+
+        var panic_string = panic_string[&quot;macOSPanicString&quot;].stringValue
+        panic_string = panic_string.replacingOccurrences(of: &quot;\n&quot;, with: &quot;&lt;br&gt;&quot;, options: NSString.CompareOptions.literal, range:nil)
+
+        while panic_string.hasSuffix(&quot;&lt;br&gt;&quot;){
+            panic_string = String(panic_string.dropLast(4))
+        }
+
+        let full_panic_text = initial_output_text + &quot;&lt;br&gt;&lt;br&gt;&quot; + process_text + &quot;&lt;br&gt;&lt;br&gt;&quot; + &quot;&lt;b&gt;Full Panic String:&lt;/b&gt;&lt;br&gt;&quot; + panic_string
+
+//      We need to convert from String to Data to use HTML formatting
+        let panic_html = full_panic_text.data(using: .utf8)!
+
+//      Tell it we want our Data to be parsed as HTML and make it mutable
+        let formatted_panic = NSMutableAttributedString(html: panic_html, documentAttributes: nil)!
+
+//      We need to get the full length so we can apply formatting to the whole string
+        let panic_range = NSMakeRange(0, formatted_panic.length)
+
+//      This is necessary for automatic Dark Mode support
+        formatted_panic.addAttribute(.foregroundColor, value: NSColor.textColor, range: panic_range)
+
+        return formatted_panic
+    }
+
+//  Combines all of our basic parsing functions together for initial output
+    func basic_parse_kernel_panic(file_name: URL) {
+        let panic_text_array = loadFile(file_path: file_name)
+
+        let initial_info = get_initial_info(panic_log_lines: panic_text_array)
+
+        if initial_info != JSON.null {
+            let panic_string = get_panic_string(panic_log_lines: panic_text_array)
+
+            let process_info = get_backtrace(panic_string: panic_string)
+
+            let initial_output = build_initial_output(file_name: file_name, initial_info: initial_info, panic_string: panic_string, process_info: process_info)
+
+            kernelPanicText.textStorage?.setAttributedString(initial_output)
+
+        } else {
+            kernelPanicText.string = &quot;Currently I can only parse Kernel Panic logs generated from macOS 10.15.x. Please select a different log.&quot;
+            return
+        }
+    }
+
+//  Combines all parsing functions together for full output
+    func advanced_parse_kernel_panic(file_name: URL) {
+        let panic_text_array = loadFile(file_path: file_name)
+
+        let initial_info = get_initial_info(panic_log_lines: panic_text_array)
+
+        if initial_info != JSON.null {
+            let panic_string = get_panic_string(panic_log_lines: panic_text_array)
+
+            let process_info = get_backtrace(panic_string: panic_string)
+
+            let full_output = build_full_output(file_name: file_name, initial_info: initial_info, panic_string: panic_string, process_info: process_info)
+
+            kernelPanicText.textStorage?.setAttributedString(full_output)
+
+            } else {
+                kernelPanicText.string = &quot;Currently I can only parse Kernel Panic logs generated from macOS 10.15.x. Please select a different log.&quot;
+                return
+            }
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+// Do any additional setup after loading the view.
+// Default function, we're not using
+    }
+
+//  Just does our initial UI setup
+    override func viewWillAppear() {
+        super.viewWillAppear()
+
+        setupUI()
+    }
+
+    override var representedObject: Any? {
+        didSet {
+// Update the view, if already loaded.
+// Default function, we're not using
+        }
+    }
+
+
+}
+</code></pre>
+
+<h2 id="summary">Summary</h2>
+
+<p>This was a real problem we needed to solve for our team and as strong supporters and contributors to the open source community, we wanted to make sure everyone could benefit from our work. We hope the community finds it useful. You can download the latest release at <a href="https://github.com/EncoreTechnologies/swift-KernelComposure/releases">https://github.com/EncoreTechnologies/swift-KernelComposure/releases</a> and we encourage comments, issues, PRs, etc.</p>
+
+    </div>
+
+    <footer>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-sitemap">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/tyler-sparr'>Tyler Sparr</a></li>
+    
+        <li><a href='/categories/encore'>Encore</a></li>
+    
+        <li><a href='/categories/macos'>macOS</a></li>
+    
+        <li><a href='/categories/python'>Python</a></li>
+    
+        <li><a href='/categories/swift'>Swift</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+<ul class="actions pagination">
+    
+        <li><a href="https://encoretechnologies.github.io/blog/2020/05/chatops_vmware_host_log_collection/"
+                class="button big previous">Utilizing Chatops for VMWare Support Cases</a></li>
+    
+
+    
+</ul>
+
+
+
+    
+        <article class="post">
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "encoretechnologies" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </article>
+    
+
+
+
+    </div>
+    
+<section id="sidebar">
+
+    
+        <section id="intro">
+            
+            
+                
+                    <img src="/img/main/encore_logo_small.png" width="300" alt="Hugo Future Imperfect" />
+                
+            
+            
+                <header>
+                    <h2>DevOps Blog</h2>
+                    <p>Blog about everything DevOps, automation, virtualization and cloud</p>
+                </header>
+            
+            <ul class="icons">
+                
+                
+                    
+<li><a href="http://encore.tech/" target="_blank" title="Website" class="fa fa-globe"></a></li>
+
+
+
+<li><a href="//github.com/EncoreTechnologies" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/company/encoretechnologies" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//facebook.com/EncoreTechnologies" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+<li><a href="//twitter.com/encoretechcincy" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <ul class="posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="https://encoretechnologies.github.io/blog/2020/05/kernel-composure/">Introducing Kernel Composure</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-05-17'>
+                                    May 17, 2020</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="https://encoretechnologies.github.io/blog/2020/05/chatops_vmware_host_log_collection/">Utilizing Chatops for VMWare Support Cases</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-05-07'>
+                                    May 7, 2020</time>
+                            </header>
+                        </article>
+                    </li>
+                
+
+                
+                    <li>
+                        <ul class="actions">
+                            <li><a href=
+                            
+                                /blog/
+                            
+                            class="button">View more posts</a></li>
+                        </ul>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+    
+    
+    
+        <section id="categories">
+            <ul class="posts">
+                <header>
+                    <h3><a href="/categories/">Categories</a></h3>
+                </header>
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/encore/">encore</a>
+                                <span style="float:right;">9</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/nick-maludy/">nick-maludy</a>
+                                <span style="float:right;">4</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/stackstorm/">stackstorm</a>
+                                <span style="float:right;">4</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/vmware/">vmware</a>
+                                <span style="float:right;">4</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/automation/">automation</a>
+                                <span style="float:right;">3</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/devops/">devops</a>
+                                <span style="float:right;">3</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/ansible/">ansible</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/bradley-bishop/">bradley-bishop</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/brian-alcorn/">brian-alcorn</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/esxi/">esxi</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/greg-perry/">greg-perry</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/john-schoewe/">john-schoewe</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/patch/">patch</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/patching/">patching</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/python/">python</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/pyvmomi/">pyvmomi</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/afinity-rule/">afinity-rule</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/bolt/">bolt</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/chatops/">chatops</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/controllers/">controllers</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/disks/">disks</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/duo/">duo</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/end-user-compute/">end-user-compute</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/inquiries/">inquiries</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/iscsi/">iscsi</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/life/">life</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/logs/">logs</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/macos/">macos</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/pack/">pack</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/pat-coughlin/">pat-coughlin</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/puppet/">puppet</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/storage/">storage</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/swift/">swift</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/tyler-sparr/">tyler-sparr</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+            </ul>
+        </section>
+    
+
+    
+        
+        <section class="blurb">
+            <h2>About</h2>
+            <p>Encore Technologies helps companies automate and accelerate their IT environments</p>
+
+            <ul class="actions">
+                <li><a href="/about/" class="button">Learn More</a></li>
+            </ul>
+        </section>
+        
+
+    
+        <section id="footer">
+            <ul class="icons">
+                
+                
+                    
+<li><a href="http://encore.tech/" target="_blank" title="Website" class="fa fa-globe"></a></li>
+
+
+
+<li><a href="//github.com/EncoreTechnologies" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/company/encoretechnologies" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//facebook.com/EncoreTechnologies" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+<li><a href="//twitter.com/encoretechcincy" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+                
+            </ul>
+
+            <p class="copyright">&copy; 2020 Encore Technologies - DevOps Blog. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        </section>
+
+</section>
+
+      </div>
+      <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+      
+
+      
+        
+      
+
+      
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script>
+        <script src="/js/util.js"></script>
+        <script src="/js/main.js"></script>
+        <script src="/js/backToTop.js"></script>
+      
+
+      
+
+      
+      <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>
+

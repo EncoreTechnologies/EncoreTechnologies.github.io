@@ -49,7 +49,7 @@
 
 <meta property="og:image" content="https://encoretechnologies.github.io/img/main/encore_power_button_small.png" />
 
-<meta property="og:updated_time" content="2020-05-07T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-05-17T00:00:00+00:00" />
 
         <meta itemprop="name" content="Encore Technologies - DevOps Blog">
 <meta itemprop="description" content="Blog about everything DevOps">
@@ -216,11 +216,11 @@ if (!doNotTrack) {
 
                 
                     <li>
-                        <a href="https://encoretechnologies.github.io/blog/2020/05/chatops_vmware_host_log_collection/"><p>Utilizing Chatops for VMWare Support Cases</p></a>
+                        <a href="https://encoretechnologies.github.io/blog/2020/05/kernel-composure/"><p>Introducing Kernel Composure</p></a>
                     </li>
                 
                     <li>
-                        <a href="https://encoretechnologies.github.io/blog/2020/03/vmware-iscsi-timeout/"><p>Changing iSCSI LoginTimeout with PowerCLI</p></a>
+                        <a href="https://encoretechnologies.github.io/blog/2020/05/chatops_vmware_host_log_collection/"><p>Utilizing Chatops for VMWare Support Cases</p></a>
                     </li>
                 
             </ul>
@@ -237,23 +237,23 @@ if (!doNotTrack) {
     <header>
     <div class="title">
         
-            <h2><a href="https://encoretechnologies.github.io/blog/2020/05/chatops_vmware_host_log_collection/">Utilizing Chatops for VMWare Support Cases</a></h2>
+            <h2><a href="https://encoretechnologies.github.io/blog/2020/05/kernel-composure/">Introducing Kernel Composure</a></h2>
         
         
-            <p>How Encore is Utilizing Chatops for VMWare Support Cases</p>
+            <p>Parsing Kernel Panic logs on macOS 10.15.x</p>
         
     </div>
     <div class="meta">
         
 
         <time class="published"
-            datetime='2020-05-07'>
-            May 7, 2020</time>
+            datetime='2020-05-17'>
+            May 17, 2020</time>
         
-        <span class="author"><a href="https://github.com/gsperry2011">Greg Perry</a></span>
+        <span class="author"><a href="https://github.com/TSPARR">Tyler Sparr</a></span>
         
         
-            <p>8 minute read</p>
+            <p>13 minute read</p>
         
         
     </div>
@@ -266,43 +266,43 @@ if (!doNotTrack) {
             
 
 
-<li><a href="//twitter.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fchatops_vmware_host_log_collection%2f&text=Utilizing%20Chatops%20for%20VMWare%20Support%20Cases&via=encoretechcincy" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f&text=Introducing%20Kernel%20Composure&via=encoretechcincy" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fchatops_vmware_host_log_collection%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fchatops_vmware_host_log_collection%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fchatops_vmware_host_log_collection%2f&title=Utilizing%20Chatops%20for%20VMWare%20Support%20Cases" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f&title=Introducing%20Kernel%20Composure" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fchatops_vmware_host_log_collection%2f&title=Utilizing%20Chatops%20for%20VMWare%20Support%20Cases" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f&title=Introducing%20Kernel%20Composure" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fchatops_vmware_host_log_collection%2f&title=Utilizing%20Chatops%20for%20VMWare%20Support%20Cases" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f&title=Introducing%20Kernel%20Composure" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by Greg%20Perry&body=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fchatops_vmware_host_log_collection%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by Tyler%20Sparr&body=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -316,320 +316,605 @@ if (!doNotTrack) {
     <div id="content">
         
 
-<p>In this post we will be explaining how we have created a chatops workflow that enables us to upload VMWare ESXi log bundles directly to a VMWare support case from our chat client of choice. The code that makes all of this work is at the bottom of this article.</p>
-
-<h2 id="chatops-introduction">Chatops Introduction</h2>
-
-<p>For the those who have never heard of chatops before; To me, it means the ability to call automation workflows from your favorite chat client. This means our automation team can code up a workflow and then connect it to a dedicated channel in slack where other engineers / admins can call these commands and pass parameters to them.</p>
-
-<p>There are a few things I find very cool about Chatops:
-- It allows administrators who don&rsquo;t understand code to leverage automation others have written
-- It enables us to do certain tasks from wherever we might be, on whatever device we have available. Ever wish you could upload VMWare logs from your cell phone after getting that email from support when you are out of the office?
-- It can be a huge time saver! No need to get on your laptop so you can 2FA into an environment. You&rsquo;d spend 10 minutes logging in to do a 5 minute job.</p>
+<p>In this post we will be explaining how we have created an application for macOS to help administrators quickly parse logs generated by kernel panics on macOS 10.15. Kernel panics can result in a less than ideal experience for users, but administrators can now keep their cool and stay composed when troubleshooting by using Encore&rsquo;s Kernel Composure. The code that makes all of this work is at the bottom of this article.</p>
 
 <h2 id="background">Background</h2>
 
-<p>Anyone who has ran a VMWare environment for some time knows that the first thing VMWare support will ask when you open a case is to upload a log bundle to them. Depending on the nature of the case you might need to extract log bundles from <em>ALL</em> of the hosts, in other cases you might need to extract a log bundle from the same host multiple times after a specific event has occurred.</p>
+<p>For those unfamiliar, kernel panics on macOS are the equivalent of the Windows &ldquo;Blue Screen of Death&rdquo;. It&rsquo;s a full crash of your computer followed by a black screen with the message &ldquo;You need to restart your computer. Hold down the Power button for several seconds or press the Restart button.&rdquo; displayed in several different languages. While kernel panics are becoming less common due to Apple&rsquo;s limiting of kernel extensions, they are unfortunately still a reality for macOS administrators.</p>
 
-<p>To collect a log bundle usually means:
-- Hopping into the jumpbox for the specific environment
-- Logging into the host(s) via SSH or logging into the vCenter console to generate the bundle
-- Uploading that bundle from your download location up to VMWare support.</p>
+<p>When a macOS computer kernel panics, a log is generated and stored in <strong>/Library/Logs/DiagnosticReports</strong> in the format of <strong>Kernel_{date of error}_{computer name}</strong>. For most recent versions of OS X/macOS, those files were easy to open up and quickly determine what caused the issue. Beginning with macOS 10.15, the format of the logs was drastically changed. While this has made it harder to open them and review, it has made them much easier to automatically parse.</p>
 
-<p>Not too challenging but definitely time consuming - and definitely something we can help automate!</p>
+<h2 id="overview-of-solution">Overview of Solution</h2>
 
-<h2 id="overview-of-chatops-action">Overview of Chatops Action</h2>
+<p>Our parser is written entirely in Python using v3 syntax and relies on the following modules:
+  * <a href="https://pypi.org/project/PyQt5/">PyQT5</a>
+  * <a href="https://pypi.org/project/py2app/">py2app</a>
+  * <a href="https://pypi.org/project/darkdetect/">darkdetect</a>
+  * <a href="https://pypi.org/project/QDarkStyle/">qdarkstyle</a>
+  * <a href="https://pypi.org/project/argparse/">argparse</a> - <em>Command line version only</em></p>
 
-<p>From a chatops perspective this is what the action looks like:</p>
+<p>The Python script to parse these logs can be run directly from the command line, but macOS does not include Python 3 by default. In order to bundle up our Python framework and all of our dependencies, we use the excellent tool py2app. This allows us to build a complete application which means the administrator does not need to install any dependencies to use it. Additionally, we are able to use PyQT5 to build a GUI to make everything more accessible to those who aren&rsquo;t comfortable with the command line. You can even deploy the application to your users to help you gather initial information on kernel panics before digging in.</p>
 
-<p><img src="/img/2020/05/slack_help_command.png" alt="help" /></p>
+<p>This isn&rsquo;t supposed to be necessary according to <a href="https://www.learnpyqt.com/blog/macos-mojave-dark-mode-support-pyqt5122/">https://www.learnpyqt.com/blog/macos-mojave-dark-mode-support-pyqt5122/</a>, but we found that this was not our experience. So in order to provide support for those who prefer to work in Dark Mode on macOS 10.14+, we use <code>darkdetect</code> to check which theme you&rsquo;re on and <code>qdarkstyle</code> to properly give our app a Dark Mode theme.</p>
 
-<p>Example of a run where I collect a log bundle from my-VMWare-host.fqdn.tld and upload it to case #12345678901:</p>
+<h2 id="code-aka-the-meat">Code AKA The Meat</h2>
 
-<p><img src="/img/2020/05/logupload_full.png" alt="help" /></p>
+<h3 id="command-line-version">Command Line Version</h3>
 
-<p>You might find it interesting that Dot Matrix (StackStorm) immediately queued my action when I called it, and it took about ~6 minutes for it to complete. You can see the timestamp of <code>05-06-2020@15:20</code> in the log bundle name, the time at which it was initiated (3:20PM). StackStorm took less than a minute to get from slack to the VMWare host!</p>
+<p>Let&rsquo;s start with the completely standalone version. This is in Py3 syntax, but only requires <code>argparse</code> as an additional module. It does no formatting and only presents the information in a more readable fashion. This could be written in pure Py2 syntax using sys.argv, but as Python is slated to be removed from macOS in a future version, we believe it&rsquo;s worth moving to Python 3 now.</p>
 
-<h2 id="chatops-tool-stack">Chatops Tool Stack</h2>
+<pre><code>#!/usr/bin/env python3
 
-<p>To create this chatops action we are using a combination of tools, nearly the entire list is open source software and can be downloaded for free:</p>
+import argparse
+import json
+import re
 
-<ul>
-<li>StackStorm - <a href="https://stackstorm.com/">https://stackstorm.com/</a>
 
-<ul>
-<li>Interpreting chatops commands entered in slack</li>
-<li>Posting the results of the workflow to the caller via slack</li>
-<li>Executing Bolt task</li>
-<li>Populates environment variables for use in Bolt task</li>
-</ul></li>
-<li>Puppet Bolt - <a href="https://puppet.com/docs/bolt/latest/bolt.html">https://puppet.com/docs/bolt/latest/bolt.html</a>
+# Parses a given log file for every match of a specific regex
+def parse_log_file(log_file_path, regex):
+    match_list = []
+    with open(log_file_path, &quot;r&quot;) as log_file:
+        content = log_file.read().splitlines()
 
-<ul>
-<li>Running the actual code that connects to the VMWare host, generates the bundle, uploads bundle to VMWare support</li>
-</ul></li>
-<li>Slack - <a href="https://slack.com/">https://slack.com/</a>
+    for line in content:
+        for match in re.finditer(regex, line, re.S):
+            match_text = match.group()
+            match_list.append(match_text)
 
-<ul>
-<li>Slack is our chat platform of choice. It has very nice integration available for Chatops.</li>
-</ul></li>
-</ul>
+    return match_list
 
-<h2 id="deep-dive">Deep Dive</h2>
 
-<p>If you&rsquo;re still reading by now I assume you are ready to see some code on how we put this together! To make things easier for you the general idea is: <code>shell script -&gt; bolt task -&gt; StackStorm action -&gt; StackStorm workflow -&gt; StackStorm alias</code></p>
+def main():
+    kernel_panic = parse_log_file(log_file_path, regex)
 
-<p>The steps involved in this shell script are:</p>
+    initial_info = json.loads(kernel_panic[0])
 
-<ul>
-<li>Generate and download a log bundle via API call at <code>https://ESXHostnameOrIPAddress/cgi-bin/vm-support.cgi</code> Explained here: <a href="https://kb.VMWare.com/s/article/1010705">https://kb.VMWare.com/s/article/1010705</a></li>
-<li>Initiate an SFTP connection to VMWare support</li>
-<li>Create a directory that matches our support case number.
+    for key, value in initial_info.items():
+        print(f&quot;{key}: {value}&quot;)
 
-<ul>
-<li>Unfortunately VMWare does not give us <code>ls</code> command access on the SFTP server so we can&rsquo;t check if this exists already, thankfully it&rsquo;s not show stopping if it does already exist.</li>
-</ul></li>
-<li>Upload our log bundle to said directory</li>
-<li>Clean up temporary bundle download location</li>
-</ul>
+    panic_json = json.loads(kernel_panic[1])
 
-<h3 id="bolt-task-code">Bolt task code</h3>
+    print(panic_json[&quot;macOSPanicString&quot;])
 
-<p>vmware_generate_and_upload_log_bundle.sh:</p>
 
-<p>This is the shell script that does the majority of the work:</p>
+if __name__ == &quot;__main__&quot;:
+    parser = argparse.ArgumentParser(description=&quot;Kernel Panic Log Path&quot;)
+    parser.add_argument(
+        &quot;log_file_path&quot;,
+        type=str,
+        help=&quot;Kernel Panic Log Path i.e. /Library/Logs/DiagnosticReports/Kernel_2020-03-09-135527_Test-Mac.panic&quot;,
+    )
+    args = parser.parse_args()
 
-<p>Note: All variables starting with <code>$PT_</code> are supplied via bolt.</p>
+    regex = r&quot;\{(.*?)\}&quot;
+    log_file_path = f&quot;{args.log_file_path}&quot;
 
-<pre><code>#!/bin/bash
-# Download log bundle from esx host API to the download directory and then upload it to
-# VMWare support's SFTP site.
-
-# Determine if a download directory was specified via bolt. Download directory is
-# the location the log bundle is downloaded to on the system that runs this script. 
-if [ -z ${PT_download_directory+x} ]
-then
-    download_directory=/tmp/
-else
-    download_directory=&quot;$PT_download_directory&quot;
-fi
-
-# EX: DD-MM-YYYY@HH:MM
-curr_datetime=$(date +&quot;%d-%m-%Y@%H:%M&quot;)
-
-# EX: my-vmware-host.fqdn.tld_DD-MM-YY@HH:MM.zip
-filename=&quot;${PT_esx_host}_${curr_datetime}.tgz&quot;
-
-# EX: /tmp/my-vmware-host.fqdn.tld_DD-MM-YY@HH:MM.zip
-filename_with_path=&quot;${download_directory}${filename}&quot;
-
-# Checking HTTP status of the host before we attempt to collect logs.
-# We cannot curl vmhost/cgi-bin/vm-support.cgi or it will trigger a log collection and our actual log collection
-# curl we have after this check will fail - you will get a 409 return code.
-http_code=$(curl --insecure -u $PT_esx_username:$PT_esx_password -s -o /dev/null -I -w &quot;%{http_code}&quot; https://$PT_esx_host)
-
-if [ &quot;$http_code&quot; == '200' ]
-then
-    # Download log bundle from esx host API to the download directory
-    # EX: curl -s --insecure -u username:password https://vmhost.fqdn.tld/cgi-bin/vm-support.cgi -o /tmp/vmhost.fqdn.tld_DD-MM-YYYY@HH:MM.gzip
-    curl -sS --insecure -u $PT_esx_username:$PT_esx_password https://$PT_esx_host/cgi-bin/vm-support.cgi -o $filename_with_path
-else
-    echo &quot;ERROR: Got http status of ${http_code} from https://${PT_esx_host}/cgi-bin/vm-support.cgi - Bailing!&quot;
-    exit 1
-fi
-
-# The hostname of the system where the download will be stored
-hostname=$(hostname)
-
-# Verify we can locate the specified log file (sanity checking vmware)
-if [ ! -f &quot;$filename_with_path&quot; ]
-then
-    echo &quot;ERROR: Unable to locate file ${filename_with_path} on ${hostname} - Bailing!&quot;
-    exit 1
-fi
-
-# Checking vmware site
-http_code=$(curl -s -o /dev/null -I -w &quot;%{http_code}&quot; ${PT_sftp_site})
-
-# Verify the sftp site is up
-if [ &quot;$http_code&quot; != '200' ]
-then
-    echo &quot;ERROR: Got http status of ${http_code} from ${PT_sftp_site} - Bailing!&quot;
-    exit 1
-fi
-
-# All of the commands following &lt;&lt;EOF below will be executed within the sftp session.
-# The put command within is where the log bundle gets uploaded to VMware's SFTP site.
-# Note: the mkdir command might create an error if the directory already exists, but we cannot validate
-# that it exists as we do not have access to the 'ls' command on the sftp server.
-
-# Establish sftp connection and execute payload
-sshpass -p $PT_sftp_password sftp -o 'StrictHostKeyChecking no' $PT_sftp_username@sftpsite.vmware.com &lt;&lt;EOF 
-
-mkdir $PT_vmware_sr_number
-cd $PT_vmware_sr_number
-put $filename_with_path
-exit
-
-EOF
-
-echo &quot;${filename} successfully uploaded to VMware SR: ${PT_vmware_sr_number}.&quot;
-
-# Clean up the extracted log bundle from the node
-rm $filename_with_path
+    main()
 </code></pre>
 
-<p>and the other piece of the bolt task:</p>
+<h3 id="gui-version">GUI Version</h3>
 
-<p>vmware_generate_and_upload_log_bundle.json</p>
+<p>By using PyQT5, we can add a GUI to our Python script. This is fully cross-platform, so as long as the modules are installed and you can get the <strong>.panic</strong> files transferred over, this can even be given to Windows administrators for usage.</p>
 
-<pre><code>{
-  &quot;description&quot;: &quot;Generates a log bundle on an esxi host&quot;,
-  &quot;implementations&quot;: [
-    {&quot;name&quot;: &quot;vmware_generate_and_upload_log_bundle.sh&quot;, &quot;requirements&quot;: [&quot;shell&quot;]}
-  ],
-  &quot;parameters&quot;: {
-    &quot;esx_username&quot;: {
-      &quot;description&quot;: &quot;Username to login to the esx host. Generally root.&quot;,
-      &quot;type&quot;: &quot;String[1]&quot;
+<pre><code>#!/usr/bin/env python3
+
+import json
+import os
+import re
+import sys
+
+import darkdetect
+import qdarkstyle
+from PyQt5.QtCore import QDir
+from PyQt5.QtWidgets import (
+    QApplication,
+    QFileDialog,
+    QLabel,
+    QPushButton,
+    QTextEdit,
+    QVBoxLayout,
+    QWidget,
+)
+
+
+class kernelcomposure(QWidget):
+    def __init__(self, parent=None):
+        super(kernelcomposure, self).__init__(parent)
+
+        layout = QVBoxLayout()
+        self.btn = QPushButton(&quot;Browse for Kernel Panic log&quot;)
+        self.btn.clicked.connect(self.getfile)
+
+        layout.addWidget(self.btn)
+        self.le = QLabel(&quot;Kernel Composure&quot;)
+
+        self.contents = QTextEdit()
+        self.contents.setReadOnly(True)
+        layout.addWidget(self.contents)
+        self.setLayout(layout)
+        self.setWindowTitle(&quot;Kernel Composure&quot;)
+
+    # Parses a given log file for every match of a specific regex
+    def parse_log_file(self, log_file_path, regex):
+        match_list = []
+        with open(log_file_path, &quot;r&quot;) as log_file:
+            content = log_file.read().splitlines()
+
+        for line in content:
+            for match in re.finditer(regex, line, re.S):
+                match_text = match.group()
+                match_list.append(match_text)
+
+        return match_list
+
+    def getfile(self):
+        fname = QFileDialog.getOpenFileName(
+            self, &quot;Open file&quot;, &quot;/&quot;, &quot;Kernel Panic Files (*.panic)&quot;
+        )
+
+        log_file_path = fname[0]
+
+        if not os.path.exists(log_file_path):
+            self.contents.setText(&quot;Please select a valid Kernel Panic log.&quot;)
+        else:
+            self.parsefile(fname[0])
+
+    def parsefile(self, log_file_path):
+        regex = r&quot;\{(.*?)\}&quot;
+
+        kernel_panic = self.parse_log_file(log_file_path, regex)
+
+        try:
+            initial_info = json.loads(kernel_panic[0])
+
+            for key, value in initial_info.items():
+                if key == list(initial_info.keys())[0]:
+                    panic_info = (
+                        f&quot;&lt;b&gt;{key}:&lt;/b&gt; &lt;br&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {value} &lt;br&gt;&quot;
+                    )
+                else:
+                    panic_info = f&quot;{panic_info} &lt;br&gt; &lt;b&gt;{key}:&lt;/b&gt; &lt;br&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {value} &lt;br&gt;&quot;
+
+            panic_json = json.loads(kernel_panic[1])
+
+            macOSPanicString = panic_json[&quot;macOSPanicString&quot;]
+
+            panic_info = (
+                f&quot;{panic_info} &lt;br&gt; &lt;b&gt;Kernel Extensions in backtrace:&lt;/b&gt; &lt;br&gt;&quot;
+            )
+
+            backtrace = False
+            for line in macOSPanicString.splitlines():
+                if &quot;Kernel Extensions in backtrace&quot; in line:
+                    backtrace = True
+                    continue
+                elif &quot;BSD process name corresponding to current thread&quot; in line:
+                    backtrace = False
+                    process_name = line.split(&quot;:&quot;, 1)[1]
+                    panic_info = f&quot;{panic_info} &lt;b&gt;Last process before crash:&lt;/b&gt; {process_name} &lt;br&gt;&quot;
+                    continue
+                elif backtrace and &quot;dependency&quot; not in line:
+                    panic_info = f&quot;{panic_info} {line.strip()} &lt;br&gt;&quot;
+                elif backtrace and &quot;dependency&quot; in line:
+                    panic_info = (
+                        f&quot;{panic_info} &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {line.strip()} &lt;br&gt;&quot;
+                    )
+
+            html_panic_string = macOSPanicString.replace(&quot;\n&quot;, &quot;&lt;br&gt;&quot;)
+
+            panic_info = (
+                f&quot;{panic_info} &lt;br&gt; &lt;b&gt;Full Panic String:&lt;/b&gt; &lt;br&gt; {html_panic_string}&quot;
+            )
+
+            self.contents.setText(panic_info)
+
+        except IndexError:
+
+            self.contents.setText(
+                &quot;Currently I can only parse Kernel Panic logs generated from macOS 10.15.x&quot;
+            )
+
+
+def main():
+    app = QApplication(sys.argv)
+    ex = kernelcomposure()
+    ex.resize(950, 500)
+    if len(sys.argv) &gt; 1:
+        ex.parsefile(sys.argv[1])
+    if darkdetect.isDark():
+        ex.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
+    ex.show()
+    sys.exit(app.exec_())
+
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+
+<h3 id="python-application">Python Application</h3>
+
+<p>Next we come to the native macOS application. This allows us to provide a native GUI and a fully standalone application designed to be easy to use for anyone. In order for py2app to build the application, we first need to generate a <strong>setup.py</strong> file. A base version can be generated from within the working directly by using <code>py2applet</code> which is included within the <code>py2app</code> module. A good breakdown of using it yourself is found <a href="https://py2app.readthedocs.io/en/latest/tutorial.html#create-a-setup-py-file">here</a>. Our <strong>setup.py</strong> is as follows:</p>
+
+<pre><code>&quot;&quot;&quot;
+This is a setup.py script generated by py2applet
+
+Usage:
+    python setup.py py2app
+&quot;&quot;&quot;
+
+from setuptools import setup
+
+APP = [&quot;./src/main/python/main.py&quot;]
+DATA_FILES = []
+OPTIONS = {
+    &quot;argv_emulation&quot;: True,
+    &quot;iconfile&quot;: &quot;kp.icns&quot;,
+    &quot;plist&quot;: {
+        &quot;CFBundleName&quot;: &quot;Kernel Composure&quot;,
+        &quot;CFBundleDisplayName&quot;: &quot;Kernel Composure&quot;,
+        &quot;CFBundleGetInfoString&quot;: &quot;Kernel Composure&quot;,
+        &quot;CFBundleIdentifier&quot;: &quot;com.encore.kernelcomposure&quot;,
+        &quot;CFBundleVersion&quot;: &quot;0.2.0&quot;,
+        &quot;CFBundleShortVersionString&quot;: &quot;0.2.0&quot;,
+        &quot;NSHumanReadableCopyright&quot;: u&quot;Copyright © 2020, Encore Technologies, All Rights Reserved&quot;,
+        &quot;CFBundleTypeExtensions&quot;: [&quot;panic&quot;],
     },
-    &quot;esx_password&quot;: {
-      &quot;description&quot;: &quot;Password to login to the esx host. Generally root password.&quot;,
-      &quot;type&quot;: &quot;String[1]&quot;,
-      &quot;sensitive&quot;: true
-    },
-    &quot;esx_host&quot;: {
-      &quot;description&quot;: &quot;Esx host to collect log bundle from.&quot;,
-      &quot;type&quot;: &quot;String[1]&quot;
-    },
-    &quot;download_directory&quot;: {
-      &quot;description&quot;: &quot;Location in which the .zip is downloaded to from the esx host. Default /tmp/&quot;,
-      &quot;type&quot;: &quot;Optional[String]&quot;
-    },
-    &quot;sftp_site&quot;: {
-      &quot;description&quot;: &quot;URL to the SFTP site.&quot;,
-      &quot;type&quot;: &quot;String[1]&quot;
-    },
-    &quot;sftp_username&quot;: {
-      &quot;description&quot;: &quot;Username to login to the SFTP site.&quot;,
-      &quot;type&quot;: &quot;String[1]&quot;
-    },
-    &quot;sftp_password&quot;: {
-      &quot;description&quot;: &quot;Password to login to the SFTP site.&quot;,
-      &quot;type&quot;: &quot;String[1]&quot;,
-      &quot;sensitive&quot;: true
-    },
-    &quot;vmware_sr_number&quot;: {
-      &quot;description&quot;: &quot;Must be 11 digit VMware SR #. Directory on the SFTP server the log will upload to.&quot;,
-      &quot;type&quot;: &quot;String[1]&quot;
+}
+
+setup(
+    app=APP,
+    data_files=DATA_FILES,
+    options={&quot;py2app&quot;: OPTIONS},
+    setup_requires=[&quot;py2app&quot;],
+)
+</code></pre>
+
+<p>After generating your <strong>setup.py</strong>, you finish your application build by running:</p>
+
+<pre><code>python setup.py py2app
+</code></pre>
+
+<p>This will result in your <strong>.app</strong> being built within the <strong>dist</strong> folder of your working directory.</p>
+
+<h2 id="swift-application">Swift application</h2>
+
+<p>Finally, we decided to rewrite the app in Swift to stay entirely within the native Apple tools. One of the biggest reasons for this change is that the app doesn&rsquo;t need to include the entire Python 3 framework inside of it. This brought the size of the app down from ~135 MB to less than 400 KB while maintaining all of the same functionality. This size went up after changing the deployment target from macOS 10.15 to macOS 10.13 due to some needed Swift inclusions, but is still much smaller than the comparable Python app. Due to the nature of storyboards, it&rsquo;s hard to accurately show all of the code within this blogpost, but the AppDelegate.swift and ViewController.swift are shown below:</p>
+
+<h3 id="appdelegate">AppDelegate</h3>
+
+<pre><code class="language-//">//  AppDelegate.swift
+//  Kernel Composure
+//
+//  Created by Tyler Sparr on 5/17/20.
+//  Copyright © 2020 Encore Technologies. All rights reserved.
+//
+
+import Cocoa
+
+@NSApplicationMain
+class AppDelegate: NSObject, NSApplicationDelegate {
+
+    var filename: String = &quot;&quot;
+
+//  Accepts a file via &quot;Open With&quot; and does an automatic parsing run
+    func application(_ sender: NSApplication, openFile filename: String) -&gt; Bool {
+        self.filename = filename
+        let fileUrl = URL(fileURLWithPath: filename)
+        guard let main = NSApp.mainWindow?.contentViewController as! ViewController? else { return true }
+        main.automatic_run(fileUrl)
+        return true
     }
-  }
+
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        // Insert code here to initialize your application
+    }
+
+    func applicationWillTerminate(_ aNotification: Notification) {
+        // Insert code here to tear down your application
+    }
+
+
 }
 </code></pre>
 
-<h3 id="stackstorm-code">StackStorm Code</h3>
+<h3 id="viewcontroller">ViewController</h3>
 
-<p>Now that we have a functional Bolt task to do want we want, we can simply roll it into a StackStorm workflow that can be called via slack.</p>
+<pre><code>//
+//  ViewController.swift
+//  Kernel Composure
+//
+//  Created by Tyler Sparr on 5/17/20.
+//  Copyright © 2020 Encore Technologies. All rights reserved.
+//
 
-<p>This StackStorm action calls the bolt task above: vmware_host_collect_and_upload_log_bundle.yaml</p>
+import Cocoa
 
-<pre><code>---
-description: &quot;Gather log bundle from specified ESX host and upload that log bundle to a VMware SR #&quot;
-enabled: true
-runner_type: orquesta
-entry_point: workflows/vmware_host_collect_and_upload_log_bundle.yaml
-name: vmware_host_collect_and_upload_log_bundle
-pack: vmware
-parameters:
-  vmware_sr_number:
-    type: string
-    description: &quot;11 digit VMware SR number&quot;
-    required: true
-  esx_host:
-    type: string
-    description: &quot;FQDN or IP of ESX host to collect logs from&quot;
-    required: true
-  download_server:
-    type: string
-    description: &quot;FQDN or IP of Linux system to temporarily place logs for upload to support&quot;
-    default: &quot;{{ st2kv.system.stackstorm.server }}&quot;
+class ViewController: NSViewController {
+
+//  Defines our button at the top of the window
+    @IBOutlet weak var kernelPanicSelection: NSButton!
+
+//  Defines the box where we output our text
+    @IBOutlet weak var kernelPanicText: NSTextView!
+
+//  Action connected to our button, opens file selection
+    @IBAction func handleKernelPanicSelection(_ sender: Any) {
+        let dialog = NSOpenPanel();
+
+        dialog.title                   = &quot;Choose the Kernel Panic log&quot;;
+        dialog.showsResizeIndicator    = true;
+        dialog.showsHiddenFiles        = false;
+        dialog.allowsMultipleSelection = false;
+        dialog.canChooseDirectories = false;
+        dialog.allowedFileTypes        = [&quot;panic&quot;];
+
+        if (dialog.runModal() ==  NSApplication.ModalResponse.OK) {
+            let result = dialog.url
+
+            if (result != nil) {
+
+                basic_parse_kernel_panic(file_name: result!)
+
+            }
+
+        } else {
+            // User clicked on &quot;Cancel&quot;
+            return
+        }
+    }
+
+//  Action connected to View - &gt; Show Advanced menu button
+    @IBAction func handleAdvancedViewSelection(_ sender: Any) {
+//      Check if there's already text in our view
+        let panic_string = (kernelPanicText.textStorage as NSAttributedString?)?.string
+
+//      If there's text, pull the filename and reparse gathering and displaying all info
+        if panic_string != nil {
+            let lines = panic_string!.split(whereSeparator: \.isNewline)
+            let filename = lines[1].trimmingCharacters(in: .whitespaces)
+            let fileUrl = URL(fileURLWithPath: filename)
+
+            advanced_parse_kernel_panic(file_name: fileUrl)
+
+            }
+        else {
+            return
+        }
+    }
+
+//  Action connected to Help -&gt; Kernel Composure Help menu button
+    @IBAction func getMoreInfo(_ sender: Any) {
+        let url = URL(string: &quot;https://developer.apple.com/library/archive/technotes/tn2063/_index.html&quot;)!
+        NSWorkspace.shared.open(url)
+    }
+
+//  This is called from AppDelegate.swift if the file is opened by &quot;Open With&quot;
+//  rather than via our GUI button
+    func automatic_run(_ filename: URL) {
+
+        basic_parse_kernel_panic(file_name: filename)
+
+    }
+
+//  Make sure we start off with a blank, uneditable view that supports rich text
+    func setupUI() {
+        kernelPanicText.string = &quot;&quot;
+        kernelPanicText.isEditable = false
+        kernelPanicText.isRichText = true
+    }
+
+//  Reads the file line by line and adds the lines to an array
+    func loadFile(file_path:URL) -&gt;  Array&lt;String&gt;{
+        var panic_log_lines: [String] = []
+        let path:String = file_path.path
+        let reader = LineReader(path: path)
+        for line in reader! {
+            panic_log_lines.append(line)
+        }
+        return panic_log_lines
+    }
+
+//  Parse the first line of the Kernel Panic log and return it as a JSON object
+    func get_initial_info(panic_log_lines:Array&lt;String&gt;) -&gt; JSON{
+        let initial_info = panic_log_lines[0]
+        let json = JSON.init(parseJSON:initial_info)
+
+        return(json)
+    }
+
+//  Parse the second line of the Kernel Panic log and return it as a JSON object
+    func get_panic_string(panic_log_lines:Array&lt;String&gt;) -&gt; JSON{
+        let panic_string = panic_log_lines[1]
+        let json = JSON.init(parseJSON:panic_string)
+
+        return(json)
+    }
+
+//  Get the kernel extensions in backtrace via brute force text parsing
+    func get_backtrace(panic_string:JSON) -&gt; Array&lt;String&gt;{
+        var process_info: [String] = []
+        let panic_string = panic_string[&quot;macOSPanicString&quot;].stringValue
+        let lines = panic_string.split(whereSeparator: \.isNewline)
+
+//      Find where the backtrace starts
+        let backtraceIndex = lines.firstIndex(of: &quot;      Kernel Extensions in backtrace:&quot;)!
+
+        for line in lines {
+//          Find where the backtrace ends
+            if line.contains(&quot;BSD process name corresponding to current thread&quot;) {
+                let process_name_line = lines.firstIndex(of: line)
+
+//              Copy everything in between the two lines to get our full backtrace
+                let backtrace_values = lines[backtraceIndex..&lt;process_name_line!]
+                for line in backtrace_values {
+//                  Bold the first line in the backtrace
+                    if backtrace_values.first == line {
+                        let stripped_line = line.trimmingCharacters(in: .whitespaces)
+                        process_info.append(&quot;&lt;b&gt;\(stripped_line)&lt;/b&gt;&quot;)
+                    }
+//                  Indent all dependencies
+                    if line.contains(&quot;dependency&quot;){
+                        let stripped_line = line.trimmingCharacters(in: .whitespaces)
+                        process_info.append(&quot;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;\(stripped_line)&lt;br&gt;&quot;)
+                    } else {
+                    let stripped_line = line.trimmingCharacters(in: .whitespaces)
+                    process_info.append(&quot;\(stripped_line)&lt;br&gt;&quot;)
+                    }
+                }
+//              Get the process name by splitting by colon
+                let process_name = line.components(separatedBy: &quot;:&quot;)
+                let process_name_txt = process_name[1]
+                process_info.append(&quot;&lt;br&gt;&lt;br&gt;&lt;b&gt;Last process before crash:&lt;/b&gt; \(process_name_txt)&lt;br&gt;&quot;)
+            }
+        }
+        return process_info
+    }
+
+//  Build our basic output with all of the necessary HTML formatting
+    func build_initial_output(file_name: URL, initial_info:JSON, panic_string:JSON, process_info:Array&lt;String&gt;) -&gt; NSAttributedString{
+        var initial_output: [String] = []
+        let path:String = file_name.path
+        initial_output.append(&quot;&lt;b&gt;filename:&lt;/b&gt; &lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;\(path)&lt;br&gt;&quot;)
+        let timestamp = initial_info[&quot;timestamp&quot;].stringValue
+        initial_output.append(&quot;&lt;b&gt;timestamp:&lt;/b&gt; &lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;\(timestamp)&lt;br&gt;&quot;)
+        let bug_type = initial_info[&quot;bug_type&quot;].stringValue
+        initial_output.append(&quot;&lt;b&gt;bug_type:&lt;/b&gt; &lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;\(bug_type)&lt;br&gt;&quot;)
+        let os_version = initial_info[&quot;os_version&quot;].stringValue
+        initial_output.append(&quot;&lt;b&gt;os_version:&lt;/b&gt; &lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;\(os_version)&lt;br&gt;&quot;)
+
+        let initial_output_text = initial_output.joined(separator: &quot;\n&quot;)
+
+        var process_text = process_info.joined(separator: &quot;,&quot;)
+        process_text = process_text.replacingOccurrences(of: &quot;,&quot;, with: &quot;&quot;, options: NSString.CompareOptions.literal, range:nil)
+
+        let full_panic_text = initial_output_text + &quot;&lt;br&gt;&lt;br&gt;&quot; + process_text
+
+//      We need to convert from String to Data to use HTML formatting
+        let panic_html = full_panic_text.data(using: .utf8)!
+
+//      Tell it we want our Data to be parsed as HTML and make it mutable
+        let formatted_panic = NSMutableAttributedString(html: panic_html, documentAttributes: nil)!
+
+//      We need to get the full length so we can apply formatting to the whole string
+        let panic_range = NSMakeRange(0, formatted_panic.length)
+
+//      This is necessary for automatic Dark Mode support
+        formatted_panic.addAttribute(.foregroundColor, value: NSColor.textColor, range: panic_range)
+
+        return formatted_panic
+    }
+
+//  Build our entire output with necessary HTML formatting
+    func build_full_output(file_name: URL, initial_info:JSON, panic_string:JSON, process_info:Array&lt;String&gt;) -&gt; NSAttributedString{
+        var initial_output: [String] = []
+        let path:String = file_name.path
+        initial_output.append(&quot;&lt;b&gt;filename:&lt;/b&gt; &lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;\(path)&lt;br&gt;&quot;)
+        let timestamp = initial_info[&quot;timestamp&quot;].stringValue
+        initial_output.append(&quot;&lt;b&gt;timestamp:&lt;/b&gt; &lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;\(timestamp)&lt;br&gt;&quot;)
+        let bug_type = initial_info[&quot;bug_type&quot;].stringValue
+        initial_output.append(&quot;&lt;b&gt;bug_type:&lt;/b&gt; &lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;\(bug_type)&lt;br&gt;&quot;)
+        let os_version = initial_info[&quot;os_version&quot;].stringValue
+        initial_output.append(&quot;&lt;b&gt;os_version:&lt;/b&gt; &lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;\(os_version)&lt;br&gt;&quot;)
+
+        let initial_output_text = initial_output.joined(separator: &quot;\n&quot;)
+
+        var process_text = process_info.joined(separator: &quot;,&quot;)
+        process_text = process_text.replacingOccurrences(of: &quot;,&quot;, with: &quot;&quot;, options: NSString.CompareOptions.literal, range:nil)
+
+        var panic_string = panic_string[&quot;macOSPanicString&quot;].stringValue
+        panic_string = panic_string.replacingOccurrences(of: &quot;\n&quot;, with: &quot;&lt;br&gt;&quot;, options: NSString.CompareOptions.literal, range:nil)
+
+        while panic_string.hasSuffix(&quot;&lt;br&gt;&quot;){
+            panic_string = String(panic_string.dropLast(4))
+        }
+
+        let full_panic_text = initial_output_text + &quot;&lt;br&gt;&lt;br&gt;&quot; + process_text + &quot;&lt;br&gt;&lt;br&gt;&quot; + &quot;&lt;b&gt;Full Panic String:&lt;/b&gt;&lt;br&gt;&quot; + panic_string
+
+//      We need to convert from String to Data to use HTML formatting
+        let panic_html = full_panic_text.data(using: .utf8)!
+
+//      Tell it we want our Data to be parsed as HTML and make it mutable
+        let formatted_panic = NSMutableAttributedString(html: panic_html, documentAttributes: nil)!
+
+//      We need to get the full length so we can apply formatting to the whole string
+        let panic_range = NSMakeRange(0, formatted_panic.length)
+
+//      This is necessary for automatic Dark Mode support
+        formatted_panic.addAttribute(.foregroundColor, value: NSColor.textColor, range: panic_range)
+
+        return formatted_panic
+    }
+
+//  Combines all of our basic parsing functions together for initial output
+    func basic_parse_kernel_panic(file_name: URL) {
+        let panic_text_array = loadFile(file_path: file_name)
+
+        let initial_info = get_initial_info(panic_log_lines: panic_text_array)
+
+        if initial_info != JSON.null {
+            let panic_string = get_panic_string(panic_log_lines: panic_text_array)
+
+            let process_info = get_backtrace(panic_string: panic_string)
+
+            let initial_output = build_initial_output(file_name: file_name, initial_info: initial_info, panic_string: panic_string, process_info: process_info)
+
+            kernelPanicText.textStorage?.setAttributedString(initial_output)
+
+        } else {
+            kernelPanicText.string = &quot;Currently I can only parse Kernel Panic logs generated from macOS 10.15.x. Please select a different log.&quot;
+            return
+        }
+    }
+
+//  Combines all parsing functions together for full output
+    func advanced_parse_kernel_panic(file_name: URL) {
+        let panic_text_array = loadFile(file_path: file_name)
+
+        let initial_info = get_initial_info(panic_log_lines: panic_text_array)
+
+        if initial_info != JSON.null {
+            let panic_string = get_panic_string(panic_log_lines: panic_text_array)
+
+            let process_info = get_backtrace(panic_string: panic_string)
+
+            let full_output = build_full_output(file_name: file_name, initial_info: initial_info, panic_string: panic_string, process_info: process_info)
+
+            kernelPanicText.textStorage?.setAttributedString(full_output)
+
+            } else {
+                kernelPanicText.string = &quot;Currently I can only parse Kernel Panic logs generated from macOS 10.15.x. Please select a different log.&quot;
+                return
+            }
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+// Do any additional setup after loading the view.
+// Default function, we're not using
+    }
+
+//  Just does our initial UI setup
+    override func viewWillAppear() {
+        super.viewWillAppear()
+
+        setupUI()
+    }
+
+    override var representedObject: Any? {
+        didSet {
+// Update the view, if already loaded.
+// Default function, we're not using
+        }
+    }
+
+
+}
 </code></pre>
 
-<p>This StackStorm workflow calls the StackStorm action above: vmware_host_collect_and_upload_log_bundle.yaml</p>
+<h2 id="summary">Summary</h2>
 
-<p>One of the key things here is that environment variables are being populated for the usernames and passwords being used. This means that they are NOT visible on the system running this code.</p>
-
-<pre><code>---
-version: 1.0
-
-description: Workflow to collect and upload a log bundle from a specified ESX host
-
-input:
-  - vmware_sr_number
-  - esx_host
-  - download_server
-
-vars:
-  - action_error: ''
-  - action_result: ''
-
-output:
-  - action_error: &quot;{{ ctx().action_error }}&quot;
-  - action_result: &quot;{{ ctx().action_result }}&quot;
-
-tasks:
-  plan_run:
-    action: vmware.bolt_plan
-    input:
-      server_fqdn: &quot;{{ ctx().download_server }} &quot;
-      os_type: &quot;linux&quot;
-      plan: &quot;vmware_generate_and_upload_log_bundle&quot;
-      params:
-        esx_host: &quot;{{ ctx().esx_host }}&quot;
-        vmware_sr_number: &quot;{{ ctx().vmware_sr_number }}&quot;
-      st2kv_vars:
-        esx_username: &quot;system.vmware.vmhost.username&quot;
-        esx_password: &quot;system.vmware.vmhost.password&quot;
-        sftp_site: &quot;system.vmware.sftp.site&quot;
-        sftp_username: &quot;system.vmware.sftp.username&quot;
-        sftp_password: &quot;system.vmware.sftp.password&quot;
-      bolt_retry_count: &quot;1&quot;
-    next:
-      - when: &quot;{{ succeeded() }}&quot;
-        publish:
-          - action_result: &quot;{{ result().output.run[0].result.value }}&quot;
-        do:
-          - noop
-      - when: &quot;{{ failed() }}&quot;
-        publish:
-          - action_error: &quot;{{ result().errors[0].result }}&quot;
-        do:
-          - fail
-</code></pre>
-
-<p>The StackStorm alias is how you configure what occurs in slack in regards to the StackStorm workflow above.
-vmware_host_collect_and_upload_log_bundle.yaml:</p>
-
-<pre><code>---
-name: vmware_host_collect_and_upload_log_bundle
-pack: vmware
-description: Uploads specified VMware host log bundle to (11 digit) VMware ticket number.
-action_ref: vmware.vmware_host_collect_and_upload_log_bundle
-
-formats:
-  - &quot;vmware host log upload {{ esx_host }} {{ vmware_sr_number }}&quot;
-
-result:
-  format: |
-    status: {{ execution.status }}
-    output:
-    -------------------------------
-    {% if execution.status == 'succeeded' %}
-      {{ execution.result.output.action_result['_output'] }}
-    {% elif execution.status == 'failed' %}
-      {{ execution.result.output.action_error }}
-    {% endif %}
-</code></pre>
+<p>This was a real problem we needed to solve for our team and as strong supporters and contributors to the open source community, we wanted to make sure everyone could benefit from our work. We hope the community finds it useful. You can download the latest release at <a href="https://github.com/EncoreTechnologies/swift-KernelComposure/releases">https://github.com/EncoreTechnologies/swift-KernelComposure/releases</a> and we encourage comments, issues, PRs, etc.</p>
 
     </div>
 
@@ -661,23 +946,15 @@ result:
 
     
     
-        <li><a href='/categories/greg-perry'>Greg Perry</a></li>
+        <li><a href='/categories/tyler-sparr'>Tyler Sparr</a></li>
     
         <li><a href='/categories/encore'>Encore</a></li>
     
-        <li><a href='/categories/vmware'>VMware</a></li>
+        <li><a href='/categories/macos'>macOS</a></li>
     
-        <li><a href='/categories/esxi'>ESXi</a></li>
+        <li><a href='/categories/python'>Python</a></li>
     
-        <li><a href='/categories/logs'>logs</a></li>
-    
-        <li><a href='/categories/chatops'>chatops</a></li>
-    
-        <li><a href='/categories/stackstorm'>StackStorm</a></li>
-    
-        <li><a href='/categories/bolt'>Bolt</a></li>
-    
-        <li><a href='/categories/puppet'>puppet</a></li>
+        <li><a href='/categories/swift'>Swift</a></li>
     
 </ul>
 
@@ -685,8 +962,8 @@ result:
 </article>
 <ul class="actions pagination">
     
-        <li><a href="https://encoretechnologies.github.io/blog/2020/03/vmware-iscsi-timeout/"
-                class="button big previous">Changing iSCSI LoginTimeout with PowerCLI</a></li>
+        <li><a href="https://encoretechnologies.github.io/blog/2020/05/chatops_vmware_host_log_collection/"
+                class="button big previous">Utilizing Chatops for VMWare Support Cases</a></li>
     
 
     
@@ -731,43 +1008,43 @@ result:
             
 
 
-<li><a href="//twitter.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fchatops_vmware_host_log_collection%2f&text=Utilizing%20Chatops%20for%20VMWare%20Support%20Cases&via=encoretechcincy" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f&text=Introducing%20Kernel%20Composure&via=encoretechcincy" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fchatops_vmware_host_log_collection%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fchatops_vmware_host_log_collection%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fchatops_vmware_host_log_collection%2f&title=Utilizing%20Chatops%20for%20VMWare%20Support%20Cases" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f&title=Introducing%20Kernel%20Composure" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fchatops_vmware_host_log_collection%2f&title=Utilizing%20Chatops%20for%20VMWare%20Support%20Cases" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f&title=Introducing%20Kernel%20Composure" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fchatops_vmware_host_log_collection%2f&title=Utilizing%20Chatops%20for%20VMWare%20Support%20Cases" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f&title=Introducing%20Kernel%20Composure" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by Greg%20Perry&body=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fchatops_vmware_host_log_collection%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by Tyler%20Sparr&body=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fkernel-composure%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -885,11 +1162,11 @@ result:
                     <li>
                         <article>
                             <header>
-                                <h3><a href="https://encoretechnologies.github.io/blog/2020/05/chatops_vmware_host_log_collection/">Utilizing Chatops for VMWare Support Cases</a></h3>
+                                <h3><a href="https://encoretechnologies.github.io/blog/2020/05/kernel-composure/">Introducing Kernel Composure</a></h3>
                                 
                                 <time class="published" datetime=
-                                    '2020-05-07'>
-                                    May 7, 2020</time>
+                                    '2020-05-17'>
+                                    May 17, 2020</time>
                             </header>
                         </article>
                     </li>
@@ -897,11 +1174,11 @@ result:
                     <li>
                         <article>
                             <header>
-                                <h3><a href="https://encoretechnologies.github.io/blog/2020/03/vmware-iscsi-timeout/">Changing iSCSI LoginTimeout with PowerCLI</a></h3>
+                                <h3><a href="https://encoretechnologies.github.io/blog/2020/05/chatops_vmware_host_log_collection/">Utilizing Chatops for VMWare Support Cases</a></h3>
                                 
                                 <time class="published" datetime=
-                                    '2020-03-05'>
-                                    March 5, 2020</time>
+                                    '2020-05-07'>
+                                    May 7, 2020</time>
                             </header>
                         </article>
                     </li>
@@ -940,7 +1217,7 @@ result:
                         <article>
                             <header>
                                 <a href="/categories/encore/">encore</a>
-                                <span style="float:right;">8</span>
+                                <span style="float:right;">9</span>
                             </header>
                         </article>
                     </li>
@@ -1065,6 +1342,15 @@ result:
                     <li>
                         <article>
                             <header>
+                                <a href="/categories/python/">python</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <a href="/categories/pyvmomi/">pyvmomi</a>
                                 <span style="float:right;">2</span>
                             </header>
@@ -1173,6 +1459,15 @@ result:
                     <li>
                         <article>
                             <header>
+                                <a href="/categories/macos/">macos</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <a href="/categories/pack/">pack</a>
                                 <span style="float:right;">1</span>
                             </header>
@@ -1200,7 +1495,7 @@ result:
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/python/">python</a>
+                                <a href="/categories/storage/">storage</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -1209,7 +1504,16 @@ result:
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/storage/">storage</a>
+                                <a href="/categories/swift/">swift</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/tyler-sparr/">tyler-sparr</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
