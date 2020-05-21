@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Citrix on Encore Technologies - DevOps Blog</title>
+    <link>https://encoretechnologies.github.io/categories/citrix/</link>
+    <description>Recent content in Citrix on Encore Technologies - DevOps Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://encoretechnologies.github.io/categories/citrix/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Migrate Citrix Policies from XenApp 6.5 to &gt;7.6</title>
+      <link>https://encoretechnologies.github.io/blog/2020/05/citrix-policy-migration/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://encoretechnologies.github.io/blog/2020/05/citrix-policy-migration/</guid>
+      <description>Migrate Citrix Policies from XenApp 6.5 to &amp;gt;7.6 In this post I will outline the process I used to overcome the limitations of existing Citrix policy migrating tools. Per Citrix, there is no direct path to migrate policies from xenapp version 6.5 to 7.7 or above, you must first install and migrate to 7.6, then do an in-place upgrade to the desired version. (source: docs.citrix.com). Unfortunately, many discover this only after their brand new 7.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1266 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>Migrate Citrix Policies from XenApp 6.5 to &gt;7.6</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.59.1" />
+        
+    
+        
+    
+
+    
+
+    <link rel="apple-touch-icon-precomposed"
+        href='/favicon/apple-touch-icon-precomposed.png'>
+    <link rel="icon" href='/favicon/favicon.png'>
+    
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage"
+        content='/favicon/mstile.png'>
+
+
+
+        
+            <meta name="author" content="Scott Caster	">
+        
+        
+            <meta name="description" content="Simple process for policy migration from xenapp 6.5 to Citrix 7.xx">
+        
+
+        <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://encoretechnologies.github.io/img/main/encore_power_button_small.png"/>
+
+<meta name="twitter:title" content="Migrate Citrix Policies from XenApp 6.5 to &gt;7.6"/>
+<meta name="twitter:description" content="Simple process for policy migration from xenapp 6.5 to Citrix 7.xx"/>
+<meta name="twitter:site" content="@encoretechcincy"/>
+
+        <meta property="og:title" content="Migrate Citrix Policies from XenApp 6.5 to &gt;7.6" />
+<meta property="og:description" content="Simple process for policy migration from xenapp 6.5 to Citrix 7.xx" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://encoretechnologies.github.io/blog/2020/05/citrix-policy-migration/" />
+
+<meta property="og:image" content="https://encoretechnologies.github.io/img/main/encore_power_button_small.png" />
+<meta property="article:published_time" content="2020-05-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-05-20T00:00:00+00:00" />
+
+        <meta itemprop="name" content="Migrate Citrix Policies from XenApp 6.5 to &gt;7.6">
+<meta itemprop="description" content="Simple process for policy migration from xenapp 6.5 to Citrix 7.xx">
+
+
+<meta itemprop="datePublished" content="2020-05-20T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-05-20T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1350">
+
+
+
+<meta itemprop="keywords" content="" />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" />
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+        
+
+        
+
+        
+            
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-108206364-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+        
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      
+          <h1><a href="/">blog</a></h1>
+      
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://encoretechnologies.github.io">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="q" value="site:https://encoretechnologies.github.io">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    <li>
+                        <a href="https://encoretechnologies.github.io/blog/2020/05/citrix-policy-migration/"><p>Migrate Citrix Policies from XenApp 6.5 to &gt;7.6</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="https://encoretechnologies.github.io/blog/2020/05/kernel-composure/"><p>Introducing Kernel Composure</p></a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fcitrix-policy-migration%2f&text=Migrate%20Citrix%20Policies%20from%20XenApp%206.5%20to%20%3e7.6&via=encoretechcincy" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fcitrix-policy-migration%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fcitrix-policy-migration%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fcitrix-policy-migration%2f&title=Migrate%20Citrix%20Policies%20from%20XenApp%206.5%20to%20%3e7.6" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fcitrix-policy-migration%2f&title=Migrate%20Citrix%20Policies%20from%20XenApp%206.5%20to%20%3e7.6" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fcitrix-policy-migration%2f&title=Migrate%20Citrix%20Policies%20from%20XenApp%206.5%20to%20%3e7.6" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by Scott%20Caster%09&body=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fcitrix-policy-migration%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="https://encoretechnologies.github.io/blog/2020/05/citrix-policy-migration/">Migrate Citrix Policies from XenApp 6.5 to &gt;7.6</a></h2>
+        
+        
+            <p>Simple process for policy migration from xenapp 6.5 to Citrix 7.xx</p>
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2020-05-20'>
+            May 20, 2020</time>
+        
+        <span class="author"><a href="https://github.com/scaster513">Scott Caster	</a></span>
+        
+        
+            <p>7 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+    
+    <section id="social-share">
+        <ul class="icons">
+            
+
+
+<li><a href="//twitter.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fcitrix-policy-migration%2f&text=Migrate%20Citrix%20Policies%20from%20XenApp%206.5%20to%20%3e7.6&via=encoretechcincy" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fcitrix-policy-migration%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fcitrix-policy-migration%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fcitrix-policy-migration%2f&title=Migrate%20Citrix%20Policies%20from%20XenApp%206.5%20to%20%3e7.6" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fcitrix-policy-migration%2f&title=Migrate%20Citrix%20Policies%20from%20XenApp%206.5%20to%20%3e7.6" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fcitrix-policy-migration%2f&title=Migrate%20Citrix%20Policies%20from%20XenApp%206.5%20to%20%3e7.6" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by Scott%20Caster%09&body=https%3a%2f%2fencoretechnologies.github.io%2fblog%2f2020%2f05%2fcitrix-policy-migration%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+    
+
+    
+
+    <div id="content">
+        
+
+<h2 id="migrate-citrix-policies-from-xenapp-6-5-to-7-6">Migrate Citrix Policies from XenApp 6.5 to &gt;7.6</h2>
+
+<p>In this post I will outline the process I used to overcome the limitations of existing Citrix policy migrating tools. Per Citrix, there is no direct path to migrate policies from xenapp version 6.5 to 7.7 or above, you must first install and migrate to 7.6, then do an in-place upgrade to the desired version. (source: <a href="https://docs.citrix.com/en-us/xenapp-and-xendesktop/7-15-ltsr/upgrade-migrate/xenapp-worker-upgrade.html">docs.citrix.com</a>). Unfortunately, many discover this only after their brand new 7.7 or higher farm is stood up. If you are in a similar situation or if you would like to try a more streamlined approach, the procedure below will help you save some time. It is quick and relatively painless, however, you will need to use and modify PowerShell modules. If you are uncomfortable with PowerShell this is a great learning opportunity. The process is broken down into 4 parts below.</p>
+
+<h1 id="export">Export</h1>
+
+<ol>
+<li>Download the Citrix Migration Tool from the xenapp 7.6 download page: <a href="https://www.citrix.com/downloads/xenapp/product-software/xenapp-76-enterprise-edition.html">Citrix 7.6 Downloads</a>
+
+<ul>
+<li>Important note, be sure to download the migration &ldquo;scripts&rdquo;, not the migration &ldquo;tool&rdquo;. The files we need are <code>ReadIMA.zip</code> and <code>ImportFMA.zip</code>. If you see <code>XDExport.zip</code> and <code>XDImport.zip</code>, you have the the actual tool and it will not work.
+<img src="/img/2020/05/migration_script_download.png" alt="migration_script_download" /></li>
+</ul></li>
+<li>On a 6.5 farm server ensure you have Windows Management Framework 3 or above installed, I used WMF 4. You can download here: <a href="https://www.microsoft.com/en-us/download/details.aspx?id=40855">Microsoft WMF 4.0</a></li>
+<li>Extract <code>ReadIMA.zip</code> to <code>C:\temp</code></li>
+
+<li><p>Open and administrator command prompt and execute the following:</p>
+
+<ul>
+<li><p>Note if you get security warnings press &ldquo;R&rdquo; to ignore and load scripts
+<img src="/img/2020/05/script_warning.png" alt="script_warning" /></p>
+
+<pre><code class="language-powershell">cd c:\temp\ReadIMA
+Import-Module .\exportpolicy.psd1
+Import-Module .\exportxafarm.psd1
+Export-Policy -XmlOutputFile .\policies.xml -LogFile .\policy-export.log
+</code></pre></li>
+</ul></li>
+
+<li><p>After the policy export completes, copy the <code>policies.xml</code> file from the 6.5 server to a 7.xx delivery controller and place in <code>C:\temp\ImportFMA</code></p></li>
+
+<li><p>If you have a large number of policies you will want to generate a verification file now. You can use to your compare current policies the to the new farm later on. On your 6.5 server run the below commands:</p>
+
+<pre><code class="language-powershell">if (!(Get-PSDrive | where name -eq LocalFarmGpo)) { 
+asnp citrix*
+Import-Module .\exportpolicy.psd1
+Import-Module .\exportxafarm.psd1
+}
+cd LocalFarmGpo:\
+$userpolicies=Get-ChildItem .\User |Select-Object name
+$outfile=&quot;c:\temp\ctxpolicy-old.txt&quot;
+foreach ($p in $userpolicies) {
+Get-ItemProperty -path .\User\$($p.name)  |Out-File $outfile -Append
+Get-ChildItem .\User\$($p.name) -Recurse |where state -eq enabled |Out-File $outfile -Append
+Get-ChildItem .\User\$($p.name) -Recurse |where enabled -eq true |Out-File $outfile -Append
+}
+</code></pre></li>
+
+<li><p>This will create a file <code>C:\temp\ctxpolicy.txt</code> (feel free to rename if desired) that contains all of policies on the farm. Save this for the verification process later.</p></li>
+</ol>
+
+<h1 id="import">Import</h1>
+
+<p>In order to complete the import we will utilize the <code>Import-Policy</code> command which is included in the <code>ImportPolicy.psm1</code> module. However, before we run it we need to fix two issues. First, it is still using the depreciated <code>[System.Reflection.Assembly]::LoadWithPartialName</code> method to load the plugin. We will use the simpler and more modern <code>Add-PSSnapin</code> cmdlet. Second, Citrix has changed their group policy snapin name from <code>Citrix.GroupPolicy.PowerShellProvider</code> to <code>Citrix.Common.GroupPolicy</code>. Since <code>Citrix.Common.GroupPolicy</code> is included by default in the install, we will add a simple check to see if it is loaded, if not we will load all installed Citrix Snapins. It could be a bit more refined, but this works for our purposes.</p>
+
+<ol>
+<li>On the 7.xx delivery controller, ensure the Citrix Group Policy Management and Powershell snappins are installed.</li>
+<li>Extract <code>ImportFMA.zip</code> to <code>C:\temp\ImportFMA</code></li>
+
+<li><p>Right click on the <code>ImportPolicy.psm1</code> file, select edit and remove or comment out the below</p>
+
+<pre><code class="language-powershell">$p = [Reflection.Assembly]::LoadWithPartialName(&quot;Citrix.GroupPolicy.PowerShellProvider&quot;)
+if ($p -eq $null)
+{
+    Write-Error ([string]::Format(&quot;{0}`n{1}&quot;,
+                                  &quot;Citrix Group Policy Provider Snapin is not installed&quot;,
+                                  &quot;You must have Citrix Group Policy Provider Snapin installed to use this script.&quot;))
+    return
+}
+
+Write-LogFile ('Import-Module -Assembly [Reflection.Assembly]::LoadWithPartialName(&quot;Citrix.GroupPolicy.PowerShellProvider&quot;)') 1
+[void](Import-Module -Assembly ([Reflection.Assembly]::LoadWithPartialName(&quot;Citrix.GroupPolicy.PowerShellProvider&quot;)))
+</code></pre></li>
+
+<li><p>Add the following code in its place</p>
+
+<pre><code class="language-powershell">if (!$(Get-PSSnapin |where name -Match Citrix.Common.GroupPolicy)) {
+    Write-Output &quot;Adding Citrix snap-in&quot;
+    Add-PSSnapin Citrix*
+} 
+</code></pre></li>
+
+<li><p>Save the file and open Powershell as administrator</p></li>
+
+<li><p>Execute the following commands. If you receive an error about unapproved verbs, ignore it.
+<img src="/img/2020/05/psverb_warning.png" alt="verb_warning" /></p>
+
+<pre><code class="language-powershell">	cd c:\temp\ImportFMA
+	Import-Module .\ImportPolicy.psm1
+	Import-Module .\ImportXAFarm.psm1
+	Import-Module .\LogUtilities.psm1
+	Import-Module .\XmlUtilities.psm1
+</code></pre></li>
+
+<li><p>Test policies import with the following command</p>
+
+<pre><code class="language-powershell">	Import-Policy -XmlInputFile .\policies.xml -LogFile .\policy-import.log -preview
+</code></pre></li>
+
+<li><p>Examine the output for any errors. If you see warnings about valid settings these can usually be ignored as there are some differences between how 6.5 and 7.xx utilize policies for configuration.</p></li>
+
+<li><p>Remove the -Preview switch to import for real this time</p>
+
+<pre><code class="language-powershell">	Import-Policy -XmlInputFile .\policies.xml -LogFile .\policy-import.log
+</code></pre></li>
+
+<li><p>Generate your verification file as you did before, this script will be a bit different due to the way we need to create the <code>LocalFarmGPO</code> PSDrive.</p>
+
+<pre><code class="language-powershell">if (!(Get-PSDrive | where name -eq LocalFarmGpo)) { New-PSDrive LocalFarmGpo –PSProvider CitrixGroupPolicy –Root \ -Controller localhost }
+cd LocalFarmGpo:\
+$userpolicies=Get-ChildItem .\User |Select-Object name
+$outfile=&quot;c:\temp\ctxpolicy-new.txt&quot;
+foreach ($p in $userpolicies) {
+Get-ItemProperty -path .\User\$($p.name)  |Out-File $outfile -Append
+Get-ChildItem .\User\$($p.name) -Recurse |where state -eq enabled |Out-File $outfile -Append
+Get-ChildItem .\User\$($p.name) -Recurse |where enabled -eq true |Out-File $outfile -Append
+}
+</code></pre></li>
+</ol>
+
+<h1 id="resolve-merge-discrepancies-with-citrix-studio">Resolve Merge Discrepancies with Citrix Studio</h1>
+
+<p>Citrix 7.xx Studio handles policy filtering in a different manner than 6.5. Separate user and computer policies no longer exist inside the GUI. Instead policies use filters that can be applied to users and computers. After an import, studio attempts to merge user policies with computer policies of the same name and applies filters for the various users and computers. Read more on this here <a href="https://support.citrix.com/article/CTX138509">https://support.citrix.com/article/CTX138509</a>.
+1.  Open Citrix studio and click on policies, If you added several policies, there is a good chance you will be presented with the below screen
+    *   Note the name of the policy given in the error message. There is no priority interference with the “unfiltered” policy as indicated in the message. While this message is misleading, it does give us a valuable bit of information, the other policy mentioned is called “Random-Citrix-Policy”. Make note of this policy name.
+    <img src="/img/2020/05/ctx_studio_error.png" alt="ctx_studio_error" />
+    * Please note: In these examples I am censoring the actual policy name and using a made up name, &lsquo;Random-Citrix-Policy&rsquo; for privacy.</p>
+
+<ol>
+<li><p>To resolve this. Return to your admin Powershell session and execute the below commands. Use the policy names from your environment in the &lsquo;where&rsquo; filters.</p>
+
+<pre><code class="language-powershell">asnp Citrix*
+New-PSDrive Site -PSProvider CitrixGroupPolicy -Root \ -Controller localhost
+cd Site:\User
+ls  | where name -eq &quot;unfiltered”
+ls  | where name -eq &quot;Random-Citrix-Policy”
+cd ..\computer
+ls  | where name -eq &quot;Random-Citrix-Policy”
+ls  | where name -eq &quot;unfiltered”
+</code></pre></li>
+
+<li><p>Examine the output.
+<img src="/img/2020/05/merge_conflict_compare.png" alt="merge_conflict_compare" /></p></li>
+
+<li><p>Note the priority on the same policy is different between the user and computer policies. The user policy priority is 4, and the computer is 1. We need to adjust one of these so that it matches the other. In this case I want the priority to be 4.
+Since ware already in the computer directory, we can change to the “Random-Citrix-Policy&rdquo; policy and execute the following commands</p>
+
+<ul>
+<li><code>cd &quot;.\Random-Citrix-Policy&quot;</code></li>
+<li>If you wish to switch to the user policy run: <code>cd &quot;..\user\Random-Citrix-Policy&quot;</code></li>
+<li>Then run <code>Set-ItemProperty . -Name Priority -value 4</code>. Replace the &lsquo;-value&rsquo; property with the priority value that is appropriate to your environment.</li>
+</ul></li>
+
+<li><p>Refresh the policy view in Citrix Studio. If you see your policies you are done with this step. Otherwise you may need to repeat this process for the next policy mentioned in the error message.</p></li>
+</ol>
+
+<h1 id="verify-policy-migration">Verify Policy Migration</h1>
+
+<ol>
+<li><p>If you followed all of the steps from the export and import process you should have 2 new files.</p>
+
+<ul>
+<li>On the old server: <code>C:\temp\ctxpolicy-old.txt</code></li>
+<li>On the new server: <code>C:\temp\ctxpolicy-new.txt</code></li>
+</ul></li>
+
+<li><p>Use your favorite comparison tool. I recommend using the open source tool “WinMerge” to diff these files as the diff command in windows is less than optimal.</p>
+
+<ul>
+<li>Open these files in WinMerge (<a href="https://sourceforge.net/projects/winmerge/">https://sourceforge.net/projects/winmerge/</a>) and it will highlight any discrepancies between the old and new Citrix environments.</li>
+<li>It is important to note that this is not a perfect process. There will be differences due to the varying versions of powershell and Citrix snap ins. You will likely some extra lines on the new farm. These can usually be ignored but use your best judgement.</li>
+</ul>
+
+<p>WinMerge Example:
+<img src="/img/2020/05/winmerge_example.png" alt="merge_conflict_compare" /></p></li>
+
+<li><p>If the policies match you are ready to move on environment build out. If some policies are incorrect, take a closer look in Citrix Studio and fix or add as necessary. In my case I had 160+ policies and did not need to recreate any.</p></li>
+</ol>
+
+<h2 id="related-links">Related links</h2>
+
+<ul>
+<li><a href="https://docs.citrix.com/en-us/xenapp-and-xendesktop/7-15-ltsr/upgrade-migrate/xenapp-worker-upgrade.html">Citrix Migration Tool Documentation</a></li>
+<li><a href="https://www.citrix.com/downloads/xenapp/product-software/xenapp-76-enterprise-edition.html">Citrix Migration Tool</a></li>
+<li><a href="https://winmerge.org/?lang=en">WinMerge</a></li>
+<li><a href="https://www.microsoft.com/en-us/download/details.aspx?id=40855">Microsoft Windows Management Framework 4.0</a></li>
+</ul>
+
+    </div>
+
+    <footer>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-sitemap">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/scott-caster'>Scott Caster</a></li>
+    
+        <li><a href='/categories/citrix'>Citrix</a></li>
+    
+        <li><a href='/categories/policy'>Policy</a></li>
+    
+        <li><a href='/categories/migrate'>Migrate</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+<ul class="actions pagination">
+    
+        <li><a href="https://encoretechnologies.github.io/blog/2020/05/kernel-composure/"
+                class="button big previous">Introducing Kernel Composure</a></li>
+    
+
+    
+</ul>
+
+
+
+    
+        <article class="post">
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "encoretechnologies" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </article>
+    
+
+
+
+    </div>
+    
+<section id="sidebar">
+
+    
+        <section id="intro">
+            
+            
+                
+                    <img src="/img/main/encore_logo_small.png" width="300" alt="Hugo Future Imperfect" />
+                
+            
+            
+                <header>
+                    <h2>DevOps Blog</h2>
+                    <p>Blog about everything DevOps, automation, virtualization and cloud</p>
+                </header>
+            
+            <ul class="icons">
+                
+                
+                    
+<li><a href="http://encore.tech/" target="_blank" title="Website" class="fa fa-globe"></a></li>
+
+
+
+<li><a href="//github.com/EncoreTechnologies" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/company/encoretechnologies" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//facebook.com/EncoreTechnologies" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+<li><a href="//twitter.com/encoretechcincy" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <ul class="posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="https://encoretechnologies.github.io/blog/2020/05/citrix-policy-migration/">Migrate Citrix Policies from XenApp 6.5 to &gt;7.6</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-05-20'>
+                                    May 20, 2020</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="https://encoretechnologies.github.io/blog/2020/05/kernel-composure/">Introducing Kernel Composure</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-05-17'>
+                                    May 17, 2020</time>
+                            </header>
+                        </article>
+                    </li>
+                
+
+                
+                    <li>
+                        <ul class="actions">
+                            <li><a href=
+                            
+                                /blog/
+                            
+                            class="button">View more posts</a></li>
+                        </ul>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+    
+    
+    
+        <section id="categories">
+            <ul class="posts">
+                <header>
+                    <h3><a href="/categories/">Categories</a></h3>
+                </header>
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/encore/">encore</a>
+                                <span style="float:right;">9</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/nick-maludy/">nick-maludy</a>
+                                <span style="float:right;">4</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/stackstorm/">stackstorm</a>
+                                <span style="float:right;">4</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/vmware/">vmware</a>
+                                <span style="float:right;">4</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/automation/">automation</a>
+                                <span style="float:right;">3</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/devops/">devops</a>
+                                <span style="float:right;">3</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/ansible/">ansible</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/bradley-bishop/">bradley-bishop</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/brian-alcorn/">brian-alcorn</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/esxi/">esxi</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/greg-perry/">greg-perry</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/john-schoewe/">john-schoewe</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/patch/">patch</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/patching/">patching</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/python/">python</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/pyvmomi/">pyvmomi</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/afinity-rule/">afinity-rule</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/bolt/">bolt</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/chatops/">chatops</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/citrix/">citrix</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/controllers/">controllers</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/disks/">disks</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/duo/">duo</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/end-user-compute/">end-user-compute</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/inquiries/">inquiries</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/iscsi/">iscsi</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/life/">life</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/logs/">logs</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/macos/">macos</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/migrate/">migrate</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/pack/">pack</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/pat-coughlin/">pat-coughlin</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/policy/">policy</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/puppet/">puppet</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/scott-caster/">scott-caster</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/storage/">storage</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/swift/">swift</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/tyler-sparr/">tyler-sparr</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+            </ul>
+        </section>
+    
+
+    
+        
+        <section class="blurb">
+            <h2>About</h2>
+            <p>Encore Technologies helps companies automate and accelerate their IT environments</p>
+
+            <ul class="actions">
+                <li><a href="/about/" class="button">Learn More</a></li>
+            </ul>
+        </section>
+        
+
+    
+        <section id="footer">
+            <ul class="icons">
+                
+                
+                    
+<li><a href="http://encore.tech/" target="_blank" title="Website" class="fa fa-globe"></a></li>
+
+
+
+<li><a href="//github.com/EncoreTechnologies" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/company/encoretechnologies" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//facebook.com/EncoreTechnologies" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+<li><a href="//twitter.com/encoretechcincy" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+                
+            </ul>
+
+            <p class="copyright">&copy; 2020 Encore Technologies - DevOps Blog. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        </section>
+
+</section>
+
+      </div>
+      <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+      
+
+      
+        
+      
+
+      
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script>
+        <script src="/js/util.js"></script>
+        <script src="/js/main.js"></script>
+        <script src="/js/backToTop.js"></script>
+      
+
+      
+
+      
+      <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>
+
